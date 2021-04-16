@@ -14,14 +14,16 @@ $(window).scroll(onScroll)
 
 
 /*************** 이벤트 콜백 *****************/
+/* for(var i=0; i<$('.page').length; i++) {
+	pageOffset[i] = $('.page').eq(i).offset().top
+} */
 function onScroll() {
 	var windowHeight = $(this).innerHeight()
 	var scrollTop = $(this).scrollTop()
 	var pageOffset = []
-
-	for(var i=0; i<$('.page').length; i++) {
-		pageOffset[i] = $('.page').eq(i).offset().top
-	}
+	$('.page').each(function(i){
+		pageOffset[i] = $(this).offset().top
+	})
 	
 	// console.log('windowHeight:', windowHeight)
 	// console.log('scrollTop:', scrollTop)
