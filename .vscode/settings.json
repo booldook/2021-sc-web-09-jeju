@@ -1,4 +1,5 @@
 {
-	"editor.hover.delay": 30,
-	"editor.quickSuggestionsDelay": 30
+	"editor.hover.delay": 200,
+	"editor.quickSuggestionsDelay": 30,
+	"editor.hover.enabled": false
 }

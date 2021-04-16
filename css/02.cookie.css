@@ -1,0 +1,9 @@
+.modal-wrapper {width: 100%; height: 100vh; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0); display: none; transition: all 0.75s;}
+
+
+.modal-wrap {width: 30%; min-width: 400px; background-color: #fff; position: absolute; top: 50%; left: 50%; transition: all 0.75s; transform: translate(-50%, -100vh);}
+
+.modal-wrap > .fa-times {width: 40px; height: 40px; line-height: 38px; text-align: center; background-color: crimson; color: #fff; font-size: 1.5em; cursor: pointer; position: absolute; top: 0; right: 0;}
+.modal-wrap > .header {padding: 1.25em 0.5em 0.5em 0.5em; font-size: 2em; border-bottom: 1px solid #ddd;}
+.modal-wrap > .body {padding: 1em; min-height: 200px;}
+.modal-wrap > .footer {padding: 1em; text-align: center; border-top: 1px solid #ddd;}
