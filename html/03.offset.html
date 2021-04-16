@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="../css/all.min.css">
+	<link rel="stylesheet" href="../css/bootstrap-icons.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/base.css">
+	<style>
+		.wrapper {background-color: cadetblue; max-width: 600px; height: 100vh; margin: auto; position: relative;}
+		.box {width: 200px; height: 200px; background-color: crimson; transform: translate(100px, 100px)}
+	</style>
+	<script src="../js/jquery-3.6.0.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="box"></div>
+	</div>
+	<script>
+		var offset = $('.box').offset()
+		var position = $('.box').position()
+		console.log(offset)
+		console.log(offset.top)
+		console.log(offset.left)
+		console.log(position)
+		console.log(position.top)
+		console.log(position.left)
+	</script>
+</body>
+</html>

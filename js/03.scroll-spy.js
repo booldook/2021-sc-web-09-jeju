@@ -15,7 +15,28 @@ $(window).scroll(onScroll)
 
 /*************** 이벤트 콜백 *****************/
 function onScroll() {
-	var windowHeight
-	var pagePosition
-	var scrollTop
+	var windowHeight = $(this).innerHeight()
+	var scrollTop = $(this).scrollTop()
+	var pageOffset = []
+
+	for(var i=0; i<$('.page').length; i++) {
+		pageOffset[i] = $('.page').eq(i).offset().top
+	}
+	
+	// console.log('windowHeight:', windowHeight)
+	// console.log('scrollTop:', scrollTop)
+	// console.log('pageOffset:', pageOffset)
+
+	if(scrollTop >= pageOffset[3]) {
+		console.log('page4')
+	}
+	else if(scrollTop >= pageOffset[2]) {
+		console.log('page3')
+	}
+	else if(scrollTop >= pageOffset[1]) {
+		console.log('page2')
+	}
+	else {
+		console.log('page1')
+	}
 }
