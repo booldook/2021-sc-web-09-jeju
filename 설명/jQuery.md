@@ -33,6 +33,7 @@
 ## Dimension
 - width(), innerWidth(), outerWidth(), outerWidth(true) 
 - height(), innerHeight(), innerWidth(), innerWidth(true)
+- offset(), position()
 
 ## 통신Ajax(Asynchronous javascript and xml)
 - $.get(), $.post(), $.ajax()
