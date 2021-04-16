@@ -14,31 +14,53 @@ $(window).scroll(onScroll)
 
 
 /*************** 이벤트 콜백 *****************/
-/* for(var i=0; i<$('.page').length; i++) {
-	pageOffset[i] = $('.page').eq(i).offset().top
-} */
 function onScroll() {
 	var windowHeight = $(this).innerHeight()
 	var scrollTop = $(this).scrollTop()
 	var pageOffset = []
+	var page
 	$('.page').each(function(i){
 		pageOffset[i] = $(this).offset().top
 	})
-	
-	// console.log('windowHeight:', windowHeight)
-	// console.log('scrollTop:', scrollTop)
-	// console.log('pageOffset:', pageOffset)
 
-	if(scrollTop >= pageOffset[3]) {
-		console.log('page4')
+	for(var i=1; i<pageOffset.length; i++) {
+		if(scrollTop < pageOffset[i]) break;
 	}
-	else if(scrollTop >= pageOffset[2]) {
-		console.log('page3')
-	}
-	else if(scrollTop >= pageOffset[1]) {
-		console.log('page2')
-	}
-	else {
-		console.log('page1')
-	}
+	page = i - 1
+	console.log(page)
 }
+
+// console.log('windowHeight:', windowHeight)
+// console.log('scrollTop:', scrollTop)
+// console.log('pageOffset:', pageOffset)
+/* 
+for(var i=0; i<$('.page').length; i++) {
+	pageOffset[i] = $('.page').eq(i).offset().top
+}
+
+if(scrollTop >= pageOffset[3]) {
+	console.log('page4')
+}
+else if(scrollTop >= pageOffset[2]) {
+	console.log('page3')
+}
+else if(scrollTop >= pageOffset[1]) {
+	console.log('page2')
+}
+else {
+	console.log('page1')
+} 
+
+if(scrollTop < pageOffset[1]) {
+	console.log('page1')
+}
+else if(scrollTop < pageOffset[2]) {
+	console.log('page2')
+}
+else if(scrollTop < pageOffset[3]) {
+	console.log('page3')
+}
+else {
+	console.log('page4')
+}
+*/
