@@ -1,0 +1,29 @@
+{
+	"comment": {
+		"scope": "html",
+		"prefix": "init",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"ko\">",
+			"<head>",
+			"\t<meta charset=\"UTF-8\">",
+			"\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+			"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"\t<title></title>",
+			"\t<link rel=\"stylesheet\" href=\"../css/all.min.css\">",
+			"\t<link rel=\"stylesheet\" href=\"../css/bootstrap-icons.css\">",
+			"\t<link rel=\"stylesheet\" href=\"../css/bootstrap.min.css\">",
+			"\t<link rel=\"stylesheet\" href=\"../css/base.css\">",
+			"\t<link rel=\"stylesheet\" href=\"../css/.css\">",
+			"\t<script src=\"../js/jquery-3.6.0.min.js\"></script>",
+			"\t<script src=\"../js/bootstrap.min.js\"></script>",
+			"</head>",
+			"<body>",
+			"\t",
+			"\t<script src=\"../js/.js\"></script>",
+			"</body>",
+			"</html>"
+		],
+		"description": "global init"
+	}
+}
