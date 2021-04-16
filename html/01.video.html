@@ -8,10 +8,12 @@
 	<link rel="stylesheet" href="../css/all.min.css">
 	<link rel="stylesheet" href="../css/bootstrap-icons.css">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/jquery.mb.YTPlayer.min.css">
 	<link rel="stylesheet" href="../css/base.css">
 	<link rel="stylesheet" href="../css/01.video.css">
 	<script src="../js/jquery-3.6.0.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery.mb.YTPlayer.min.js"></script>
 </head>
 <body>
 	<!-- <div class="video-wrapper">
@@ -20,7 +22,7 @@
 		</video>
 	</div> -->
 	<div class="video-wrapper">
-		<iframe width="100%" height="100%" src="https://www.youtube.com/embed/EGGe07oYRkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<div id="youtubeBg" class="player" data-property="{videoURL:'https://www.youtube.com/embed/EGGe07oYRkU', containment:'.video-wrapper', autoPlay:true, mute:true, startAt:0, opacity:1}">My video</div>
 	</div>
 	<script src="../js/01.video.js"></script>
 </body>
