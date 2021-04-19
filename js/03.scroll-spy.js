@@ -31,6 +31,7 @@ function onScroll() {
 	page = i - 1
 	console.log(page)
 	$('.content').eq(page).addClass('active')
+	// $('.content').eq(page).addClass('active animated rubberBand')
 }
 
 // console.log('windowHeight:', windowHeight)
