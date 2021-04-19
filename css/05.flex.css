@@ -1,18 +1,24 @@
 /********************** 글로벌 설정 *********************/
-html, body {height: 20000px;}
+html, body {height: 20000px; text-align: center;}
 .wrapper {max-width: 1200px; margin: auto;}
 .title {margin-top: 30px; font-size: 1.5em;}
 .box-wrapper {background-color: bisque; margin-top: 10px; border: 2px solid red;}
 .box-wrapper > .box {background-color: #032db4; width: 100px; height: 100px; border: 10px solid #6fb6f8; color: #6fb6f8; font-weight: bold; font-size: 50px; display: flex; justify-content: center; align-items: center;}
 
 /********* flex options **********/
-.box-wrapper {display: flex; justify-content: space-between; transition: all 2s;}
+.box-wrapper {display: flex; justify-content: space-between; transition: all 2s; }
 .box-wrapper1 > .box {transition: all 2s;}
 .box-wrapper1 > .box:nth-child(1) {background-color: cadetblue;}
 .box-wrapper1 > .box:nth-child(2) {background-color:coral ;}
 .box-wrapper1 > .box:nth-child(3) {background-color: crimson;}
 .box-wrapper1 > .box:nth-child(4) {background-color: darkolivegreen;}
 .box-wrapper1 > .box:nth-child(5) {background-color: dodgerblue;}
+
+/* 기본값: flex-grow: 0 / flex-shrink: 1 */
+/* .box-wrapper2 > .box {flex-grow: 1; flex-shrink: 0; transition: all 2s; width: 200px; height: 200px;} */
+.box-wrapper2 > .box {flex: 1 0 200px; transition: all 2s; height: 200px;}
+.box-wrapper2 > .box:hover {flex-grow: 8;}
+/* .box-wrapper2 > .box:nth-child(2) {flex-grow: 1;} */
 
 
 /********************** 반응형 설정 *********************/
