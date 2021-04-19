@@ -1,0 +1,1 @@
+spyScroll('.content', 'active animated flash')
