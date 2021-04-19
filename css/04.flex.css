@@ -1,5 +1,5 @@
 /********************** 글로벌 설정 *********************/
-html, body {height: 10000px;}
+html, body {height: 20000px;}
 .wrapper {max-width: 1200px; margin: auto;}
 
 
@@ -50,8 +50,24 @@ html, body {height: 10000px;}
 .box-wrapper.sample3 > .box {width: 100px; height: 100px;}
 .box-wrapper.box-wrapper11 {display: flex; flex-direction: row;}
 .box-wrapper.box-wrapper12 {display: flex; flex-direction: row-reverse;}
-.box-wrapper.box-wrapper13 {display: flex; flex-direction: column;}
-.box-wrapper.box-wrapper14 {display: flex; flex-direction: column-reverse;}
+.box-wrapper.box-wrapper13 {display: flex; flex-direction: column; justify-content: center; align-items: flex-end;}
+.box-wrapper.box-wrapper14 {display: flex; flex-direction: column-reverse; justify-content: center; align-items: center;}
+
+
+/********* justify-items **********/
+.box-wrapper.sample4 {height: 500px; justify-content: center; align-items: center;}
+.box-wrapper.sample4 > .box {width: 120px; height: 80px; font-size: 1em; border-width: 3px;}
+
+.box-wrapper.box-wrapper15 {align-content: normal;}
+.box-wrapper.box-wrapper16 {align-content: center;}
+.box-wrapper.box-wrapper17 {align-content: flex-start;}
+.box-wrapper.box-wrapper18 {align-content: flex-end;}
+.box-wrapper.box-wrapper19 {align-content: space-between;}
+.box-wrapper.box-wrapper20 {align-content: space-around;}
+.box-wrapper.box-wrapper21 {align-content: space-evenly;}
+.box-wrapper.box-wrapper22 {align-content: stretch; align-items: stretch;}
+
+.box-wrapper.box-wrapper22 > .box {height: auto;}
 
 
 
