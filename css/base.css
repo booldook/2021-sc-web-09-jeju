@@ -47,7 +47,7 @@ table {
 	border-spacing: 0;
 }
 a, label {display: inline-block;}
-/* a:link, a:visited, a:hover, a:active {color: inherit; text-decoration: none;} */
+a:link, a:visited, a:hover, a:active {color: inherit; text-decoration: none;}
 img {vertical-align: bottom;}
 input, button {border-radius: 0; outline: none; border: none; background-color: transparent; cursor: pointer;}
 

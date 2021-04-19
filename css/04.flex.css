@@ -1,0 +1,50 @@
+/********************** 글로벌 설정 *********************/
+.wrapper {max-width: 1200px; margin: auto;}
+
+
+/**********************  *********************/
+.header-wrapper {background-color: #eee;}
+
+.navi-wrapper {display: flex; justify-content: space-between;}
+.navi-wrapper > .logo {}
+.navi-wrapper > .navi-wrap {display: flex;}
+.navi-wrapper > .navi-wrap > .navi {}
+
+.header-wrapper .logo {padding: 1em 1.5em;}
+.header-wrapper .logo:hover {background-color: #444; color: #f9f9f9;}
+.header-wrapper .navi-wrap .navi {padding: 1em 1.5em;}
+.header-wrapper .navi-wrap .navi:hover {background-color: #444; color: #f9f9f9;}
+
+
+.title {margin-top: 30px; font-size: 1.5em;}
+.box-wrapper {background-color: bisque; margin: 20px auto;}
+.box-wrapper > .box {background-color: #032db4; width: 100px; height: 100px; border: 10px solid #6fb6f8; color: #6fb6f8; font-weight: bold; font-size: 50px;}
+
+/********* flex options **********/
+.box-wrapper {display: flex;}
+
+
+
+
+
+
+/********************** 반응형 설정 *********************/
+@media (max-width: 1399px) {
+	
+}
+
+@media (max-width: 1199px) {
+	
+}
+
+@media (max-width: 991px) {
+	
+}
+
+@media (max-width: 767px) {
+	
+}
+
+@media (max-width: 575px) {
+	
+}
