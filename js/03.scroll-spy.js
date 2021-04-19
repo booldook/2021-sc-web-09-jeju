@@ -20,8 +20,8 @@ function onScroll() {
 	var scrollTop = $(this).scrollTop()
 	var pageOffset = []
 	var page
-	var gap = 200
-	$('.page').each(function(i){
+	var gap = 300
+	$('.content').each(function(i){
 		pageOffset[i] = $(this).offset().top
 	})
 
@@ -30,7 +30,7 @@ function onScroll() {
 	}
 	page = i - 1
 	console.log(page)
-	$('.page').eq(page).find('.content').addClass('active')
+	$('.content').eq(page).addClass('active')
 }
 
 // console.log('windowHeight:', windowHeight)
