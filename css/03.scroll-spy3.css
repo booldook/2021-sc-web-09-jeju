@@ -2,3 +2,5 @@
 .page2 {min-height: 150vh; background-color: darkkhaki;}
 .page3 {min-height: 70vh; background-color: darkslategray;}
 .page4 {min-height: 120vh; background-color: indianred;}
+
+.wow {animation-delay: 2s;}
