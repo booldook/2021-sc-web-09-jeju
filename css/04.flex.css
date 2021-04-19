@@ -1,4 +1,5 @@
 /********************** 글로벌 설정 *********************/
+html, body {height: 10000px;}
 .wrapper {max-width: 1200px; margin: auto;}
 
 
@@ -17,11 +18,41 @@
 
 
 .title {margin-top: 30px; font-size: 1.5em;}
-.box-wrapper {background-color: bisque; margin: 20px auto;}
-.box-wrapper > .box {background-color: #032db4; width: 100px; height: 100px; border: 10px solid #6fb6f8; color: #6fb6f8; font-weight: bold; font-size: 50px;}
+.box-wrapper {background-color: bisque; margin-top: 10px; border: 2px solid red;}
+.box-wrapper > .box {background-color: #032db4; width: 200px; height: 200px; border: 10px solid #6fb6f8; color: #6fb6f8; font-weight: bold; font-size: 50px; display: flex; justify-content: center; align-items: center;}
+
+.box-wrapper.sample2 {height: 500px;}
+.box-wrapper.sample2 > .box {width: 100px; height: auto;}
 
 /********* flex options **********/
-.box-wrapper {display: flex;}
+.box-wrapper {display: flex; flex-wrap: wrap;}
+.box-wrapper1 {justify-content: flex-start;}
+.box-wrapper2 {justify-content: center;}
+.box-wrapper3 {justify-content: flex-end;}
+.box-wrapper4 {justify-content: space-between;}
+.box-wrapper5 {justify-content: space-evenly;}
+.box-wrapper6 {justify-content: space-around;}
+
+.box-wrapper7 {justify-content: center; align-items: stretch;}
+.box-wrapper8 {justify-content: space-between; align-items: flex-start;}
+.box-wrapper9 {justify-content: flex-start; align-items: flex-end;}
+.box-wrapper10 {justify-content: space-evenly; align-items: center;}
+
+
+/********* modal 정렬하기 **********/
+.modal-wrapper {background-color: rgba(0, 0, 0, 0.8); width: 100%; height: 100vh;
+	display: flex; justify-content: center; align-items: center;}
+.modal-wrapper > .modal-wrap {width: 30%; height: 30vh; background-color: beige;}
+
+
+/********* flex-direction **********/
+.box-wrapper.sample3 {height: 500px;}
+.box-wrapper.sample3 > .box {width: 100px; height: 100px;}
+.box-wrapper.box-wrapper11 {display: flex; flex-direction: row;}
+.box-wrapper.box-wrapper12 {display: flex; flex-direction: row-reverse;}
+.box-wrapper.box-wrapper13 {display: flex; flex-direction: column;}
+.box-wrapper.box-wrapper14 {display: flex; flex-direction: column-reverse;}
+
 
 
 
