@@ -1,1 +1,1 @@
-spyScroll('.content', 'active animated flash')
+scrollSpy('.content', 'active animated flash')

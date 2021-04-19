@@ -14,9 +14,9 @@ function sortDesc(key) {
 
 
 /*************** Scroll Spy *****************/
-function spyScroll(el, cls, _gap) {
-	$(window).scroll(onSpyScroll).trigger('scroll')
-	function onSpyScroll() {
+function scrollSpy(el, cls, _gap) {
+	$(window).scroll(onScrollSpy).trigger('scroll')
+	function onScrollSpy() {
 		var scrollTop = $(this).scrollTop()
 		var pageOffset = []
 		var page
