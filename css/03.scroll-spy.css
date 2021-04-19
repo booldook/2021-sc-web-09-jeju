@@ -3,4 +3,5 @@
 .page3 {min-height: 70vh; background-color: darkslategray;}
 .page4 {min-height: 120vh; background-color: indianred;}
 
-.content {opacity: 0;}
+.content {opacity: 0; transition: all 0.5s;}
+.content.active {opacity: 1;}

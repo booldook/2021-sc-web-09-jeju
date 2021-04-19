@@ -10,7 +10,8 @@ Scroll Spy
 
 
 /*************** 이벤트 등록 *****************/
-$(window).scroll(onScroll)
+$(window).scroll(onScroll).trigger('scroll')
+
 
 
 /*************** 이벤트 콜백 *****************/
@@ -19,15 +20,17 @@ function onScroll() {
 	var scrollTop = $(this).scrollTop()
 	var pageOffset = []
 	var page
+	var gap = 200
 	$('.page').each(function(i){
 		pageOffset[i] = $(this).offset().top
 	})
 
 	for(var i=1; i<pageOffset.length; i++) {
-		if(scrollTop < pageOffset[i]) break;
+		if(scrollTop < pageOffset[i] - gap) break
 	}
 	page = i - 1
 	console.log(page)
+	$('.page').eq(page).find('.content').addClass('active')
 }
 
 // console.log('windowHeight:', windowHeight)
