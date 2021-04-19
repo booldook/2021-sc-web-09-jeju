@@ -1,0 +1,31 @@
+/********************** 글로벌 설정 *********************/
+html, body {height: 20000px;}
+.wrapper {max-width: 1200px; margin: auto;}
+.title {margin-top: 30px; font-size: 1.5em;}
+.box-wrapper {background-color: bisque; margin-top: 10px; border: 2px solid red;}
+.box-wrapper > .box {background-color: #032db4; width: 200px; height: 200px; border: 10px solid #6fb6f8; color: #6fb6f8; font-weight: bold; font-size: 50px; display: flex; justify-content: center; align-items: center;}
+
+/********* flex options **********/
+
+
+
+/********************** 반응형 설정 *********************/
+@media (max-width: 1399px) {
+	
+}
+
+@media (max-width: 1199px) {
+	
+}
+
+@media (max-width: 991px) {
+	
+}
+
+@media (max-width: 767px) {
+	
+}
+
+@media (max-width: 575px) {
+	
+}
