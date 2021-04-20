@@ -18,6 +18,7 @@ $('.header-wrapper .bt-today').click(onHideTodayNotice)
 $('.header-wrapper .link-lang').click(onToggleLang)
 $('.header-wrapper .link-lang').mouseenter(onShowLang)
 $('.header-wrapper .link-lang').mouseleave(onHideLang)
+$('.header-wrapper .link-lang .lang').click(onChgLang)
 
 
 /*************** 이벤트 콜백 *****************/
@@ -52,5 +53,13 @@ function onShowLang() {
 
 function onHideLang() {
 	$('.header-wrapper .link-lang .hover').hide()
+}
+
+function onChgLang() {
+	var $span = $(this).parent().prev().find('span')
+	var myLang = $(this).text()
+	var spanLang = $span.text()
+	$span.text(myLang)
+	$(this).text(spanLang)
 }
 

@@ -26,15 +26,17 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
 .header-wrapper .notice-content .bt-today {color: #f9f9f9;}
 
 .header-wrapper > .top-wrapper {color: #f9f9f9;}
-.header-wrapper > .top-wrapper:hover {color: #777; background-color: #f9f9f9;}
+.header-wrapper > .top-wrapper:hover {color: rgba(0,0,0,.5); background-color: #f9f9f9;}
 
 .header-wrapper .link-wrapper {border-bottom: 1px solid #ddd;}
 .header-wrapper .link-wrap {padding: 1em 0; display: flex; justify-content: flex-end; align-items: center;}
 .header-wrapper .link-wrap > .link {font-weight: 300; user-select: none;}
+.header-wrapper .link-wrap > .link:hover {color: rgba(0,0,0,.75);}
 .header-wrapper .link-wrap > .link:not(.link-lang) {border-right: 1px solid #ddd; padding: 0 1.5em;}
 .header-wrapper .link-lang {padding-left: 1.5em; position: relative;}
 .header-wrapper .link-lang > .sel {cursor: pointer;}
-.header-wrapper .link-lang > .hover {background-color: #f9f9f9; position: absolute; width: 100%; padding: 1em; left: .5em; cursor: pointer; display: none;}
+.header-wrapper .link-lang > .hover {background-color: #f9f9f9; position: absolute; min-width: 100%; padding: 1em; left: .5em; cursor: pointer; display: none;}
+.header-wrapper .link-lang > .hover > .lang {margin-top: .75em;}
 .header-wrapper .link-lang .bt-lang::before {transition: transform 1s; font-size: .75em}
 .header-wrapper .link-lang:hover .bt-lang::before {transform: rotate(180deg);}
 
