@@ -1,8 +1,7 @@
-# .vscode/*
-.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vscode/*
+!.vscode/css.code-snippets
+!.vscode/html.code-snippets
+!.vscode/javascript.code-snippets
 *.code-workspace
 
 # Local History for Visual Studio Code
