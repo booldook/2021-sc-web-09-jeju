@@ -3,6 +3,9 @@
 /********************** 글로벌 설정 *********************/
 html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
 .wrapper {width: 1368px; margin: auto;}
+.bt-ghost {padding: .875em 1.75em; border: 1px solid #999; color: #f9f9f9; transition: all .5s;}
+.bt-ghost:hover {background-color: #f9f9f9; color: #b38859;}
+.bt-anchor {text-decoration: underline;}
 
 
 
@@ -14,7 +17,10 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
 .header-wrapper .notice-wrap > .bt-down {cursor: pointer; margin-right: auto;}
 .header-wrapper .notice-wrap > .bt-close {font-size: 1.75em; cursor: pointer;}
 
-.header-wrapper .notice-content {padding-left: 4rem;} 
+.header-wrapper .notice-content {padding-left: 4rem;}
+.header-wrapper .notice-content > .content {font-size: 1.125em; line-height: 1.5; color: #bbb; margin-bottom: 1.5em;} 
+.header-wrapper .notice-content > .bt-wrap {padding-bottom: 2em; display: flex; justify-content: space-between; align-items: flex-end;} 
+.header-wrapper .notice-content .bt-today {color: #f9f9f9;} 
 
 
 /********************** footer-wrapper *********************/
