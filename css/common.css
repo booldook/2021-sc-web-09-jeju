@@ -14,7 +14,8 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
 .header-wrapper .notice-wrap {display: flex; padding: 1em 0; align-items: center;}
 .header-wrapper .notice-wrap > .notice-bullet {font-size: .875em; color: #b38859; width: 4rem;}
 .header-wrapper .notice-wrap > .notice-title {font-size: 1.25em; margin-right: .5rem;}
-.header-wrapper .notice-wrap > .bt-down {cursor: pointer; margin-right: auto;}
+.header-wrapper .notice-wrap > .bt-show {cursor: pointer; margin-right: auto;}
+.header-wrapper .notice-wrap > .bt-hide {cursor: pointer; margin-right: auto;}
 .header-wrapper .notice-wrap > .bt-close {font-size: 1.75em; cursor: pointer;}
 
 .header-wrapper .notice-content {padding-left: 4rem;}
