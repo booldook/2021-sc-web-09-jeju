@@ -63,10 +63,13 @@ $('.header-wrapper .link-lang .lang').click(onChgLang)
 function onNaviEnter() {
 	$('.header-wrapper .sub-wrapper').hide()
 	$(this).find('.sub-wrapper').show()
+	$('.header-wrapper .navi').removeClass('active')
+	$(this).addClass('active')
 }
 
 function onNaviLeave() {
 	$('.header-wrapper .sub-wrapper').hide()
+	$('.header-wrapper .navi').removeClass('active')
 }
 
 function onScroll(e) {
