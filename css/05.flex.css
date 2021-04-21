@@ -15,11 +15,17 @@ html, body {height: 20000px; text-align: center;}
 .box-wrapper1 > .box:nth-child(5) {background-color: dodgerblue;}
 
 /* 기본값: flex-grow: 0 / flex-shrink: 1 */
-/* flex: flex-grow flex-shrink flex-basis */
+/* flex: flex-basis flex-grow flex-shrink */
 /* .box-wrapper2 > .box {flex-grow: 1; flex-shrink: 0; transition: all 2s; width: 200px; height: 200px;} */
 .box-wrapper2 > .box {flex: 1 0 200px; transition: all 2s; height: 200px;}
 .box-wrapper2 > .box:hover {flex-grow: 8;}
 /* .box-wrapper2 > .box:nth-child(2) {flex-grow: 1;} */
+
+
+
+.box-wrapper3 {display: flex; justify-content: flex-start; padding: 1em;}
+.box-wrapper3 > .boxes {padding: 1em; flex: auto 1 1;}
+.box-wrapper3 > .boxes:not(:last-child) {border-right: 3px solid blue;}
 
 
 /********************** 반응형 설정 *********************/
