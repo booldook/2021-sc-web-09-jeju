@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
 
 /********************** 글로벌 설정 *********************/
-html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
+html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 20000px;}
 .wrapper {width: 1368px; margin: auto;}
 .bt-ghost {padding: .875em 1.75em; border: 1px solid #999; color: #fff; transition: all .5s;}
 .bt-ghost:hover {background-color: #fff; color: #b38859;}
@@ -27,10 +27,10 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
 
 
 /********************** header-wrapper *********************/
-.header-wrapper > .top-wrapper {color: #fff;}
-.header-wrapper > .top-wrapper:hover {color: rgba(0,0,0,.5); background-color: #fff;}
+.header-wrapper {color: #fff; position: absolute; width: 100%;}
+.header-wrapper:hover {color: rgba(0,0,0,.5); background-color: #fff;}
 
-.header-wrapper > .top-wrapper:hover .link-wrapper {border-bottom: 1px solid #ddd;}
+.header-wrapper:hover .link-wrapper {border-bottom: 1px solid #ddd;}
 .header-wrapper .link-wrapper {border-bottom: 1px solid rgba(255,255,255, .1);}
 .header-wrapper .link-wrap {padding: 1em 0; display: flex; justify-content: flex-end; align-items: center;}
 .header-wrapper .link-wrap > .link {font-weight: 300; user-select: none;}
@@ -43,20 +43,20 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
 .header-wrapper .link-lang .bt-lang::before {transition: transform 1s; font-size: .75em}
 .header-wrapper .link-lang:hover .bt-lang::before {transform: rotate(180deg);}
 
-.header-wrapper > .top-wrapper:hover .logo-white {display: none;}
-.header-wrapper > .top-wrapper:hover .logo-color {display: inline-block;}
-.header-wrapper > .top-wrapper:hover .bt-ghost.gold {color: #b38859; border: 1px solid #b38859;}
-.header-wrapper > .top-wrapper:hover .navi {text-shadow: none; color: #111;}
-.header-wrapper > .top-wrapper:hover .navi:hover {color: #b38859;}
+.header-wrapper:hover .logo-white {display: none;}
+.header-wrapper:hover .logo-color {display: inline-block;}
+.header-wrapper:hover .bt-ghost.gold {color: #b38859; border: 1px solid #b38859;}
+.header-wrapper:hover .navi {text-shadow: none; color: #111;}
+.header-wrapper:hover .navi:hover {color: #b38859;}
 .header-wrapper .navi-wrapper > .wrapper {display: flex; padding: 1.5em 0;}
 .header-wrapper .logo-wrap {order: 2; flex: 0 0 254px;}
-.header-wrapper .logo-wrap .logo-color {display: none;}
+.header-wrapper .logo-color {display: none;}
 .header-wrapper .navi-wrap {flex: 0 0 calc(50% - 127px); display: flex; align-items: center;}
 .header-wrapper .navi-wrap-lt {order: 1;}
 .header-wrapper .navi-wrap-rt {order: 3; justify-content: flex-end;}
-.header-wrapper .navi-wrap > .navi {margin: 0 2em; text-shadow: 0 0 8px rgba(0,0,0,.75);}
-.header-wrapper .navi-wrap > .navi:first-child {margin-left: 0;}
-.header-wrapper .navi-wrap > .navi:last-child {margin-right: 0;}
+.header-wrapper .navi {margin: 0 2em; text-shadow: 0 0 8px rgba(0,0,0,.75);}
+.header-wrapper .navi:first-child {margin-left: 0;}
+.header-wrapper .navi:last-child {margin-right: 0;}
 
 
 /********************** footer-wrapper *********************/
