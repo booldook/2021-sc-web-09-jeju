@@ -11,22 +11,22 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
 
 
 
+/********************** notice-wrapper *********************/
+.notice-wrapper {width: 100%; background-color: #28354b; color: #fff;}
+.notice-wrapper .notice-wrap {display: flex; padding: 1em 0; align-items: center;}
+.notice-wrapper .notice-wrap > .notice-bullet {font-size: .875em; color: #b38859; width: 4rem;}
+.notice-wrapper .notice-wrap > .notice-title {font-size: 1.25em; margin-right: .5rem;}
+.notice-wrapper .notice-wrap > .bt-show {cursor: pointer; margin-right: auto;}
+.notice-wrapper .notice-wrap > .bt-hide {cursor: pointer; margin-right: auto;}
+.notice-wrapper .notice-wrap > .bt-close {font-size: 1.75em; cursor: pointer;}
+
+.notice-wrapper .notice-content {padding-left: 4rem;}
+.notice-wrapper .notice-content > .content {font-size: 1.125em; line-height: 1.5; color: #bbb; margin-bottom: 1.5em;} 
+.notice-wrapper .notice-content > .bt-wrap {padding-bottom: 2em; display: flex; justify-content: space-between; align-items: flex-end;} 
+.notice-wrapper .notice-content .bt-today {color: #fff;}
+
+
 /********************** header-wrapper *********************/
-.header-wrapper {font-size: 1em; position: fixed; width: 100%;}
-
-.header-wrapper > .notice-wrapper {background-color: #28354b; color: #fff;}
-.header-wrapper .notice-wrap {display: flex; padding: 1em 0; align-items: center;}
-.header-wrapper .notice-wrap > .notice-bullet {font-size: .875em; color: #b38859; width: 4rem;}
-.header-wrapper .notice-wrap > .notice-title {font-size: 1.25em; margin-right: .5rem;}
-.header-wrapper .notice-wrap > .bt-show {cursor: pointer; margin-right: auto;}
-.header-wrapper .notice-wrap > .bt-hide {cursor: pointer; margin-right: auto;}
-.header-wrapper .notice-wrap > .bt-close {font-size: 1.75em; cursor: pointer;}
-
-.header-wrapper .notice-content {padding-left: 4rem;}
-.header-wrapper .notice-content > .content {font-size: 1.125em; line-height: 1.5; color: #bbb; margin-bottom: 1.5em;} 
-.header-wrapper .notice-content > .bt-wrap {padding-bottom: 2em; display: flex; justify-content: space-between; align-items: flex-end;} 
-.header-wrapper .notice-content .bt-today {color: #fff;}
-
 .header-wrapper > .top-wrapper {color: #fff;}
 .header-wrapper > .top-wrapper:hover {color: rgba(0,0,0,.5); background-color: #fff;}
 
