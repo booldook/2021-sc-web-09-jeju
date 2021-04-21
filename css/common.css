@@ -46,13 +46,15 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif;}
 .header-wrapper > .top-wrapper:hover .logo-white {display: none;}
 .header-wrapper > .top-wrapper:hover .logo-color {display: inline-block;}
 .header-wrapper > .top-wrapper:hover .bt-ghost.gold {color: #b38859; border: 1px solid #b38859;}
+.header-wrapper > .top-wrapper:hover .navi {text-shadow: none; color: #111;}
+.header-wrapper > .top-wrapper:hover .navi:hover {color: #b38859;}
 .header-wrapper .navi-wrapper > .wrapper {display: flex; padding: 1.5em 0;}
 .header-wrapper .logo-wrap {order: 2; flex: 0 0 254px;}
 .header-wrapper .logo-wrap .logo-color {display: none;}
 .header-wrapper .navi-wrap {flex: 0 0 calc(50% - 127px); display: flex; align-items: center;}
 .header-wrapper .navi-wrap-lt {order: 1;}
 .header-wrapper .navi-wrap-rt {order: 3; justify-content: flex-end;}
-.header-wrapper .navi-wrap > .navi {margin: 0 2em;}
+.header-wrapper .navi-wrap > .navi {margin: 0 2em; text-shadow: 0 0 8px rgba(0,0,0,.75);}
 .header-wrapper .navi-wrap > .navi:first-child {margin-left: 0;}
 .header-wrapper .navi-wrap > .navi:last-child {margin-right: 0;}
 
