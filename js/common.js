@@ -1,5 +1,7 @@
 /*************** 글로벌 설정 *****************/
+var isHeaderAni = false
 initCommon()
+
 
 /*************** 사용자 함수 *****************/
 function initCommon() {
@@ -18,18 +20,23 @@ function scrollNotice(scTop) {
 	if(scTop == 0) {
 		$('.notice-wrapper').show()
 		$('.link-wrapper').show()
-		$('.header-wrapper').css('top', 'unset')
+		$('.header-wrapper').css({'position': 'absolute', 'top': 'unset'})
+		isHeaderAni = false
 	}
-	else if(scTop > 0 && scTop < 200) {
+	else if(scTop > 0 && scTop < 150) {
 		$('.notice-wrapper').hide()
 		$('.link-wrapper').hide()
 		$('.header-wrapper').css({'position': 'fixed', 'top': 0})
+		isHeaderAni = false
 	}
 	else {
-		$('.header-wrapper').css('top', -headerHeight+'px')
-		setTimeout(function(){
-			$('.header-wrapper').css('top', 0)
-		}, 50)
+		if(!isHeaderAni) {
+			isHeaderAni = true
+			$('.header-wrapper').css('top', -headerHeight+'px')
+			setTimeout(function(){
+				$('.header-wrapper').css('top', 0)
+			}, 100)
+		}
 	}
 }
 
