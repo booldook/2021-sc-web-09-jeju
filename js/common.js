@@ -13,60 +13,50 @@ function initCommon() {
 }
 
 function scrollNotice(scTop) {
-	var headerHeight = $('.header-wrapper').outerHeight()
-	var noticeHeight = $('.notice-wrapper').outerHeight()
-	var linkHeight = $('.link-wrapper').outerHeight()
-	console.log(scTop)
+	var $notice = $('.notice-wrapper')
+	var $link = $('.link-wrapper')
+	var $navi = $('.navi-wrapper')
+	var $header = $('.header-wrapper')
+	var noticeHeight, linkHeight, naviHeight, headerHeight
 	if(scTop == 0) {
-		$('.notice-wrapper').show()
-		$('.link-wrapper').show()
-		$('.header-wrapper').css({'position': 'absolute', 'top': 'unset'})
-		isHeaderAni = false
+		$notice.show()
+		$link.show()
+		$header.css('top', 'unset')
+		$header.removeClass('active')
 	}
-	else if(scTop > 0 && scTop < 150) {
-		$('.notice-wrapper').hide()
-		$('.link-wrapper').hide()
-		$('.header-wrapper').css({'position': 'fixed', 'top': 0})
-		isHeaderAni = false
+	else if(scTop < 150) {
+		$notice.hide()
+		$link.hide()
+		$header.css('top', 'unset')
+		$header.removeClass('active')
 	}
 	else {
-		if(!isHeaderAni) {
-			isHeaderAni = true
-			$('.header-wrapper').css('top', -headerHeight+'px')
-			setTimeout(function(){
-				$('.header-wrapper').css('top', 0)
-			}, 100)
-		}
+		$notice.hide()
+		$link.hide()
+		headerHeight = $header.outerHeight()
+		$header.css('top', -headerHeight + 'px')
+		$header.css('top')
+		$header.css('top', 0)
+		$header.addClass('active')
 	}
 }
 
-function scrollHeader(scTop) {
-	var linkHeight = $('.link-wrapper').outerHeight()
-	if(scTop > 150) {
-		//$('.header-wrapper').css({'position': 'fixed' , 'top': 0})
+/* function scrollNotice(scTop) {
+	var $notice = $('.notice-wrapper')
+	var $link = $('.link-wrapper')
+	if(scTop == 0) {
+		$notice.show()
+		$link.show()
 	}
 	else {
-
+		$notice.hide()
+		$link.hide()
 	}
-	/*
-	var headerHeight = $('.header-wrapper').outerHeight()
-	console.log(scTop, headerHeight)
-	if(headerHeight < scTop) {
-		$('.link-wrapper').hide()
-		$('.header-wrapper').stop().animate({'top': 0}, 200, function(){
-			$('.header-wrapper').css({'position': 'fixed', 'top': 0})
-		})
-	}
-	else {
-		console.log('원위치')
-		//$('.header-wrapper').css({'position': 'absolute', 'top': 'unset'})
-	}
-	*/
-}
+} */
 
 
 /*************** 이벤트 등록 *****************/
-$(window).scroll(onScroll)
+$(window).scroll(onScroll).trigger('scroll')
 
 $('.notice-wrapper .bt-show').click(onShowNotice)
 $('.notice-wrapper .bt-hide').click(onHideNotice)
@@ -83,7 +73,6 @@ $('.header-wrapper .link-lang .lang').click(onChgLang)
 function onScroll(e) {
 	var scTop = $(this).scrollTop()
 	scrollNotice(scTop)
-	scrollHeader(scTop)
 }
 
 function onShowNotice() {

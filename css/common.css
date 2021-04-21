@@ -27,10 +27,8 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 10
 
 
 /********************** header-wrapper *********************/
-.header-wrapper {color: #fff; position: absolute; width: 100%; transition: top 0.35s;}
-.header-wrapper:hover {color: rgba(0,0,0,.5); background-color: #fff;}
+.header-wrapper {color: #fff; position: fixed; width: 100%; transition: top 0.35s;}
 
-.header-wrapper:hover .link-wrapper {border-bottom: 1px solid #ddd;}
 .header-wrapper .link-wrapper {border-bottom: 1px solid rgba(255,255,255, .1);}
 .header-wrapper .link-wrap {padding: 1em 0; display: flex; justify-content: flex-end; align-items: center;}
 .header-wrapper .link-wrap > .link {font-weight: 300; user-select: none;}
@@ -43,11 +41,6 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 10
 .header-wrapper .link-lang .bt-lang::before {transition: transform 1s; font-size: .75em}
 .header-wrapper .link-lang:hover .bt-lang::before {transform: rotate(180deg);}
 
-.header-wrapper:hover .logo-white {display: none;}
-.header-wrapper:hover .logo-color {display: inline-block;}
-.header-wrapper:hover .bt-ghost.gold {color: #b38859; border: 1px solid #b38859;}
-.header-wrapper:hover .navi {text-shadow: none; color: #111;}
-.header-wrapper:hover .navi:hover {color: #b38859;}
 .header-wrapper .navi-wrapper > .wrapper {display: flex; padding: 1.5em 0;}
 .header-wrapper .logo-wrap {order: 2; flex: 0 0 254px;}
 .header-wrapper .logo-color {display: none;}
@@ -57,6 +50,21 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 10
 .header-wrapper .navi {margin: 0 2em; text-shadow: 0 0 8px rgba(0,0,0,.75);}
 .header-wrapper .navi:first-child {margin-left: 0;}
 .header-wrapper .navi:last-child {margin-right: 0;}
+
+.header-wrapper:hover,
+.header-wrapper.active {color: rgba(0,0,0,.5); background-color: #fff;}
+.header-wrapper:hover .link-wrapper,
+.header-wrapper.active .link-wrapper {border-bottom: 1px solid #ddd;}
+.header-wrapper:hover .logo-white,
+.header-wrapper.active .logo-white {display: none;}
+.header-wrapper:hover .logo-color,
+.header-wrapper.active .logo-color {display: inline-block;}
+.header-wrapper:hover .bt-ghost.gold,
+.header-wrapper.active .bt-ghost.gold {color: #b38859; border: 1px solid #b38859;}
+.header-wrapper:hover .navi,
+.header-wrapper.active .navi {text-shadow: none; color: #111;}
+.header-wrapper:hover .navi:hover,
+.header-wrapper.active .navi:hover {color: #b38859;}
 
 
 /********************** footer-wrapper *********************/
