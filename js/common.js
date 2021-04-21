@@ -10,6 +10,28 @@ function initCommon() {
 	}
 }
 
+function scrollNotice(scTop) {
+	var noticeHeight = $('.notice-wrapper').outerHeight()
+	if(scTop > 0) {
+		$('.notice-wrapper').hide()
+		$('.header-wrapper').css('top', noticeHeight + 'px')
+	}
+	else {
+		$('.notice-wrapper').show()
+		$('.header-wrapper').css('top', 'unset')
+	}
+}
+
+function scrollHeader(scTop) {
+	var headerGap = $('.header-wrapper').outerHeight()
+	if(headerGap < scTop) {
+		$('.header-wrapper').css({'position': 'fixed', 'top': 0})
+	}
+	else {
+		$('.header-wrapper').css({'position': 'absolute', 'top': 'unset'})
+	}
+}
+
 /*************** 이벤트 등록 *****************/
 $(window).scroll(onScroll).trigger('scroll')
 
@@ -27,17 +49,8 @@ $('.header-wrapper .link-lang .lang').click(onChgLang)
 /*************** 이벤트 콜백 *****************/
 function onScroll(e) {
 	var scTop = $(this).scrollTop()
-	var headerGap = 100
-	var noticeHeight = $('.notice-wrapper').outerHeight();
-	/***** notice-wrapper 제어 *****/
-	if(scTop > 0) {
-		$('.notice-wrapper').hide()
-		$('.header-wrapper').css('top', noticeHeight + 'px')
-	}
-	else {
-		$('.notice-wrapper').show()
-		$('.header-wrapper').css('top', 'unset')
-	}
+	scrollNotice(scTop)
+	scrollHeader(scTop)
 }
 
 function onShowNotice() {

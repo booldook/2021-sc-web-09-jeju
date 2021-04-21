@@ -27,7 +27,7 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 10
 
 
 /********************** header-wrapper *********************/
-.header-wrapper {color: #fff; position: absolute; width: 100%; }
+.header-wrapper {color: #fff; position: absolute; width: 100%;}
 .header-wrapper:hover {color: rgba(0,0,0,.5); background-color: #fff;}
 
 .header-wrapper:hover .link-wrapper {border-bottom: 1px solid #ddd;}
