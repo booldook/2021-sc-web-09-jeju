@@ -27,45 +27,53 @@ $('.header-wrapper .link-lang .lang').click(onChgLang)
 /*************** 이벤트 콜백 *****************/
 function onScroll(e) {
 	var scTop = $(this).scrollTop()
-	var noticeGap = 5
+	var headerGap = 100
+	var noticeHeight = $('.notice-wrapper').outerHeight();
 	/***** notice-wrapper 제어 *****/
-	
+	if(scTop > 0) {
+		$('.notice-wrapper').hide()
+		$('.header-wrapper').css('top', noticeHeight + 'px')
+	}
+	else {
+		$('.notice-wrapper').show()
+		$('.header-wrapper').css('top', 'unset')
+	}
 }
 
-function onShowNotice(e) {
+function onShowNotice() {
 	$('.notice-wrapper').find('.bt-show').hide()
 	$('.notice-wrapper').find('.bt-hide').show()
 	$('.notice-wrapper').find('.notice-content').show()
 }
 
-function onHideNotice(e) {
+function onHideNotice() {
 	$('.notice-wrapper').find('.bt-show').show()
 	$('.notice-wrapper').find('.bt-hide').hide()
 	$('.notice-wrapper').find('.notice-content').hide()
 }
 
-function onCloseNotice(e) {
+function onCloseNotice() {
 	$('.notice-wrapper').hide()
 }
 
-function onHideTodayNotice(e) {
+function onHideTodayNotice() {
 	$.cookie('hideNotice', 'Y', { expires: 1, path: '/' })
 	onCloseNotice()
 }
 
-function onToggleLang(e) {
+function onToggleLang() {
 	$('.header-wrapper .link-lang .hover').toggle()
 }
 
-function onShowLang(e) {
+function onShowLang() {
 	$('.header-wrapper .link-lang .hover').show()
 }
 
-function onHideLang(e) {
+function onHideLang() {
 	$('.header-wrapper .link-lang .hover').hide()
 }
 
-function onChgLang(e) {
+function onChgLang() {
 	var $span = $(this).parent().prev().find('span')
 	var myLang = $(this).text()
 	var spanLang = $span.text()
