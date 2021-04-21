@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif; */
+/* font-family: 'Jost', sans-serif; */
 
 /********************** 글로벌 설정 *********************/
 html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 10000px;}
@@ -47,9 +50,17 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 10
 .header-wrapper .navi-wrap {flex: 0 0 calc(50% - 127px); display: flex; align-items: center;}
 .header-wrapper .navi-wrap-lt {order: 1;}
 .header-wrapper .navi-wrap-rt {order: 3; justify-content: flex-end;}
-.header-wrapper .navi {margin: 0 2em; text-shadow: 0 0 8px rgba(0,0,0,.75);}
+.header-wrapper .navi {margin: 0 2em; position: relative;}
+.header-wrapper .navi > a {font-family: 'Jost', 'Noto Sans KR', sans-serif; font-size: 1.125em; text-shadow: 0 0 8px rgba(0,0,0,.75);}
 .header-wrapper .navi:first-child {margin-left: 0;}
 .header-wrapper .navi:last-child {margin-right: 0;}
+.header-wrapper .navi > .sub-wrapper {position: absolute; background-color: #fff; padding: 3em 2.5em; top: calc(1em + 40px); border-top: 1px solid #ccc;}
+.header-wrapper .navi > .sub-wrapper::before {width: 40px; height: 2px; background-color: #b38859; content: ''; display: block; position: absolute; top: 0; left: 50px; transform: rotate(90deg);}
+.header-wrapper .sub-wrap h3.title {font-family: 'Jost', 'Noto Sans KR', sans-serif; color: #222; font-size: 1.25em; padding-bottom: 1em; display: flex; align-items: center;}
+.header-wrapper .sub-wrap h3.title::before {content: '·'; display: block; margin-top: -0.25em;  font-size: 2em; margin-right: 0.25em;}
+
+.header-wrapper .navi > .sub-wrapper.stay {width: 440px; left: -50px;}
+
 
 .header-wrapper:hover,
 .header-wrapper.active {color: rgba(0,0,0,.5); background-color: #fff;}
@@ -61,10 +72,10 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 10
 .header-wrapper.active .logo-color {display: inline-block;}
 .header-wrapper:hover .bt-ghost.gold,
 .header-wrapper.active .bt-ghost.gold {color: #b38859; border: 1px solid #b38859;}
-.header-wrapper:hover .navi,
-.header-wrapper.active .navi {text-shadow: none; color: #111;}
-.header-wrapper:hover .navi:hover,
-.header-wrapper.active .navi:hover {color: #b38859;}
+.header-wrapper:hover .navi > a,
+.header-wrapper.active .navi > a {text-shadow: none; color: #111;}
+.header-wrapper:hover .navi:hover > a,
+.header-wrapper.active .navi:hover > a {color: #b38859;}
 
 
 /********************** footer-wrapper *********************/
