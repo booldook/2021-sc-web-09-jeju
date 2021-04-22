@@ -4,33 +4,39 @@
 // 3. 동영상은 플레이가 끝난 이후에 다음으로 넘어간다
 
 
-/*************** 글로벌 설정 *****************/
-var $mainWrapper = $('.main-wrapper')
-var $mainSlide = $('.main-wrapper .slide')
-var mainLen = $mainSlide.length
-var mainLastIdx = mainLen - 1
-var mainDepth = 2
-var mainIdx = 0
-var mainGap = 3000
-var mainSpeed = 500
-var mainInterval
-initMain()
+
+/*************** main-wrapper *****************/
+$(function() {
+
+	/*************** 글로벌 설정 *****************/
+	var $wrapper = $('.main-wrapper')
+	var $slide = $('.main-wrapper .slide')
+	var len = $slide.length
+	var lastIdx = len - 1
+	var depth = 2
+	var idx = 0
+	var gap = 3000
+	var speed = 500
+	var interval
+	init()
 
 
-/*************** 사용자 함수 *****************/
-function initMain() {
-	$mainSlide.eq(mainIdx).css('z-index', mainDepth++)
-	mainInterval = setInterval(onMainAni, mainGap)
-}
+	/*************** 사용자 함수 *****************/
+	function init() {
+		$slide.eq(idx).css('z-index', depth++)
+		interval = setInterval(onAni, gap)
+	}
 
 
-/*************** 이벤트 등록 *****************/
+	/*************** 이벤트 등록 *****************/
 
 
-/*************** 이벤트 콜백 *****************/
-/* if(mainIdx == mainLastIdx) mainIdx = 0
-else mainIdx = mainIdx + 1 */
-function onMainAni() {
-	mainIdx = (mainIdx == mainLastIdx) ? 0 : mainIdx + 1
-	$mainSlide.eq(mainIdx).css('z-index', mainDepth++)
-}
+	/*************** 이벤트 콜백 *****************/
+	/* if(idx == lastIdx) mainIdx = 0
+	else idx = idx + 1 */
+	function onAni() {
+		idx = (idx == lastIdx) ? 0 : idx + 1
+		$slide.eq(idx).css('z-index', depth++)
+	}
+
+})
