@@ -1,5 +1,10 @@
 /********************** main-wrapper *********************/
-
+.main-wrapper {}
+.main-wrapper .slide-stage {width: 100%; height: 100vh; overflow: hidden; position: relative;}
+.main-wrapper .slide {width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: hidden;}
+.main-wrapper .slide > img,
+.main-wrapper .slide > video
+{min-height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 
 
 /********************** dream-wrapper *********************/
