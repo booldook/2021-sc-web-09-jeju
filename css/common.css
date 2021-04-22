@@ -4,7 +4,7 @@
 /* font-family: 'Jost', sans-serif; */
 
 /********************** 글로벌 설정 *********************/
-html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 10000px;}
+html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; height: 10000px;}
 .wrapper {width: 1368px; margin: auto;}
 .bt-ghost {padding: .875em 1.75em; border: 1px solid #999; color: #fff; transition: all .5s;}
 .bt-ghost:hover {background-color: #fff; color: #b38859;}
@@ -52,7 +52,7 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 10
 .header-wrapper .navi-wrap-rt {order: 3; justify-content: flex-end;}
 .header-wrapper .navi {padding: 0 2em; position: relative; display: flex; align-items: center;}
 .header-wrapper .navi.has-sub.active::after {width: 40px; height: 2px; background-color: #b38859; content: ''; display: block; position: absolute; transform-origin: left; transform: rotate(90deg); top: 70px; left: calc(50% - 1px);}
-.header-wrapper .navi > a {font-family: 'Jost', 'Noto Sans KR', sans-serif; font-size: 1.125em; text-shadow: 0 0 8px rgba(0,0,0,.75);}
+.header-wrapper .navi > a {font-size: 1.125em; text-shadow: 0 0 8px rgba(0,0,0,.75);}
 .header-wrapper .navi:first-child {margin-left: 0;}
 .header-wrapper .navi:last-child {margin-right: 0;}
 .header-wrapper .navi > .sub-wrapper {position: absolute; background-color: #fff; padding: 3em 2.5em; top: 92px; border-top: 1px solid #ddd; color: #666;}
