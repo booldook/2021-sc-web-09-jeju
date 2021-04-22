@@ -18,7 +18,7 @@ function scrollNotice(scTop) {
 	var $header = $('.header-wrapper')
 	var headerHeight
 	if(scTop == 0) {
-		$notice.show()
+		if($.cookie('hideNotice') !== 'Y') $notice.show()
 		$link.show()
 		$header.css('top', 'unset')
 		$header.removeClass('active')
