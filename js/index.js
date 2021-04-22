@@ -3,7 +3,8 @@
 // 2. 배너가 나타나면 그 후에 내부요소들이 animation으로 나타난다
 // 3. 동영상은 플레이가 끝난 이후에 다음으로 넘어간다
 
-
+	/* if(idx == lastIdx) mainIdx = 0
+	else idx = idx + 1 */
 
 /*************** main-wrapper *****************/
 $(function() {
@@ -18,7 +19,6 @@ $(function() {
 	var idx = 0
 	var gap = 3000
 	var speed = 500
-	var interval
 	init()
 	
 	
@@ -30,18 +30,26 @@ $(function() {
 
 
 	/*************** 이벤트 등록 *****************/
-
+	video.addEventListener('loadeddata', onLoadedVideo)
+	video.addEventListener('ended', onPlay)
 
 	/*************** 이벤트 콜백 *****************/
-	/* if(idx == lastIdx) mainIdx = 0
-	else idx = idx + 1 */
-	function onAni() {
-		if($slide.eq(idx).hasClass('is-video')) {
-			
+	function onLoadedVideo() {
+		if(video.readyState >= 2) {
+			video.playbackRate = 4.0
 		}
+	}
+	
+	function onAni() {
+		video.currentTime = 0
+		if($slide.eq(idx).hasClass('is-video')) video.play()
+		else setTimeout(onPlay, gap)
+	}
+
+	function onPlay() {
 		idx = (idx == lastIdx) ? 0 : idx + 1
 		$slide.eq(idx).css({'z-index': depth++, 'left': '100%'})
-		$slide.eq(idx).stop().animate({'left': 0}, speed)
+		$slide.eq(idx).stop().animate({'left': 0}, speed, onAni)
 	}
 
 })
