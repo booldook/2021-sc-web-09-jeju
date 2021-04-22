@@ -41,6 +41,7 @@ $(function() {
 	}
 	
 	function onAni() {
+		$(this).addClass('active')
 		video.currentTime = 0
 		if($slide.eq(idx).hasClass('is-video')) video.play()
 		else setTimeout(onPlay, gap)
@@ -49,6 +50,7 @@ $(function() {
 	function onPlay() {
 		idx = (idx == lastIdx) ? 0 : idx + 1
 		$slide.eq(idx).css({'z-index': depth++, 'left': '100%'})
+		$slide.removeClass('active')
 		$slide.eq(idx).stop().animate({'left': 0}, speed, onAni)
 	}
 

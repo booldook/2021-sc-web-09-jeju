@@ -5,11 +5,15 @@
 .main-wrapper .slide > video
 {min-width: 100%; min-height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 
-.main-wrapper .slide > .slide-body {width: 100%; position: absolute; top: 50%; transform: translateY(-50%); text-align: center;}
-.main-wrapper .slide .slide-title {font-size: 4.5em; font-weight: 500; color: #fff; margin-bottom: 0.75em; text-shadow: 1px 1px 2px rgba(0, 0, 0, .7);}
-.main-wrapper .slide .bt-video {font-size: 1.25em; color: #fff; display: flex; align-items: center; justify-content: center;}
+.main-wrapper .slide .slide-body {width: 100%; position: absolute; top: 50%; transform: translateY(-50%); text-align: center;}
+.main-wrapper .slide .slide-title {font-size: 4.5em; font-weight: 500; color: #fff; padding-bottom: 0.75em; text-shadow: 1px 1px 2px rgba(0, 0, 0, .7);}
+.main-wrapper .slide .bt-video {font-size: 1.25em; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer;}
 .main-wrapper .slide .bt-video i {font-size: 1.25em; margin-right: 0.5em; margin-top: -5px;}
 
+.main-wrapper .slide .ani-stage {overflow: hidden;}
+.main-wrapper .slide .ani-stage > * {transition: transform .5s; transform: translateY(150%);}
+.main-wrapper .slide.active .ani-stage > * {transform: translateY(0);}
+.main-wrapper .slide .slide-desc {transition-delay: 0.35s;}
 
 /********************** dream-wrapper *********************/
 
