@@ -30,7 +30,7 @@ html, body {font-size: 16px; font-family: 'Noto Sans KR', sans-serif; height: 10
 
 
 /********************** header-wrapper *********************/
-.header-wrapper {color: #fff; position: fixed; width: 100%; transition: top 0.35s;}
+.header-wrapper {color: #fff; position: fixed; width: 100%; transition: top 0.35s; z-index: 99;}
 
 .header-wrapper .link-wrapper {border-bottom: 1px solid rgba(255,255,255, .1);}
 .header-wrapper .link-wrap {padding: 1em 0; display: flex; justify-content: flex-end; align-items: center;}
