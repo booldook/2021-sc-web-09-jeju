@@ -12,6 +12,7 @@ $(function() {
 	/*************** 글로벌 설정 *****************/
 	var $wrapper = $('.main-wrapper')
 	var $slide = $('.main-wrapper .slide')
+	var $pagerSlide = $('.main-wrapper .pager-slide')
 	var video = $('.main-wrapper .video')[0]
 	var len = $slide.length
 	var lastIdx = len - 1
@@ -26,7 +27,15 @@ $(function() {
 	function init() {
 		$slide.eq(idx).css('z-index', depth++)
 		$slide.eq(idx).addClass('active')
-		onAni()
+
+		for(var i=0; i<len; i++) $pagerSlide.append('<i class="pager"></i>')
+		$pagerSlide.find('.pager').click(onPagerClick)
+		$pagerSlide.find('.pager').eq(idx).addClass('active')
+
+		/* for(var i=0; i<len; i++) {
+			$('<i class="pager"></i>').appendTo($pagerSlide).click(onPagerClick).addClass((idx === i) ? 'active': '')
+		} */
+		ani()
 	}
 
 
@@ -38,7 +47,15 @@ $(function() {
 	$('.cookie-wrapper').find('.bt-close').click(onCookieClose)
 
 
+
 	/*************** 이벤트 콜백 *****************/
+	function onPagerClick() {
+		idx = $(this).index()
+		$pagerSlide.find('.pager').removeClass('active')
+		$(this).addClass('active')
+		onPlay('pager')
+	}
+
 	function onCookieClose() {
 		$('.cookie-wrapper').hide()
 	}
@@ -57,18 +74,18 @@ $(function() {
 		}
 	}
 	
-	function onAni() {
+	function ani() {
 		$(this).addClass('active')
 		video.currentTime = 0
 		if($slide.eq(idx).hasClass('is-video')) video.play()
 		else setTimeout(onPlay, gap)
 	}
 
-	function onPlay() {
-		idx = (idx == lastIdx) ? 0 : idx + 1
+	function onPlay(state) {
+		if(state !== 'pager') idx = (idx == lastIdx) ? 0 : idx + 1
 		$slide.eq(idx).css({'z-index': depth++, 'left': '100%'})
 		$slide.removeClass('active')
-		$slide.eq(idx).stop().animate({'left': 0}, speed, onAni)
+		$slide.eq(idx).stop().animate({'left': 0}, speed, ani)
 	}
 
 })
