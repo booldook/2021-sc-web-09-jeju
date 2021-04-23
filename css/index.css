@@ -5,7 +5,7 @@
 .main-wrapper .slide > video
 {min-width: 100%; min-height: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 
-.main-wrapper .slide .slide-body {width: 100%; position: absolute; top: 50%; transform: translateY(-50%); text-align: center;}
+.main-wrapper .slide .slide-body {width: 100%; position: absolute; top: 50%; transform: translateY(-50%); text-align: center; display: flex; flex-direction: column; align-items: center;}
 .main-wrapper .slide .slide-title {font-size: 4.5em; font-weight: 500; color: #fff; padding-bottom: 0.75em; text-shadow: 1px 1px 2px rgba(0, 0, 0, .7);}
 .main-wrapper .slide .bt-video {font-size: 1.25em; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; padding-top: 5px;}
 .main-wrapper .slide .bt-video i {font-size: 1.25em; margin-right: 0.5em; margin-top: -5px;}
@@ -45,6 +45,17 @@
 
 
 /********************** cookie-wrapper *********************/
+.cookie-wrapper {position: fixed; z-index: 100; width: 100%; left: 0; bottom: 0; background: rgba(0, 0, 0, .7); backdrop-filter: blur(6px); padding: 3em 0; color: #fff;}
+.cookie-wrapper .cont-wrap {display: flex; justify-content: space-between;}
+.cookie-wrapper .cont-wrap > p {flex: 90% 0 1; font-size: 1.125em; font-weight: 300; line-height: 1.75; margin-bottom: 1em;}
+.cookie-wrapper .cont-wrap > i {font-size: 2em; cursor: pointer;}
+
+
+/********************** modal-wrapper *********************/
+.modal-video .modal-wrap {flex: 80% 0 1;}
+.modal-video .modal-top {padding: .5em 0; font-size: 2em; color: #ddd; text-align: right;}
+.modal-video .modal-center video {width: 100%;}
+.modal-video .modal-bottom {padding: 2em 0; text-align: center;}
 
 
 
