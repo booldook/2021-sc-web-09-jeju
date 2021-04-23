@@ -1,5 +1,6 @@
 /********************** main-wrapper *********************/
-.main-wrapper .slide-stage {width: 100%; height: 100vh; overflow: hidden; position: relative;}
+.main-wrapper {position: relative;}
+.main-wrapper .slide-stage {width: 100%; height: 100vh; overflow: hidden; position: relative; z-index: 1;}
 .main-wrapper .slide {width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: hidden; z-index: 1;}
 .main-wrapper .slide > img,
 .main-wrapper .slide > video
@@ -14,6 +15,8 @@
 .main-wrapper .slide .ani-stage > * {transition: transform .5s; transform: translateY(150%);}
 .main-wrapper .slide.active .ani-stage > * {transform: translateY(0);}
 .main-wrapper .slide.active .slide-desc {transition-delay: .35s;}
+
+.main-wrapper .pager-slide {position: absolute; z-index: 2; bottom: 30%; left: 50%; transform: translateX(-50%);}
 
 
 /********************** dream-wrapper *********************/
