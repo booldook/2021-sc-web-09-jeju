@@ -17,19 +17,21 @@ var arr = ['A', 'B', 'C']
 
 navigator.geolocation.getCurrentPosition(onSuccess, onError)
 
+var url = 'https://api.openweathermap.org/data/2.5/weather'
+var data = {
+	appid: '02efdd64bdc14b279bc91d9247db4722',
+	units: 'metric',
+}
 function onSuccess(r) {
-	var url = 'https://api.openweathermap.org/data/2.5/weather'
-	var data = {
-		appid: '02efdd64bdc14b279bc91d9247db4722',
-		units: 'metric',
-		lat: r.coords.latitude,
-		lon: r.coords.longitude
-	}
+	data.lat = r.coords.latitude,
+	data.lon = r.coords.longitude
 	$.get(url, data, onGetData)
 }
 
 function onError(err) {
-	console.log(err)
+	data.lat = 37.566461,
+	data.lon = 126.977945
+	$.get(url, data, onGetData)
 }
 
 function onGetData(r) {

@@ -18,8 +18,9 @@ $(function() {
 	var lastIdx = len - 1
 	var depth = 2
 	var idx = 0
-	var gap = 3000
+	var gap = 5000
 	var speed = 500
+	var timeout
 	init()
 	
 	
@@ -51,8 +52,6 @@ $(function() {
 	/*************** 이벤트 콜백 *****************/
 	function onPagerClick() {
 		idx = $(this).index()
-		$pagerSlide.find('.pager').removeClass('active')
-		$(this).addClass('active')
 		onPlay('pager')
 	}
 
@@ -78,11 +77,16 @@ $(function() {
 		$(this).addClass('active')
 		video.currentTime = 0
 		if($slide.eq(idx).hasClass('is-video')) video.play()
-		else setTimeout(onPlay, gap)
+		else {
+			clearTimeout(timeout)
+			timeout = setTimeout(onPlay, gap)
+		}
 	}
 
-	function onPlay(state) {
-		if(state !== 'pager') idx = (idx == lastIdx) ? 0 : idx + 1
+	function onPlay(e) {
+		if(e !== 'pager') idx = (idx == lastIdx) ? 0 : idx + 1
+		$pagerSlide.find('.pager').removeClass('active')
+		$pagerSlide.find('.pager').eq(idx).addClass('active')
 		$slide.eq(idx).css({'z-index': depth++, 'left': '100%'})
 		$slide.removeClass('active')
 		$slide.eq(idx).stop().animate({'left': 0}, speed, ani)
