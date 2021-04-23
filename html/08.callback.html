@@ -1,0 +1,18 @@
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+function find(arr, search, fn) {
+	var idx = arr.indexOf(search)
+	fn(arr[idx], idx)
+}
+
+var arr = ['A', 'B', 'C']
+find(arr, 'A', function(v, i) {
+	if(i == -1) alert('포함이 안되어 있어요~')
+	else alert(v + '는 포함되어 있어요~')
+})
+
+// https://api.openweathermap.org/data/2.5/weather?lat=위도&lon=경도&units=metric&appid=본인의APIKey
+// https://api.openweathermap.org/data/2.5/weather?lat=37.566535&lon=126.97796919&units=metric&appid=02efdd64bdc14b279bc91d9247db4722
+// 02efdd64bdc14b279bc91d9247db4722(본인거만)
+
+</script>
