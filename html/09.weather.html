@@ -1,35 +1,58 @@
 <script>
-/*
-1. javascript의 navigator(브라우저, explorer, chrome)객체
-2. 통신-정말 얘기할게 많지만 자세한 얘기는 백엔드(node)
-3. 통신중 하나인 AJAX(Asyncronous Javascript And XML)
-4. 시간
-*/
-
-/*********** navigator.geolocation *************/
-// navigator.geolocation.getCurrentPosition(function(r) {}, )
-
-
-function saleLatte(price, type) {
-	//음료제작
-	var obj = {
-		coffee: type,
-		charge: 500
+	// Callback 설명
+	function saleLatte(price, type) {
+		//음료제작
+		var obj = {
+			coffee: type,
+			charge: 500
+		}
+		return obj
 	}
-	return obj
-}
-var getCoffee = saleLatte(5000, 'latte')
+	var getCoffee = saleLatte(5000, 'latte')
 
-function saleLatte2(price, type, fn) {
-	//음료제작
-	var obj = {
-		coffee: 'latte',
-		charge: 500
+	function saleLatte2(price, type, fn) {
+		//음료제작
+		var obj = {
+			coffee: 'latte',
+			charge: 500
+		}
+		fn(obj)
 	}
-	fn(obj)
-}
 
-saleLatte2(5000, 'latte', function(r) {
-	console.log('내 친구가 '+r.coffee+'를 받아서 잘 마시고 잔돈 '+r.charge+'를 나한테 가져왔다.')
-})
+	saleLatte2(5000, 'latte', function (r) {
+		// console.log('내 친구가 '+r.coffee+'를 받아서 잘 마시고 잔돈 '+r.charge+'를 나한테 가져왔다.')
+	})
+
+
+	/*
+	1. javascript의 navigator(브라우저, explorer, chrome)객체
+	2. 통신-정말 얘기할게 많지만 자세한 얘기는 백엔드(node)
+	3. 통신을 위한 문서규약 - 
+	4. 통신중 하나인 AJAX(Asynchronous Javascript And XML)
+	5. 시간
+	*/
+
+	/*********** 1. navigator.geolocation *************/
+	navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError)
+
+	function onGeoSuccess(r) {
+		console.log(r)
+	}
+
+	function onGeoError(err) {
+		console.log(err.code)
+		console.log(err.message)
+	}
+
+
+	/*********** 2. 외부와의 연결(통신) - AJAX *************/
+	var url = 'https://api.openweathermap.org/data/2.5/weather?lat=37.566535&lon=126.97796919&units=metric&appid=02efdd64bdc14b279bc91d9247db4722'
+	var xhr = new XMLHttpRequest()
+	xhr.onreadystatechange = function () {
+		if(this.readyState == 4 && this.status == 200) {
+			console.log(JSON.parse(this.responseText))
+		}
+	}
+	xhr.open("GET", url, true)
+	xhr.send();
 </script>
