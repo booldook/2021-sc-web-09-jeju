@@ -1,6 +1,7 @@
 /********************** main-wrapper *********************/
 .main-wrapper {position: relative;}
 .main-wrapper .slide-stage {width: 100%; height: 100vh; overflow: hidden; position: relative; z-index: 1;}
+.main-wrapper .slide-wrap {position: relative; width: 100%; height: 100%; z-index: 1;}
 .main-wrapper .slide {width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: hidden; z-index: 1;}
 .main-wrapper .slide > img,
 .main-wrapper .slide > video
