@@ -117,4 +117,12 @@
 	// moment.js를 알아보자
 	console.log( moment().format('YYYY. M. D. ddd') )
 	console.log( moment().format('hh:mm A') )
+
+	// timestamp를 알아보자
+	// timestamp는 1970-01-01 00:00:00 -> 0 (JAVA ...)
+	// timestamp는 1970-01-01 00:00:00:000 -> 0 (Javascript ...)
+	// 1조6천 -> 밀리초
+	// 16억 -> 초
+	console.log( new Date().getTime() )
+	console.log( moment(1619420666 * 1000).format('YYYY. M. D. ddd') )
 </script>

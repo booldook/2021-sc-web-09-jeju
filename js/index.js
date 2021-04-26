@@ -85,6 +85,9 @@ $(function() {
 		console.log(r)
 		$weather.find('.icon').addClass(weatherIcon['i'+r.weather[0].icon])
 		$weather.find('.temp').text(r.main.temp)
+		$weather.find('.date').text(moment(r.dt * 1000).format('YYYY. M. D. ddd'))
+		$weather.find('.time > span').text(moment(r.dt * 1000).format('hh:mm'))
+		$weather.find('.time > small').text(moment(r.dt * 1000).format('A'))
 	}
 
 	function onGetGeo(r) {

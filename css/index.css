@@ -32,7 +32,9 @@
 .main-wrapper .info-stage .weather .icon {font-size: 2em;}
 .main-wrapper .info-stage .weather .temp {font-size: 2em;}
 .main-wrapper .info-stage .weather .date {margin-top: 1em; line-height: 1.25;}
-.main-wrapper .info-stage .weather .time {font-size: 1.25em;}
+.main-wrapper .info-stage .weather .time {line-height: 1.25;}
+.main-wrapper .info-stage .weather .time span {font-size: 1.25em; font-weight: 500;}
+.main-wrapper .info-stage .weather .time small {font-size: 1em;}
 
 /********************** dream-wrapper *********************/
 
