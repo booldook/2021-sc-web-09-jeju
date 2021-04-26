@@ -1,0 +1,24 @@
+<script>
+/*
+변수는 primitive type과 reference type으로 나뉘어진다.
+- primitive : Number, String, Boolean
+- reference : Array, Object
+*/
+
+var chair = {
+	color: 'red',
+	type: '사무용',
+	price: 50000
+}
+
+var chair2 = {
+	color: 'black',
+	type: '학생용',
+	price: 60000
+}
+
+var chair3 = chair
+chair3.color = 'orange'
+
+console.log(chair, chair2, chair3)
+</script>
