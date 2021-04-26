@@ -5,6 +5,7 @@
 - reference : Array, Object
 */
 
+// Literal Object
 var chair = {
 	color: 'red',
 	type: '사무용',
@@ -19,6 +20,31 @@ var chair2 = {
 
 var chair3 = chair
 chair3.color = 'orange'
+console.log(chair === chair3)
 
 console.log(chair, chair2, chair3)
+
+// Constructor Object - 생성자객체
+var Chair = function(color, type, price) {
+	this.color = color
+	this.type = type
+	this.price = price
+}
+Chair.prototype.rotate = function() {
+	console.log(this.color + ' 의자가 회전합니다.')
+}
+
+var chair4 = new Chair('yellow', '업무용', 85000)
+var chair5 = new Chair('blue', '학생용', 45000)
+console.log(chair4, chair5)
+console.log(chair4 === chair5)
+chair4.rotate()
+chair5.rotate()
+
+
+var arr = new Array(1, 2, 3)
+arr.push(4)
+console.log(arr)
+var obj = new Object()
+console.log(obj)
 </script>
