@@ -19,6 +19,14 @@
 
 .main-wrapper .pager-slide {position: absolute; z-index: 2; bottom: 30%; left: 50%; transform: translateX(-50%);}
 
+.main-wrapper .info-stage {position: absolute; width: 100%; z-index: 3; left: 0; bottom: 0;  display: flex; justify-content: center;}
+.main-wrapper .info-wrap {display: flex; justify-content: center; padding: 1.5em 0; border-top: 1px solid rgba(255, 255, 255, 0.25);}
+.main-wrapper .info {padding: 0 4em; color: rgba(255, 255, 255, 0.5); cursor: pointer;}
+.main-wrapper .info:hover {color: rgba(255, 255, 255, 1);}
+.main-wrapper .info > div {display: flex; justify-content: center;}
+.main-wrapper .info > div > .cnt {font-size: 3em; margin-left: 0.25em;}
+.main-wrapper .info > h3 {padding-top: 1em; text-align: center;}
+
 
 /********************** dream-wrapper *********************/
 
