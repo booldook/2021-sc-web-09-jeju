@@ -1,5 +1,6 @@
 <script src="../js/jquery-3.6.0.min.js"></script>
 <script src="../js/axios.min.js"></script>
+<script src="../js/moment.min.js"></script>
 <script>
 	// Callback 설명
 	function saleLatte(price, type) {
@@ -98,5 +99,20 @@
 
 	/*********** 5. 시간 - Date객체 *************/
 	// new 를 알아보자 -> 10.object 참조
-	console.log( new Date() )
+	var months = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+	var week = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
+	var d = new Date()
+	console.log( d.__proto__ )
+
+	console.log(d.getFullYear())
+	console.log(months[d.getMonth()])		// 0 ~ 11
+	console.log(d.getDate())
+	console.log(week[d.getDay()])			// 0 ~ 6
+	console.log(d.getHours())
+	console.log(d.getMinutes())
+	console.log(d.getSeconds())
+
+	// moment.js를 알아보자
+	console.log( moment().format('YYYY. M. D. ddd') )
+	console.log( moment().format('hh:mm A') )
 </script>
