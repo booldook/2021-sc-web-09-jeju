@@ -1,0 +1,35 @@
+<script>
+/*
+1. javascript의 navigator(브라우저, explorer, chrome)객체
+2. 통신-정말 얘기할게 많지만 자세한 얘기는 백엔드(node)
+3. 통신중 하나인 AJAX(Asyncronous Javascript And XML)
+4. 시간
+*/
+
+/*********** navigator.geolocation *************/
+// navigator.geolocation.getCurrentPosition(function(r) {}, )
+
+
+function saleLatte(price, type) {
+	//음료제작
+	var obj = {
+		coffee: type,
+		charge: 500
+	}
+	return obj
+}
+var getCoffee = saleLatte(5000, 'latte')
+
+function saleLatte2(price, type, fn) {
+	//음료제작
+	var obj = {
+		coffee: 'latte',
+		charge: 500
+	}
+	fn(obj)
+}
+
+saleLatte2(5000, 'latte', function(r) {
+	console.log('내 친구가 '+r.coffee+'를 받아서 잘 마시고 잔돈 '+r.charge+'를 나한테 가져왔다.')
+})
+</script>
