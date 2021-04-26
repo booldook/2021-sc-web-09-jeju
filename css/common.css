@@ -48,7 +48,7 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 .header-wrapper .link-wrap > .link:not(.link-lang) {border-right: 1px solid #ddd; padding: 0 1.5em;}
 .header-wrapper .link-lang {padding-left: 1.5em; position: relative;}
 .header-wrapper .link-lang > .sel {cursor: pointer;}
-.header-wrapper .link-lang > .hover {background-color: #fff; position: absolute; min-width: 100%; padding: 1em; left: .5em; cursor: pointer; display: none;}
+.header-wrapper .link-lang > .hover {background-color: #fff; position: absolute; z-index: 1; min-width: 100%; padding: 1em; left: .5em; cursor: pointer; display: none;}
 .header-wrapper .link-lang > .hover > .lang {margin-top: .75em;}
 .header-wrapper .link-lang .bt-lang::before {transition: transform 1s; font-size: .75em}
 .header-wrapper .link-lang:hover .bt-lang::before {transform: rotate(180deg);}
