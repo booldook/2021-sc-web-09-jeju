@@ -1,3 +1,5 @@
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script src="../js/axios.min.js"></script>
 <script>
 	// Callback 설명
 	function saleLatte(price, type) {
@@ -27,7 +29,7 @@
 	/*
 	1. javascript의 navigator(브라우저, explorer, chrome)객체
 	2. 통신-정말 얘기할게 많지만 자세한 얘기는 백엔드(node)
-	3. 통신을 위한 문서규약 - 
+	3. 통신을 위한 문서규약 - JSON
 	4. 통신중 하나인 AJAX(Asynchronous Javascript And XML)
 	5. 시간
 	*/
@@ -44,15 +46,57 @@
 		console.log(err.message)
 	}
 
+	/*********** 3. 외부와의 연결(통신) - AJAX *************/
+	var json = '{"users":[{"name": "hong"}, {"name": "kong"}]}'	//JSON
+	var jsObj = JSON.parse(json)	//JS Object
+	var json2 = JSON.stringify(jsObj)
+	console.log(json)
+	console.log(jsObj)
+	console.log(json2)
 
-	/*********** 2. 외부와의 연결(통신) - AJAX *************/
+
+
+
 	var url = 'https://api.openweathermap.org/data/2.5/weather?lat=37.566535&lon=126.97796919&units=metric&appid=02efdd64bdc14b279bc91d9247db4722'
+	var path = 'https://api.openweathermap.org/data/2.5/weather'
+	var data = {
+		lat: 37.566535,
+		lon: 126.97796919,
+		units: 'metric',
+		appid: '02efdd64bdc14b279bc91d9247db4722'
+	}
+
+	/*********** 4. 외부와의 연결(통신) - AJAX - XMLHttpRequest *************/
 	var xhr = new XMLHttpRequest()
+	var weather
 	xhr.onreadystatechange = function () {
 		if(this.readyState == 4 && this.status == 200) {
-			console.log(JSON.parse(this.responseText))
+			weather = JSON.parse(this.responseText)
+			console.log(weather)
 		}
 	}
 	xhr.open("GET", url, true)
 	xhr.send();
+
+	
+	/*********** 4. 외부와의 연결(통신) - AJAX - jQuery *************/
+	$.get(path, data, onGetData)
+	function onGetData(r) {
+		console.log(r)
+	}
+
+
+	/*********** 4. 외부와의 연결(통신) - AJAX - Axios *************/
+	axios.get(path, { params: data }).then(onGetAxios).catch(onError)
+	function onGetAxios(r) {
+		console.log(r.data)
+	}
+	function onError(err) {
+		console.log(err)
+	}
+
+
+	/*********** 5. 시간 - Date객체 *************/
+	// new 를 알아보자 -> 10.object 참조
+	console.log( new Date() )
 </script>
