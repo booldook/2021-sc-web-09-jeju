@@ -82,11 +82,11 @@ $(function () {
 			breakpoints: {
 				576: {
 					slidesPerView: 2,
-					spaceBetween: 20,
+					spaceBetween: 25,
 				},
 				992: {
 					slidesPerView: 3,
-					spaceBetween: 30,
+					spaceBetween: 40,
 				}
 			}
 		});

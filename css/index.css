@@ -1,8 +1,8 @@
 body > section {position: relative; z-index: 3; background-color: #fff; padding: 5em 0;}
-.title-wrap {text-align: center;}
-.title-wrap h2.title {font-size: 3.5em; padding: .25em 0; font-family: 'Jost', sans-serif; letter-spacing: .05em;}
-.title-wrap h3.title {font-size: 2em; padding: .175em 0;}
-.title-wrap h4.title {font-size: 1.125em; padding: .125em 0; color: #888;}
+.title-wrap {text-align: center; margin-bottom: 3em;}
+.title-wrap h2.title {font-size: 3.5em; margin-bottom: .25em; font-family: 'Jost', sans-serif; letter-spacing: .05em;}
+.title-wrap h3.title {font-size: 2em; margin-bottom: .175em;}
+.title-wrap h4.title {font-size: 1.125em; margin-bottom: .125em; color: #888;}
 
 /********************** main-wrapper *********************/
 .main-wrapper {width: 100%; height: 100vh;}
@@ -54,6 +54,16 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 
 /********************** dream-wrapper *********************/
 
+.dream-wrapper .slide-stage {position: relative;}
+.dream-wrapper .slide-stage > .swiper-container {width: calc(100% - 60px)}
+.dream-wrapper .slide-stage .slide {cursor: pointer;}
+.dream-wrapper .slide-stage .cont-wrap {padding: 8%; min-height: 220px; position: relative; background-color: #fff;}
+.dream-wrapper .slide-stage .img-wrap {overflow: hidden;}
+.dream-wrapper .slide-stage .img-wrap img {transition: all 1s;}
+.dream-wrapper .slide-stage .img-wrap:hover img {transform: scale(1.1);}
+.dream-wrapper .slide-stage .cont-wrap .title {font-size: 1.75em; margin-bottom: 0.5em;}
+.dream-wrapper .slide-stage .cont-wrap .desc {font-size: 1.125em; color: #888; line-height: 1.5;}
+.dream-wrapper .slide-stage .cont-wrap .tag {font-size: 1em; color: #fff; background-color: #ff5100; padding: 0 .75em; position: absolute; height: 26px; line-height: 26px; border-radius: 13px; top: -13px; left: 10%;}
 
 
 /********************** promo-wrapper *********************/
