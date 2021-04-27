@@ -1,6 +1,8 @@
+body > section {position: relative; z-index: 3; min-height: 100vh; background-color: aquamarine;}
+
 /********************** main-wrapper *********************/
-.main-wrapper {position: relative;}
-.main-wrapper .slide-stage {width: 100%; height: 100vh; overflow: hidden; position: relative; z-index: 1;}
+.main-wrapper {width: 100%; height: 100vh;}
+.main-wrapper .slide-stage {width: 100%; height: 100vh; overflow: hidden; position: fixed; z-index: 1;}
 .main-wrapper .slide-wrap {position: relative; width: 100%; height: 100%; z-index: 1;}
 .main-wrapper .slide {width: 100%; height: 100%; position: absolute; top: 0; left: 0; overflow: hidden; z-index: 1;}
 .main-wrapper .slide > img,
@@ -19,7 +21,7 @@
 
 .main-wrapper .pager-slide {position: absolute; z-index: 2; bottom: 30%; left: 50%; transform: translateX(-50%);}
 
-.main-wrapper .info-stage {position: absolute; width: 100%; z-index: 3; left: 0; bottom: 0;  display: flex; justify-content: center;}
+.main-wrapper .info-stage {position: fixed; width: 100%; z-index: 2; left: 0; bottom: 0;  display: flex; justify-content: center;}
 .main-wrapper .info-wrap {display: flex; justify-content: center; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.25);}
 .main-wrapper .info-stage .info {padding: 0 4em; color: rgba(255, 255, 255, 0.5); cursor: pointer;}
 .main-wrapper .info-stage .info:nth-child(1),
