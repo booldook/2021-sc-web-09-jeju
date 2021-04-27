@@ -1,4 +1,8 @@
-body > section {position: relative; z-index: 3; background-color: #fff;}
+body > section {position: relative; z-index: 3; background-color: #fff; padding: 5em 0;}
+.title-wrap {text-align: center;}
+.title-wrap h2.title {font-size: 3.5em; padding: .25em 0; font-family: 'Jost', sans-serif; letter-spacing: .05em;}
+.title-wrap h3.title {font-size: 2em; padding: .175em 0;}
+.title-wrap h4.title {font-size: 1.125em; padding: .125em 0; color: #888;}
 
 /********************** main-wrapper *********************/
 .main-wrapper {width: 100%; height: 100vh;}
