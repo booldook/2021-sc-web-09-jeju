@@ -75,8 +75,14 @@ $(function () {
 	function slideDream() {
 		var swiper = new Swiper('.dream-wrapper .swiper-container', {
 			pagination: {
-				el: '.dream-wrapper .swiper-pagination',
+				el: '.dream-wrapper .pager-wrapper',
+				clickable: true
 			},
+			navigation: {
+				nextEl: '.dream-wrapper .bt-slide.right',
+				prevEl: '.dream-wrapper .bt-slide.left',
+			},
+			loop: true,
 			slidesPerView: 1,
 			spaceBetween: 10,
 			breakpoints: {
