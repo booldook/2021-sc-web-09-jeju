@@ -12,7 +12,8 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 .bt-ghost.gold:hover {background-color: #b38859; color: #fff !important;}
 .bt-ghost.angle::after {content: '〉'; display: inline-block; margin-left: .5em; margin-right: -.5em;}
 .bt-anchor {text-decoration: underline;}
-.bt-moving-top {width: 70px; height: 70px; border-radius: 50%; background-color: #111; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; position: fixed; right: 2em; bottom: 2em; z-index: 98; line-height: 1.25; transition: all .35s;}
+.bt-moving-top {width: 70px; height: 70px; border-radius: 50%; background-color: #111; color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; position: fixed; right: 2em; bottom: 2em; opacity: 0; transform: translateY(calc(70px + 2em)); z-index: 98; line-height: 1.25; transition: all .35s;}
+.bt-moving-top.active {opacity: 1; transform: translateY(0);}
 .bt-moving-top > i {transition: all .35s;}
 .bt-moving-top:hover {background-color: #222;}
 .bt-moving-top:hover > i {transform: translateY(-0.25em);}
