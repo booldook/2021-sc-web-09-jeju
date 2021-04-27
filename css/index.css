@@ -23,20 +23,30 @@ body > section {position: relative; z-index: 3; min-height: 100vh; background-co
 
 .main-wrapper .info-stage {position: fixed; width: 100%; z-index: 2; left: 0; bottom: 0;  display: flex; justify-content: center;}
 .main-wrapper .info-wrap {display: flex; justify-content: center; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.25);}
-.main-wrapper .info-stage .info {padding: 0 4em; color: rgba(255, 255, 255, 0.5); cursor: pointer;}
+.main-wrapper .info-stage .info {padding: 0 4em; color: rgba(255, 255, 255, 0.5); cursor: pointer; animation: infoAni 0.35s forwards; transform: translateY(200%);}
 .main-wrapper .info-stage .info:nth-child(1),
 .main-wrapper .info-stage .info:nth-child(2) {border-right: 1px solid rgba(255, 255, 255, 0.25);}
 .main-wrapper .info-stage .info:hover {color: rgba(255, 255, 255, 1);}
 .main-wrapper .info-stage .info > div {display: flex; justify-content: center;}
 .main-wrapper .info-stage .info > div > .cnt {font-size: 3em; margin-left: 0.25em;}
 .main-wrapper .info-stage .info > h3 {padding-top: 1em; text-align: center;}
-.main-wrapper .info-stage .weather {color: #fff; padding: 1.5em; text-align: center; background-color: rgba(255, 255, 255, .3);}
+.main-wrapper .info-stage .weather {color: #fff; padding: 1.5em; text-align: center; background-color: rgba(255, 255, 255, .3); animation: infoAni 0.35s forwards; transform: translateY(200%);}
 .main-wrapper .info-stage .weather .icon {font-size: 2em;}
 .main-wrapper .info-stage .weather .temp {font-size: 2em;}
 .main-wrapper .info-stage .weather .date {margin-top: 1em; line-height: 1.25;}
 .main-wrapper .info-stage .weather .time {line-height: 1.25;}
 .main-wrapper .info-stage .weather .time span {font-size: 1.25em; font-weight: 500;}
 .main-wrapper .info-stage .weather .time small {font-size: 1em;}
+
+.main-wrapper .info-stage .info:nth-child(1) {animation-delay: 2s;}
+.main-wrapper .info-stage .info:nth-child(2) {animation-delay: 2.15s;}
+.main-wrapper .info-stage .info:nth-child(3) {animation-delay: 2.3s;}
+.main-wrapper .info-stage .weather:nth-child(4) {animation-delay: 2.45s;}
+@keyframes infoAni {
+	0% {transform: translateY(200%);}
+	100% {transform: translateY(0);}
+}
+
 
 /********************** dream-wrapper *********************/
 
