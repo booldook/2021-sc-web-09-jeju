@@ -68,6 +68,7 @@ $(function() {
 
 	/*************** 이벤트 등록 *****************/
 	$(window).scroll(onScroll).trigger('scroll')
+	$(window).resize(onResize).trigger('resize')
 
 	$('.header-wrapper .navi').mouseenter(onNaviEnter)
 	$('.header-wrapper .navi').mouseleave(onNaviLeave)
@@ -106,6 +107,15 @@ $(function() {
 		var scTop = $(this).scrollTop()
 		scrollNotice(scTop)
 		movingTop(scTop)
+	}
+
+	function onResize(e) {
+		$('.ratio').each(function(i) {
+			var ratio = $(this).data('ratio') // data-ratio
+			var width = $(this).innerWidth()
+			var height = width * Number(ratio)
+			$(this).innerHeight(height)
+		})
 	}
 
 	function onShowNotice() {
