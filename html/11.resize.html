@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<style>
+		.wrapper {width: 30%; margin: 100px auto; border: 10px solid red;}
+		.list {width: 100%; border: 10px solid blue;}
+	</style>
+</head>
+<body>
+		<div class="wrapper">
+			<div class="list">
+				<!-- <img src="../img/index/3348.jpg"> -->
+				<img src="http://www.kbmaeil.com/news/photo/202005/845446_859995_210.jpg">
+			</div>
+		</div>
+		<script src="../js/jquery-3.6.0.min.js"></script>
+		<script>
+			var ratio = 1.25
+			$(window).resize(onResize).trigger('resize')
+			function onResize() {
+				console.log($(".list").find('img').innerWidth())
+				console.log($(".list").find('img').innerHeight())
+
+
+
+				var width = $(".list").innerWidth()
+				var height = width * ratio
+				$(".list").innerHeight(height)
+
+				if($(".list").css('position') === 'static') $(".list").css('position', 'relative')
+				// $(".list").css('overflow', 'hidden')
+				$(".list").find('img').css({
+					'min-width': '100%',
+					'min-height': '100%',
+					'position': 'absolute',
+					'top': '50%',
+					'left': '50%',
+					'opacity': .5,
+					'transform': 'translate(-50%, -50%)'
+				})
+			}
+		</script>
+</body>
+</html>

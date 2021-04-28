@@ -185,11 +185,9 @@ $(function () {
 				html += '</li>';
 				$slideWrap.append(html)
 			})
-
 			var swiper = getSwiper('.promo-wrapper', { break: 4 });
 		}
-
-		$.get('../json/promotion.json', onGetData)
+		$.get('../json/promotion.json', onGetData)	// init
 	}
 
 })
