@@ -34,8 +34,8 @@ function scrollSpy(el, cls, _gap) {
 }
 
 
-/*************** getSwiperOptions *****************/
-function getSwiperOptions(cls, opt) {
+/*************** getSwiper *****************/
+function getSwiper(container, opt) {
 	/*
 	- cls : '.promo-wrapper
 	- opt 
@@ -43,6 +43,7 @@ function getSwiperOptions(cls, opt) {
 		pager: true,
 		navi: true,
 		auto: true,
+		autoEl: '.slide-stage'
 		delay: 3000,
 		loop: true,
 		space: 40,
@@ -50,14 +51,15 @@ function getSwiperOptions(cls, opt) {
 	}
 	*/
 	var opt = opt || {}
+	var autoEl = $( container + ' ' + autoEl || '.slide-stage' )
 	var pagination = (opt.pager === false) ? false : {
-		el: cls + ' .pager-wrapper',
+		el: container + ' .pager-wrapper',
 		clickable: true
 	}
 
 	var navigation = (opt.navi === false) ? false : {
-		nextEl: cls + ' .bt-slide.right',
-		prevEl: cls + ' .bt-slide.left',
+		nextEl: container + ' .bt-slide.right',
+		prevEl: container + ' .bt-slide.left',
 	}
 
 	var autoplay = (opt.auto === false) ? false : {
@@ -93,7 +95,7 @@ function getSwiperOptions(cls, opt) {
 		}
 	}
 
-	return {
+	var swiper = new Swiper(container, {
 		pagination: pagination,
 		navigation: navigation,
 		autoplay: autoplay,
@@ -101,13 +103,17 @@ function getSwiperOptions(cls, opt) {
 		slidesPerView: 1,
 		spaceBetween: opt.space || 40,
 		breakpoints: breakpoints
-	}
-}
+	})
 
-function swiperHover(swiper, el) {
-	$(el).hover(function(){
+	$(autoEl).hover(function(){
 		swiper.autoplay.stop()
 	}, function(){
 		swiper.autoplay.start()
 	})
+
+	return swiper
+}
+
+function swiperHover(swiper, el) {
+	
 }
