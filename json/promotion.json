@@ -1,6 +1,6 @@
 {
 	"promo": [
-		{"id": 1, "title": "PROMOTION", "src": "../img/index/3438.jpg", "desc": "스테이크 하우스 소믈리에 추천 1+1", "link": "#"},
+		{"id": 1, "title": "PROMOTION", "src": "../img/index/3438.png", "desc": "스테이크 하우스 소믈리에 추천 1+1", "link": "#"},
 		{"id": 2, "title": "PROMOTION", "src": "../img/index/3360.jpg", "desc": "스테이크 하우스 런치 코스 세트 메뉴", "link": "#"},
 		{"id": 3, "title": "PROMOTION", "src": "../img/index/3348.jpg", "desc": "녹나무 봄맞이 한식 런치스페셜 세트 ", "link": "#"},
 		{"id": 4, "title": "PROMOTION", "src": "../img/index/3334.jpg", "desc": "카페 8 이탈리안 레스토랑 런치 뷔페", "link": "#"},

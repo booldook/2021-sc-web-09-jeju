@@ -13,6 +13,58 @@ else idx = idx + 1 */
 /*************** Index *****************/
 $(function () {
 
+	function getSwiperOption(cls, opt) {
+		/*
+		- cls : '.promo-wrapper
+		- opt 
+		{
+			pager: true,
+			navi: true,
+			auto: true,
+			delay: 3000,
+			loop: true,
+			space: 40,
+			break: 4
+		}
+		*/
+		var pagination = (opt.pager === false) ? false : {
+			el: cls + ' .pager-wrapper',
+			clickable: true
+		}
+
+		var navigation = (opt.navi === false) ? false : {
+			nextEl: cls + ' .bt-slide.right',
+			prevEl: cls + ' .bt-slide.left',
+		}
+
+		var autoplay = (opt.auto === false) ? false : {
+			// delay: opt.delay ? opt.delay : 3000
+			delay: opt.delay || 3000
+		}
+
+		var breakpoints = {}
+
+		return {
+			pagination: pagination,
+			navigation: navigation,
+			autoplay: autoplay,
+			loop: opt.loop === false ? false : true,
+			slidesPerView: 1,
+			spaceBetween: opt.space || 40,
+			breakpoints: {
+				576: {
+					slidesPerView: 2,
+				},
+				992: {
+					slidesPerView: 3,
+				},
+				1200: {
+					slidesPerView: 4,
+				},
+			}
+		}
+	}
+
 	weather()
 	setCookie()
 	slideMain()
@@ -163,30 +215,7 @@ $(function () {
 	}
 
 	function slideDream() {
-		var swiper = new Swiper('.dream-wrapper .swiper-container', {
-			pagination: {
-				el: '.dream-wrapper .pager-wrapper',
-				clickable: true
-			},
-			navigation: {
-				nextEl: '.dream-wrapper .bt-slide.right',
-				prevEl: '.dream-wrapper .bt-slide.left',
-			},
-			autoplay: {
-				delay: 3000,
-			},
-			loop: true,
-			slidesPerView: 1,
-			spaceBetween: 40,
-			breakpoints: {
-				576: {
-					slidesPerView: 2,
-				},
-				992: {
-					slidesPerView: 3,
-				}
-			}
-		});
+		var swiper = new Swiper('.dream-wrapper .swiper-container', );
 
 		$('.dream-wrapper .slide-stage').hover(function(){
 			swiper.autoplay.stop()
@@ -197,9 +226,50 @@ $(function () {
 
 	function slidePromo() {
 		var $promoWrapper = $('.promo-wrapper')
+		var $slideWrap = $promoWrapper.find('.slide-wrap')
 
 		function onGetData(r) {
-			console.log(r)
+			// for(var i=0; i<r.promo.length; i++) {}
+			r.promo.forEach(function(v, i) {
+				var html = ''
+				html += '<li class="slide swiper-slide">';
+				html += '<div class="img-wrap">';
+				html += '<img src="'+v.src+'" alt="메뉴" class="w-100">';
+				html += '</div>';
+				html += '<div class="cont-wrap">';
+				html += '<h3 class="title">'+v.title+'</h3>';
+				html += '<div class="desc">'+v.desc+'</div>';
+				html += '</div>';
+				html += '</li>';
+				$slideWrap.append(html)
+			})
+			var swiper = new Swiper('.promo-wrapper .swiper-container', {
+				pagination: {
+					el: '.promo-wrapper .pager-wrapper',
+					clickable: true
+				},
+				navigation: {
+					nextEl: '.promo-wrapper .bt-slide.right',
+					prevEl: '.promo-wrapper .bt-slide.left',
+				},
+				autoplay: {
+					delay: 3000,
+				},
+				loop: true,
+				slidesPerView: 1,
+				spaceBetween: 40,
+				breakpoints: {
+					576: {
+						slidesPerView: 2,
+					},
+					992: {
+						slidesPerView: 3,
+					},
+					1200: {
+						slidesPerView: 4,
+					}
+				}
+			})
 		}
 
 		$.get('../json/promotion.json', onGetData)
