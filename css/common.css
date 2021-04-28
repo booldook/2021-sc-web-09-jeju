@@ -6,6 +6,7 @@
 /********************** 글로벌 설정 *********************/
 html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; height: 10000px;}
 .wrapper {width: 1368px; margin: auto;}
+.wrapper-lg {width: 1568px; margin: auto;}
 .bt-ghost {padding: .875em 1.75em; border: 1px solid #999; color: #fff; transition: all .5s;}
 .bt-ghost:hover {background-color: #fff; color: #b38859;}
 .bt-ghost.gold {border: 1px solid #fff;}
@@ -116,6 +117,10 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 
 
 /********************** 반응형 설정 *********************/
+@media (max-width: 1599px) {
+	.wrapper-lg {width: calc(100% - 2rem); margin: 0 1rem;}
+}
+
 @media (max-width: 1399px) {
 	.wrapper {width: calc(100% - 2rem); margin: 0 1rem;}
 }

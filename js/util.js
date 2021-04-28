@@ -112,7 +112,7 @@ function getSwiper(el, opt) {
 	})
 
 	function onResize(e) {
-		$(el + ' .ratio').each(function(i) {
+		$(el + ' .ratio-wrap').each(function(i) {
 			var ratio = $(this).data('ratio') // data-ratio
 			var width = $(this).innerWidth()
 			var height = width * Number(ratio)

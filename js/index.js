@@ -18,6 +18,7 @@ $(function () {
 	slideMain()
 	slideDream()
 	slidePromo()
+	initStyle()
 
 	function setCookie() {
 		var $cookieWrapper = $('.cookie-wrapper')
@@ -175,7 +176,7 @@ $(function () {
 			r.promo.forEach(function(v, i) {
 				var html = ''
 				html += '<li class="slide swiper-slide">'
-				html += '<div class="img-wrap ratio" data-ratio="1">'
+				html += '<div class="img-wrap ratio-wrap" data-ratio="1">'
 				html += '<div class="ratio-bg" style="background-image: url('+v.src+');"></div>'
 				html += '</div>'
 				html += '<div class="cont-wrap">'
@@ -188,6 +189,18 @@ $(function () {
 			var swiper = getSwiper('.promo-wrapper', { break: 4, pager: false });
 		}
 		$.get('../json/promotion.json', onGetData)	// init
+	}
+
+	function initStyle() {
+		$(window).resize(onResize).trigger('resize')
+		function onResize() {
+			$('.style-wrapper .ratio-wrap').each(function(i) {
+				var ratio = $(this).data('ratio')
+				var width = $(this).innerWidth()
+				var height = width * Number(ratio)
+				$(this).innerHeight(height)
+			})
+		}
 	}
 
 })
