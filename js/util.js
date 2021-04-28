@@ -35,7 +35,7 @@ function scrollSpy(el, cls, _gap) {
 
 
 /*************** getSwiper *****************/
-function getSwiper(container, opt) {
+function getSwiper(el, opt) {
 	/*
 	- cls : '.promo-wrapper
 	- opt 
@@ -51,15 +51,15 @@ function getSwiper(container, opt) {
 	}
 	*/
 	var opt = opt || {}
-	var autoEl = $( container + ' ' + autoEl || '.slide-stage' )
+	var autoEl = el + ' ' + (opt.autoEl || '.slide-stage')
 	var pagination = (opt.pager === false) ? false : {
-		el: container + ' .pager-wrapper',
+		el: el + ' .pager-wrapper',
 		clickable: true
 	}
 
 	var navigation = (opt.navi === false) ? false : {
-		nextEl: container + ' .bt-slide.right',
-		prevEl: container + ' .bt-slide.left',
+		nextEl: el + ' .bt-slide.right',
+		prevEl: el + ' .bt-slide.left',
 	}
 
 	var autoplay = (opt.auto === false) ? false : {
@@ -95,7 +95,7 @@ function getSwiper(container, opt) {
 		}
 	}
 
-	var swiper = new Swiper(container, {
+	var swiper = new Swiper(el + ' .swiper-container', {
 		pagination: pagination,
 		navigation: navigation,
 		autoplay: autoplay,
