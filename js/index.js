@@ -12,14 +12,12 @@ else idx = idx + 1 */
 
 /*************** Index *****************/
 $(function () {
-	init()
 
-	function init() {
-		weather()
-		setCookie()
-		slideMain()
-		slideDream()
-	}
+	weather()
+	setCookie()
+	slideMain()
+	slideDream()
+	slidePromo()
 
 	function setCookie() {
 		var $cookieWrapper = $('.cookie-wrapper')
@@ -195,6 +193,16 @@ $(function () {
 		}, function(){
 			swiper.autoplay.start()
 		})
+	}
+
+	function slidePromo() {
+		var $promoWrapper = $('.promo-wrapper')
+
+		function onGetData(r) {
+			console.log(r)
+		}
+
+		$.get('../json/promotion.json', onGetData)
 	}
 
 })
