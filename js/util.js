@@ -111,6 +111,8 @@ function getSwiper(el, opt) {
 		swiper.autoplay.start()
 	})
 
+	$(window).trigger('resize')
+
 	return swiper
 }
 
