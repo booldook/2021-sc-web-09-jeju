@@ -67,8 +67,8 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 .dream-wrapper .slide-stage .pager-slide {text-align: center; margin-top: 2em; position: absolute; width: 100%;}
 .dream-wrapper .slide-stage .pager-slide .swiper-pagination-bullet-active {border: 1px solid #b38859;}
 .dream-wrapper .slide-stage .box {width: 200%; height: 100%; position: absolute; top: 0; z-index: 15;}
-.dream-wrapper .slide-stage .box.left {left: calc(-200% - 10px); background-image: linear-gradient(to left, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
-.dream-wrapper .slide-stage .box.right {right: calc(-200% - 10px); background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
+.dream-wrapper .slide-stage .box.left {left: calc(-200% - 9px); background-image: linear-gradient(to left, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
+.dream-wrapper .slide-stage .box.right {right: calc(-200% - 9px); background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
 
 .dream-wrapper .bt-wrap {text-align: center;}
 .dream-wrapper .bt-wrap .bt-ghost.white {padding: 1em 3em;}
