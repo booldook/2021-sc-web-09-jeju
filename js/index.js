@@ -185,7 +185,7 @@ $(function () {
 				html += '</li>'
 				$slideWrap.append(html)
 			})
-			var swiper = getSwiper('.promo-wrapper', { break: 4 });
+			var swiper = getSwiper('.promo-wrapper', { break: 4, pager: false });
 		}
 		$.get('../json/promotion.json', onGetData)	// init
 	}

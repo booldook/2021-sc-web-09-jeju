@@ -86,8 +86,6 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 .promo-wrapper .slide-stage .img-wrap:hover > .ratio-bg {transform: scale(1.1);}
 .promo-wrapper .slide-stage .cont-wrap .title {margin-bottom: 0.5em; color: #b38859;}
 .promo-wrapper .slide-stage .cont-wrap .desc {font-size: 1.5em; color: #333; line-height: 1.25;}
-.promo-wrapper .slide-stage .pager-slide {text-align: center; margin-top: 2em; position: absolute; width: 100%;}
-.promo-wrapper .slide-stage .pager-slide .swiper-pagination-bullet-active {border: 1px solid #b38859;}
 
 .promo-wrapper .bt-wrap {text-align: center;}
 .promo-wrapper .bt-wrap .bt-ghost.white {padding: 1em 3em;}
