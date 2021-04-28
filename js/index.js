@@ -42,7 +42,33 @@ $(function () {
 			delay: opt.delay || 3000
 		}
 
-		var breakpoints = {}
+		var breakpoints = {};
+		if(opt.break == 2) {
+			breakpoints = {
+				768: { slidesPerView: 2}
+			}
+		}
+		else if(opt.break == 3) {
+			breakpoints = {
+				768: { slidesPerView: 2},
+				1200: { slidesPerView: 3}
+			}
+		}
+		else if(opt.break == 4) {
+			breakpoints = {
+				576: { slidesPerView: 2},
+				992: { slidesPerView: 3},
+				1200: { slidesPerView: 4}
+			}
+		}
+		else if(opt.break == 5) {
+			breakpoints = {
+				576: { slidesPerView: 2},
+				768: { slidesPerView: 3},
+				992: { slidesPerView: 4},
+				1200: { slidesPerView: 5}
+			}
+		}
 
 		return {
 			pagination: pagination,
@@ -51,17 +77,7 @@ $(function () {
 			loop: opt.loop === false ? false : true,
 			slidesPerView: 1,
 			spaceBetween: opt.space || 40,
-			breakpoints: {
-				576: {
-					slidesPerView: 2,
-				},
-				992: {
-					slidesPerView: 3,
-				},
-				1200: {
-					slidesPerView: 4,
-				},
-			}
+			breakpoints: breakpoints
 		}
 	}
 
