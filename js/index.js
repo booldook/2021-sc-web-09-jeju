@@ -13,74 +13,6 @@ else idx = idx + 1 */
 /*************** Index *****************/
 $(function () {
 
-	function getSwiperOption(cls, opt) {
-		/*
-		- cls : '.promo-wrapper
-		- opt 
-		{
-			pager: true,
-			navi: true,
-			auto: true,
-			delay: 3000,
-			loop: true,
-			space: 40,
-			break: 4
-		}
-		*/
-		var pagination = (opt.pager === false) ? false : {
-			el: cls + ' .pager-wrapper',
-			clickable: true
-		}
-
-		var navigation = (opt.navi === false) ? false : {
-			nextEl: cls + ' .bt-slide.right',
-			prevEl: cls + ' .bt-slide.left',
-		}
-
-		var autoplay = (opt.auto === false) ? false : {
-			// delay: opt.delay ? opt.delay : 3000
-			delay: opt.delay || 3000
-		}
-
-		var breakpoints = {};
-		if(opt.break == 2) {
-			breakpoints = {
-				768: { slidesPerView: 2}
-			}
-		}
-		else if(opt.break == 3) {
-			breakpoints = {
-				768: { slidesPerView: 2},
-				1200: { slidesPerView: 3}
-			}
-		}
-		else if(opt.break == 4) {
-			breakpoints = {
-				576: { slidesPerView: 2},
-				992: { slidesPerView: 3},
-				1200: { slidesPerView: 4}
-			}
-		}
-		else if(opt.break == 5) {
-			breakpoints = {
-				576: { slidesPerView: 2},
-				768: { slidesPerView: 3},
-				992: { slidesPerView: 4},
-				1200: { slidesPerView: 5}
-			}
-		}
-
-		return {
-			pagination: pagination,
-			navigation: navigation,
-			autoplay: autoplay,
-			loop: opt.loop === false ? false : true,
-			slidesPerView: 1,
-			spaceBetween: opt.space || 40,
-			breakpoints: breakpoints
-		}
-	}
-
 	weather()
 	setCookie()
 	slideMain()
@@ -231,13 +163,10 @@ $(function () {
 	}
 
 	function slideDream() {
-		var swiper = new Swiper('.dream-wrapper .swiper-container', );
-
-		$('.dream-wrapper .slide-stage').hover(function(){
-			swiper.autoplay.stop()
-		}, function(){
-			swiper.autoplay.start()
-		})
+		var el = '.dream-wrapper'
+		var container = '.dream-wrapper .swiper-container'
+		var swiper = new Swiper(container, getSwiperOptions(el, { break: 3 }));
+		swiperHover(swiper, el)
 	}
 
 	function slidePromo() {
@@ -259,33 +188,10 @@ $(function () {
 				html += '</li>';
 				$slideWrap.append(html)
 			})
-			var swiper = new Swiper('.promo-wrapper .swiper-container', {
-				pagination: {
-					el: '.promo-wrapper .pager-wrapper',
-					clickable: true
-				},
-				navigation: {
-					nextEl: '.promo-wrapper .bt-slide.right',
-					prevEl: '.promo-wrapper .bt-slide.left',
-				},
-				autoplay: {
-					delay: 3000,
-				},
-				loop: true,
-				slidesPerView: 1,
-				spaceBetween: 40,
-				breakpoints: {
-					576: {
-						slidesPerView: 2,
-					},
-					992: {
-						slidesPerView: 3,
-					},
-					1200: {
-						slidesPerView: 4,
-					}
-				}
-			})
+			var el = '.promo-wrapper'
+			var container = '.promo-wrapper .swiper-container'
+			var swiper = new Swiper(container, getSwiperOptions(el, { break: 4 }));
+			swiperHover(swiper, el)
 		}
 
 		$.get('../json/promotion.json', onGetData)
