@@ -103,6 +103,9 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 .style-wrapper .list .bar {}
 .style-wrapper .list .content {font-size: 1.125em; width: 80%; line-height: 1.5; text-align: center; margin-bottom: 2.5em;}
 .style-wrapper .list .bt-ghost {border: 1px solid #fff;}
+.style-wrapper .list .bt-wrap {width: 80%; display: flex; flex-wrap: wrap; justify-content: space-between;}
+.style-wrapper .list .bt-wrap .bt-ghost {margin-bottom: 10px; flex: 0 0 calc(50% - 5px);}
+.style-wrapper .list .bt-wrap .bt-ghost:last-child {flex: 0 0 100%;}
 
 
 /********************** room-wrapper *********************/
