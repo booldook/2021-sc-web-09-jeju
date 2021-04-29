@@ -121,8 +121,10 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 
 /********************** room-wrapper *********************/
 .room-wrapper .slide-stage {position: relative; margin-bottom: 6em;}
-.room-wrapper .slide-stage > .swiper-container {width: calc(100% - 60px);}
-.room-wrapper .slide-stage .pager-slide {text-align: center; margin-top: 2em; position: absolute; width: 100%;}
+.room-wrapper .slide-stage .slide-bg {
+	background-image: linear-gradient(to right, #28354b, #28354b 60%, #fff 60%, #fff);}
+.room-wrapper .slide-stage .swiper-container {width: calc(90% - 60px); transform: translate(45%, 10%);}
+.room-wrapper .slide-stage .pager-slide {text-align: center; margin-top: 5em; position: absolute; width: 100%;}
 .room-wrapper .slide-stage .pager-slide .swiper-pagination-bullet-active {border: 1px solid #b38859;}
 
 

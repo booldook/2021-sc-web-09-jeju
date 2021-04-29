@@ -5,8 +5,9 @@
 
 /********************** 글로벌 설정 *********************/
 html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; height: 10000px;}
-.wrapper {width: 1368px; margin: auto;}
-.wrapper-lg {width: 1568px; margin: auto;}
+.wrapper {width: 1368px; margin: auto; position: relative;}
+.wrapper-lg {width: 1568px; margin: auto; position: relative;}
+.wrapper-xl {width: 1768px; margin: auto; position: relative;}
 .bt-ghost {padding: .875em 1.75em; border: 1px solid #999; color: #fff; transition: all .5s;}
 .bt-ghost:hover {background-color: #fff; color: #b38859;}
 .bt-ghost.gold {border: 1px solid #fff;}
@@ -26,6 +27,8 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 .pager-wrapper .pager.active,
 .pager-wrapper .swiper-pagination-bullet-active {border: 1px solid #fff; background-color: transparent; transform: scale(1); opacity: 1;}
 .bt-slide {background-color: #ddd; color: #777; width: 60px; height: 60px; position: absolute; top: calc(50% - 30px); z-index: 90; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; cursor: pointer;}
+.bt-slide.gold {background-color: rgba(0, 0, 0, .5); color: #fff; transition: all .5s;}
+.bt-slide.gold:hover {background-color: #b38859;}
 .bt-slide.left {left: 0;}
 .bt-slide.right {right: 0;}
 
@@ -119,6 +122,10 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 
 
 /********************** 반응형 설정 *********************/
+@media (max-width: 1799px) {
+	.wrapper-xl {width: calc(100% - 2rem); margin: 0 1rem;}
+}
+
 @media (max-width: 1599px) {
 	.wrapper-lg {width: calc(100% - 2rem); margin: 0 1rem;}
 }
