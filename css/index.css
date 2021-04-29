@@ -133,7 +133,7 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 .room-wrapper .desc-wrapper .desc {font-size: 1.125em; color: #999; line-height: 1.5; font-weight: 300; margin-bottom: 1em;}
 .room-wrapper .desc-wrapper .bt-ghost {border: 1px solid #fff;}
 .room-wrapper .desc-wrapper .moving-stage {overflow: hidden;}
-.room-wrapper .desc-wrapper .moving-box {transition: all .5s; transform: translateY(100%);}
+.room-wrapper .desc-wrapper .moving-box {transition: all .35s; transform: translateY(100%);}
 .room-wrapper .desc-wrapper .moving-box.active {transform: translateY(0);}
 
 
