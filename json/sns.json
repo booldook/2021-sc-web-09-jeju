@@ -1,0 +1,13 @@
+{
+	"sns": [
+		{ "id": 1, "src":"../img/index/evt01.jpg", "link": "#" },
+		{ "id": 2, "src":"../img/index/evt02.jpg", "link": "#" },
+		{ "id": 3, "src":"../img/index/evt03.jpg", "link": "#" },
+		{ "id": 4, "src":"../img/index/evt04.jpg", "link": "#" },
+		{ "id": 5, "src":"../img/index/evt05.jpg", "link": "#" },
+		{ "id": 6, "src":"../img/index/evt06.jpg", "link": "#" },
+		{ "id": 7, "src":"../img/index/evt07.jpg", "link": "#" },
+		{ "id": 8, "src":"../img/index/evt08.jpg", "link": "#" },
+		{ "id": 9, "src":"../img/index/evt09.jpg", "link": "#" }
+	]
+}

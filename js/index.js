@@ -21,6 +21,7 @@ $(function () {
 	initStyle()
 	slideRoom()
 	slideSvc()
+	slideSns()
 
 	function setCookie() {
 		var $cookieWrapper = $('.cookie-wrapper')
@@ -250,12 +251,11 @@ $(function () {
 				html += '</li>'
 				$slideWrapper.append(html)
 			})
-			swiper = getSwiper('.svc-wrapper', { break: 2, speed: 600 })
+			swiper = getSwiper('.svc-wrapper', { break: 2, speed: 600, pager: false })
 			swiper.on('slideChange', onChange)
 			showAni(1)
 		}
 		function onChange(e) {
-			console.log(e.realIndex)
 			showAni( (e.realIndex == lastIdx) ? 0 : e.realIndex + 1 )
 		}
 		function showAni(n) {
@@ -264,4 +264,22 @@ $(function () {
 		}
 		$.get('../json/svc.json', onGetData)
 	}
+
+	function slideSns() {
+		var $slideWrapper = $('.sns-wrapper .slide-wrapper')
+		var swiper
+		function onGetData(r) {
+			r.sns.forEach(function(v, i){
+				var html = ''
+				html += '<li class="slide swiper-slide">'
+				html += '<img src="'+v.src+'" alt="이벤트" class="w-100">'
+				html += '<i class="icon fab fa-instagram"></i>'
+				html += '</li>'
+				$slideWrapper.append(html)
+			})
+			swiper = getSwiper('.sns-wrapper', { break: 7, space: 0, pager: false })
+		}
+		$.get('../json/sns.json', onGetData)
+	}
 })
+

@@ -157,8 +157,18 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 .svc-wrapper .slide-stage .slide.active {transform: translateY(-20%);}
 
 
-
 /********************** sns-wrapper *********************/
+.sns-wrapper {background-color: #f5f5f5;}
+.sns-wrapper .slide-stage {margin-bottom: 2em;}
+.sns-wrapper .slide-stage .swiper-container {overflow: visible;}
+.sns-wrapper .slide {cursor: pointer;}
+.sns-wrapper .slide .icon {position: absolute; top: .75em; right: .75em; color: #fff; font-size: 1.125em;}
+.sns-wrapper .slide-stage .box.left {left: -200%;}
+.sns-wrapper .slide-stage .box.right {right: -200%;}
+.sns-wrapper .desc-wrapper { display: flex; justify-content: center; color: #666;}
+.sns-wrapper .desc-wrapper .desc {font-size: 2.25em; font-weight: 300;}
+.sns-wrapper .desc-wrapper .divide {border-left: 1px solid #ccc; margin: 0 5em;}
+.sns-wrapper .desc-wrapper .sns {width: 50px; height: 50px; line-height: 50px; text-align: center;border-radius: 50%; border: 1px solid #ccc; color: #666; font-size: 1.25em;}
 
 
 
