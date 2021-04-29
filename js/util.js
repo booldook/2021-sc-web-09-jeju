@@ -100,6 +100,7 @@ function getSwiper(el, opt) {
 		navigation: navigation,
 		autoplay: autoplay,
 		loop: opt.loop === false ? false : true,
+		speed: opt.speed || 500,
 		slidesPerView: 1,
 		spaceBetween: opt.space || 40,
 		breakpoints: breakpoints

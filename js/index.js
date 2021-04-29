@@ -206,14 +206,30 @@ $(function () {
 
 	function slideRoom() {
 		var room = [], swiper
+		var $movingBox = $('.room-wrapper .desc-wrapper .moving-box')
+		var $tag = $('.room-wrapper .desc-wrapper .tag > div')
+		var $title = $('.room-wrapper .desc-wrapper .title > div')
+		var $desc = $('.room-wrapper .desc-wrapper .desc > div')
 		function onGetData(r) {
 			room = r.room.slice()
 			console.log(room)
-			swiper = getSwiper('.room-wrapper', { break: 2 })
-			swiper.on('slideChange', onChange);
+			swiper = getSwiper('.room-wrapper', { break: 2, speed: 600 })
+			swiper.on('slideChange', onBefore)
+			swiper.on('slideChangeTransitionEnd', onChange)
+			showDesc(0)
+		}
+		function onBefore(e) {
+			$movingBox.removeClass('active')
 		}
 		function onChange(e) {
-			console.log(e.realIndex)
+			var idx = e.realIndex
+			showDesc(idx)
+		}
+		function showDesc(n) {
+			$tag.text(room[n].tag)
+			$title.text(room[n].title)
+			$desc.text(room[n].desc)
+			$movingBox.addClass('active')
 		}
 		$.get('../json/room.json', onGetData)
 	}
