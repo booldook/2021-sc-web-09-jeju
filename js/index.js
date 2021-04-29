@@ -237,11 +237,12 @@ $(function () {
 
 	function slideSvc() {
 		var $slideWrapper = $('.svc-wrapper .slide-wrapper')
-		var swiper
+		var swiper, lastIdx
 		function onGetData(r) {
+			lastIdx = r.svc.length - 1
 			r.svc.forEach(function(v, i){
 				var html = ''
-				html += '<li class="slide swiper-slide">'
+				html += '<li class="slide swiper-slide" title="'+i+'">'
 				html += '<div class="img-wrap">'
 				html += '<img src="'+v.src+'" alt="svc" class="w-100">'
 				html += '</div>'
@@ -250,10 +251,16 @@ $(function () {
 				$slideWrapper.append(html)
 			})
 			swiper = getSwiper('.svc-wrapper', { break: 2, speed: 600 })
-			swiper.on('slideChange', onBefore)
+			swiper.on('slideChange', onChange)
+			showAni(0)
 		}
-		function onBefore(e) {
-			console.log(e.previousIndex, e.activeIndex)
+		function onChange(e) {
+			console.log(e.realIndex)
+			showAni( (e.realIndex == lastIdx) ? 0 : e.realIndex + 1 )
+		}
+		function showAni(n) {
+			$slideWrapper.find('.slide').removeClass('active')
+			$slideWrapper.find('.slide[title="'+n+'"]').addClass('active')
 		}
 		$.get('../json/svc.json', onGetData)
 	}
