@@ -205,7 +205,17 @@ $(function () {
 	}
 
 	function slideRoom() {
-		var swiper = getSwiper('.room-wrapper', { break: 2 })
+		var room = [], swiper
+		function onGetData(r) {
+			room = r.room.slice()
+			console.log(room)
+			swiper = getSwiper('.room-wrapper', { break: 2 })
+			swiper.on('slideChange', onChange);
+		}
+		function onChange(e) {
+			console.log(e.realIndex)
+		}
+		$.get('../json/room.json', onGetData)
 	}
 
 })
