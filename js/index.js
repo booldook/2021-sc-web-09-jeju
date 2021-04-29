@@ -20,6 +20,7 @@ $(function () {
 	slidePromo()
 	initStyle()
 	slideRoom()
+	slideSvc()
 
 	function setCookie() {
 		var $cookieWrapper = $('.cookie-wrapper')
@@ -215,13 +216,13 @@ $(function () {
 			console.log(room)
 			swiper = getSwiper('.room-wrapper', { break: 2, speed: 600 })
 			swiper.on('slideChange', onBefore)
-			swiper.on('slideChangeTransitionEnd', onChange)
+			swiper.on('slideChangeTransitionEnd', onAfter)
 			showDesc(0)
 		}
 		function onBefore(e) {
 			$movingBox.removeClass('active')
 		}
-		function onChange(e) {
+		function onAfter(e) {
 			var idx = e.realIndex
 			showDesc(idx)
 		}
@@ -234,4 +235,26 @@ $(function () {
 		$.get('../json/room.json', onGetData)
 	}
 
+	function slideSvc() {
+		var $slideWrapper = $('.svc-wrapper .slide-wrapper')
+		var swiper
+		function onGetData(r) {
+			r.svc.forEach(function(v, i){
+				var html = ''
+				html += '<li class="slide swiper-slide">'
+				html += '<div class="img-wrap">'
+				html += '<img src="'+v.src+'" alt="svc" class="w-100">'
+				html += '</div>'
+				html += '<h4 class="title">'+v.title+'</h4>'
+				html += '</li>'
+				$slideWrapper.append(html)
+			})
+			swiper = getSwiper('.svc-wrapper', { break: 2, speed: 600 })
+			swiper.on('slideChange', onBefore)
+		}
+		function onBefore(e) {
+			console.log(e.previousIndex, e.activeIndex)
+		}
+		$.get('../json/svc.json', onGetData)
+	}
 })

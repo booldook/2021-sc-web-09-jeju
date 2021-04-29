@@ -4,6 +4,10 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 .title-wrap h3.title {font-size: 2em; margin-bottom: .175em;}
 .title-wrap h4.title {font-size: 1.125em; margin-bottom: .125em; color: #888;}
 
+.slide-stage .box {width: 200%; height: 100%; position: absolute; top: 0; z-index: 15;}
+.slide-stage .box.left {background-image: linear-gradient(to left, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
+.slide-stage .box.right {background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
+
 /********************** main-wrapper *********************/
 .main-wrapper {width: 100%; height: 100vh;}
 .main-wrapper .slide-stage {width: 100%; height: 100vh; overflow: hidden; position: fixed; z-index: 1;}
@@ -66,9 +70,9 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 .dream-wrapper .slide-stage .cont-wrap .tag {font-size: 1em; color: #fff; background-color: #ff5100; padding: 0 .75em; position: absolute; height: 26px; line-height: 26px; border-radius: 13px; top: -13px; left: 10%;}
 .dream-wrapper .slide-stage .pager-slide {text-align: center; margin-top: 2em; position: absolute; width: 100%;}
 .dream-wrapper .slide-stage .pager-slide .swiper-pagination-bullet-active {border: 1px solid #b38859;}
-.dream-wrapper .slide-stage .box {width: 200%; height: 100%; position: absolute; top: 0; z-index: 15;}
-.dream-wrapper .slide-stage .box.left {left: calc(-200% - 9px); background-image: linear-gradient(to left, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
-.dream-wrapper .slide-stage .box.right {right: calc(-200% - 9px); background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
+
+.dream-wrapper .slide-stage .box.left {left: calc(-200% - 9px);}
+.dream-wrapper .slide-stage .box.right {right: calc(-200% - 9px);}
 
 .dream-wrapper .bt-wrap {text-align: center;}
 .dream-wrapper .bt-wrap .bt-ghost.white {padding: 1em 3em;}
@@ -138,6 +142,18 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 
 
 /********************** svc-wrapper *********************/
+.svc-wrapper .title-wrap.wrapper {text-align: left; margin-top: 4em;}
+.svc-wrapper .title-wrap.wrapper h3.title {font-size: 2.75em; margin-bottom: .5em;}
+.svc-wrapper .title-wrap.wrapper h4.title {font-weight: 300;}
+.svc-wrapper .slide-stage .swiper-container {overflow: visible;}
+.svc-wrapper .slide-stage .img-wrap {margin-bottom: 2em;}
+.svc-wrapper .slide-stage h4.title {font-size: 2em; color: #444;}
+
+.svc-wrapper .slide-stage .box.left {left: calc(-200% - 39px);}
+.svc-wrapper .slide-stage .box.right {right: calc(-200% - 39px);}
+
+.svc-wrapper .slide-stage .slide {transition: all .6s;}
+.svc-wrapper .slide-stage .slide.active {transform: translateY(-20%);}
 
 
 

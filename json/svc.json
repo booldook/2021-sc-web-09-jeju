@@ -1,0 +1,7 @@
+{
+	"svc": [
+		{ "id": 1, "title": "실내 수영장", "src": "../img/index/317.jpg", "link": "#" },
+		{ "id": 2, "title": "포디엄 풀데크", "src": "../img/index/321.jpg", "link": "#" },
+		{ "id": 3, "title": "그랜드 클럽", "src": "../img/index/327.jpg", "link": "#" }
+	]
+}
