@@ -252,7 +252,7 @@ $(function () {
 			})
 			swiper = getSwiper('.svc-wrapper', { break: 2, speed: 600 })
 			swiper.on('slideChange', onChange)
-			showAni(0)
+			showAni(1)
 		}
 		function onChange(e) {
 			console.log(e.realIndex)
