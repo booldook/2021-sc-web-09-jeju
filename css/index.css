@@ -99,13 +99,24 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 .style-wrapper .list:hover .hover-bg {opacity: 1;}
 
 .style-wrapper .list .hover-cont {width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10%; color: #fff;}
-.style-wrapper .list .title {font-size: 2.5em; margin-bottom: 1em;}
+.style-wrapper .list .title {font-size: 2.5em;}
 .style-wrapper .list .bar {}
-.style-wrapper .list .content {font-size: 1.125em; width: 80%; line-height: 1.5; text-align: center; margin-bottom: 2.5em;}
+.style-wrapper .list .content {font-size: 1.125em; width: 80%; line-height: 1.5; text-align: center;}
 .style-wrapper .list .bt-ghost {border: 1px solid #fff;}
-.style-wrapper .list .bt-wrap {width: 80%; display: flex; flex-wrap: wrap; justify-content: space-between;}
+.style-wrapper .list .bt-wrap {width: 80%;}
+.style-wrapper .list .bt-wrap > div {display: flex; flex-wrap: wrap; justify-content: space-between;}
 .style-wrapper .list .bt-wrap .bt-ghost {margin-bottom: 10px; flex: 0 0 calc(50% - 5px);}
 .style-wrapper .list .bt-wrap .bt-ghost:last-child {flex: 0 0 100%;}
+
+/* moving-aniamtion */
+.style-wrapper .list .bar {width: 30px; height: 2px; background-color: #fff; margin: 0; transition: transform .35s; transform: scaleX(0);}
+.style-wrapper .list .moving-stage {overflow: hidden; height: 0; margin-bottom: 0;}
+.style-wrapper .list .moving-box {transition: all .35s; transform: translateY(100%); opacity: 0;}
+.style-wrapper .list:hover .bar {transform: scaleX(1); margin: 2em auto 1.5em auto;}
+.style-wrapper .list:hover .moving-stage {height: auto;}
+.style-wrapper .list:hover .moving-stage.content {margin-bottom: 2.5em;}
+.style-wrapper .list:hover .moving-box { transform: translateY(0); opacity: 1;}
+
 
 
 /********************** room-wrapper *********************/
