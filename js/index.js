@@ -19,6 +19,7 @@ $(function () {
 	slideDream()
 	slidePromo()
 	initStyle()
+	slideRoom()
 
 	function setCookie() {
 		var $cookieWrapper = $('.cookie-wrapper')
@@ -169,7 +170,7 @@ $(function () {
 
 	function slidePromo() {
 		var $promoWrapper = $('.promo-wrapper')
-		var $slideWrap = $promoWrapper.find('.slide-wrap')
+		var $slideWrapper = $promoWrapper.find('.slide-wrapper')
 
 		function onGetData(r) {
 			// for(var i=0; i<r.promo.length; i++) {}
@@ -184,7 +185,7 @@ $(function () {
 				html += '<div class="desc">'+v.desc+'</div>'
 				html += '</div>'
 				html += '</li>'
-				$slideWrap.append(html)
+				$slideWrapper.append(html)
 			})
 			var swiper = getSwiper('.promo-wrapper', { break: 4, pager: false });
 		}
@@ -201,6 +202,10 @@ $(function () {
 				$(this).innerHeight(height)
 			})
 		}
+	}
+
+	function slideRoom() {
+		var swiper = getSwiper('.room-wrapper', { break: 2 })
 	}
 
 })

@@ -92,7 +92,7 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 
 
 /********************** style-wrapper *********************/
-.style-wrapper {background-color: #f5f0e7;}
+.style-wrapper {background-color: #f5f0e7; padding: 5em 0 0 0;}
 .style-wrapper .list-wrap {display: flex;}
 .style-wrapper .list {flex: 0 0 33.3333%; position: relative;}
 .style-wrapper .list .hover-bg {background-color: rgba(179, 136, 89, 0.95); opacity: 0; width: 100%; height: 100%; position: absolute; top: 0; left: 0; transition: all .5s;}
@@ -109,9 +109,9 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 .style-wrapper .list .bt-wrap .bt-ghost:last-child {flex: 0 0 100%;}
 
 /* moving-aniamtion */
-.style-wrapper .list .bar {width: 30px; height: 2px; background-color: #fff; margin: 0; transition: transform .35s; transform: scaleX(0);}
+.style-wrapper .list .bar {width: 30px; height: 2px; background-color: #fff; margin: 0; transition: transform .5s; transform: scaleX(0);}
 .style-wrapper .list .moving-stage {overflow: hidden; height: 0; margin-bottom: 0;}
-.style-wrapper .list .moving-box {transition: all .35s; transform: translateY(100%); opacity: 0;}
+.style-wrapper .list .moving-box {transition: all .5s; transform: translateY(100%); opacity: 0;}
 .style-wrapper .list:hover .bar {transform: scaleX(1); margin: 2em auto 1.5em auto;}
 .style-wrapper .list:hover .moving-stage {height: auto;}
 .style-wrapper .list:hover .moving-stage.content {margin-bottom: 2.5em;}
@@ -120,7 +120,10 @@ body > section {position: relative; z-index: 3; background-color: #fff; padding:
 
 
 /********************** room-wrapper *********************/
-
+.room-wrapper .slide-stage {position: relative; margin-bottom: 6em;}
+.room-wrapper .slide-stage > .swiper-container {width: calc(100% - 60px);}
+.room-wrapper .slide-stage .pager-slide {text-align: center; margin-top: 2em; position: absolute; width: 100%;}
+.room-wrapper .slide-stage .pager-slide .swiper-pagination-bullet-active {border: 1px solid #b38859;}
 
 
 /********************** svc-wrapper *********************/
