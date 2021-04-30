@@ -114,7 +114,7 @@
 
 /* moving-aniamtion */
 .style-wrapper .list .bar {width: 30px; height: 2px; background-color: #fff; margin: 0; transition: transform .5s; transform: scaleX(0);}
-.style-wrapper .list .moving-stage {overflow: hidden; height: 0; margin-bottom: 0;}
+.style-wrapper .list .moving-stage {width: 100%; overflow: hidden; height: 0; margin-bottom: 0;}
 .style-wrapper .list .moving-box {transition: all .5s; transform: translateY(100%); opacity: 0;}
 .style-wrapper .list:hover .bar {transform: scaleX(1); margin: 2em auto 1.5em auto;}
 .style-wrapper .list:hover .moving-stage {height: auto;}
@@ -132,9 +132,9 @@
 .room-wrapper .slide-stage .pager-slide {text-align: center; margin-top: 5em; position: absolute; width: 100%;}
 .room-wrapper .slide-stage .pager-slide .swiper-pagination-bullet-active {border: 1px solid #b38859;}
 .room-wrapper .desc-wrapper {position: absolute; width: 35%; height: 100%; top: 0; left: 80px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: #fff;}
-.room-wrapper .desc-wrapper .tag {color: #b38859; font-size: 1.125em; margin-bottom: .5em;}
-.room-wrapper .desc-wrapper .title {font-size: 2.5em; margin-bottom: .5em;}
-.room-wrapper .desc-wrapper .desc {font-size: 1.125em; color: #999; line-height: 1.5; font-weight: 300; margin-bottom: 1em;}
+.room-wrapper .desc-wrapper .tag {width: 100%; color: #b38859; font-size: 1.125em; margin-bottom: .5em;}
+.room-wrapper .desc-wrapper .title {width: 100%; font-size: 2.5em; margin-bottom: .5em;}
+.room-wrapper .desc-wrapper .desc {width: 100%; font-size: 1.125em; color: #999; line-height: 1.5; font-weight: 300; margin-bottom: 1em;}
 .room-wrapper .desc-wrapper .bt-ghost {border: 1px solid #fff;}
 .room-wrapper .desc-wrapper .moving-stage {overflow: hidden;}
 .room-wrapper .desc-wrapper .moving-box {transition: all .35s; transform: translateY(100%);}

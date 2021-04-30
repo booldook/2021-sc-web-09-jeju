@@ -67,7 +67,7 @@ function getSwiper(el, opt) {
 		delay: opt.delay || 3000
 	}
 
-	var breakpoints = {};
+	/* var breakpoints = {};
 	if(opt.break == 2) {
 		breakpoints = {
 			'768': { slidesPerView: 2}
@@ -101,7 +101,7 @@ function getSwiper(el, opt) {
 			'992': { slidesPerView: opt.break - 1},
 			'1200': { slidesPerView: opt.break}
 		}
-	}
+	} */
 
 	var swiper = new Swiper(el + ' .swiper-container', {
 		pagination: pagination,
@@ -109,7 +109,8 @@ function getSwiper(el, opt) {
 		autoplay: autoplay,
 		loop: opt.loop === false ? false : true,
 		speed: opt.speed || 500,
-		slidesPerView: opt.break && opt.break > 5 ? opt.break - 4 : 1,
+		// slidesPerView: opt.break && opt.break > 5 ? opt.break - 4 : 1,
+		slidesPerView: opt.break ? opt.break : 1,
 		spaceBetween: opt.space === undefined ? 40 : opt.space,
 		// breakpoints: breakpoints
 	})
