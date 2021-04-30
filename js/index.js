@@ -73,7 +73,7 @@ $(function () {
 	
 		function onLoadedVideo() {
 			if (video.readyState >= 2) {
-				video.playbackRate = 4.0;
+				// video.playbackRate = 4.0;
 			}
 		}
 	
