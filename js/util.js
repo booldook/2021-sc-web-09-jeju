@@ -70,36 +70,36 @@ function getSwiper(el, opt) {
 	var breakpoints = {};
 	if(opt.break == 2) {
 		breakpoints = {
-			768: { slidesPerView: 2}
+			'768': { slidesPerView: 2}
 		}
 	}
 	else if(opt.break == 3) {
 		breakpoints = {
-			768: { slidesPerView: 2},
-			1200: { slidesPerView: 3}
+			'768': { slidesPerView: 2},
+			'1200': { slidesPerView: 3}
 		}
 	}
 	else if(opt.break == 4) {
 		breakpoints = {
-			576: { slidesPerView: 2},
-			992: { slidesPerView: 3},
-			1200: { slidesPerView: 4}
+			'576': { slidesPerView: 2},
+			'992': { slidesPerView: 3},
+			'1200': { slidesPerView: 4}
 		}
 	}
 	else if(opt.break == 5) {
 		breakpoints = {
-			576: { slidesPerView: 2},
-			768: { slidesPerView: 3},
-			992: { slidesPerView: 4},
-			1200: { slidesPerView: 5}
+			'576': { slidesPerView: 2},
+			'768': { slidesPerView: 3},
+			'992': { slidesPerView: 4},
+			'1200': { slidesPerView: 5}
 		}
 	}
 	else if(opt.break > 5) {
 		breakpoints = {
-			576: { slidesPerView: opt.break - 3},
-			768: { slidesPerView: opt.break - 2},
-			992: { slidesPerView: opt.break - 1},
-			1200: { slidesPerView: opt.break}
+			'576': { slidesPerView: opt.break - 3},
+			'768': { slidesPerView: opt.break - 2},
+			'992': { slidesPerView: opt.break - 1},
+			'1200': { slidesPerView: opt.break}
 		}
 	}
 
@@ -111,7 +111,7 @@ function getSwiper(el, opt) {
 		speed: opt.speed || 500,
 		slidesPerView: opt.break && opt.break > 5 ? opt.break - 4 : 1,
 		spaceBetween: opt.space === undefined ? 40 : opt.space,
-		breakpoints: breakpoints
+		// breakpoints: breakpoints
 	})
 
 	$(autoEl).hover(function(){
