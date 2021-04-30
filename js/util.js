@@ -1,13 +1,13 @@
 /****************** Array.sort() ********************/
 function sortAsc(key) {
 	return function(a, b) {
-		return key ? a[key] - b[key] : a - b
+		return key ? a[key] - b[key] : a - b;
 	}
 }
 
 function sortDesc(key) {
 	return function(a, b) {
-		return key ? b[key] - a[key] : b - a
+		return key ? b[key] - a[key] : b - a;
 	}
 }
 
@@ -15,21 +15,21 @@ function sortDesc(key) {
 
 /*************** Scroll Spy *****************/
 function scrollSpy(el, cls, _gap) {
-	$(window).scroll(onScrollSpy).trigger('scroll')
+	$(window).scroll(onScrollSpy).trigger('scroll');
 	function onScrollSpy() {
-		var scrollTop = $(this).scrollTop()
-		var pageOffset = []
-		var page
-		var gap = _gap || 300
+		var scrollTop = $(this).scrollTop();
+		var pageOffset = [];
+		var page;
+		var gap = _gap || 300;
 		$(el).each(function(i){
-			pageOffset[i] = $(this).offset().top
+			pageOffset[i] = $(this).offset().top;
 		})
 	
 		for(var i=1; i<pageOffset.length; i++) {
-			if(scrollTop < pageOffset[i] - gap) break
+			if(scrollTop < pageOffset[i] - gap) break;
 		}
-		page = i - 1
-		$(el).eq(page).addClass(cls)
+		page = i - 1;
+		$(el).eq(page).addClass(cls);
 	}
 }
 
@@ -50,8 +50,8 @@ function scrollSpy(el, cls, _gap) {
 }
 */
 function getSwiper(el, opt) {
-	var opt = opt || {}
-	var autoEl = el + ' ' + (opt.autoEl || '.slide-stage')
+	var opt = opt || {};
+	var autoEl = el + ' ' + (opt.autoEl || '.slide-stage');
 	var pagination = (opt.pager === false) ? false : {
 		el: el + ' .pager-wrapper',
 		clickable: true
@@ -115,21 +115,21 @@ function getSwiper(el, opt) {
 	})
 
 	$(autoEl).hover(function(){
-		swiper.autoplay.stop()
+		swiper.autoplay.stop();
 	}, function(){
-		swiper.autoplay.start()
+		swiper.autoplay.start();
 	})
 
 	function onResize(e) {
 		$(el + ' .ratio-wrap').each(function(i) {
 			var ratio = $(this).data('ratio') // data-ratio
-			var width = $(this).innerWidth()
-			var height = width * Number(ratio)
-			$(this).innerHeight(height)
+			var width = $(this).innerWidth();
+			var height = width * Number(ratio);
+			$(this).innerHeight(height);
 		})
 	}
 	
-	$(window).resize(onResize).trigger('resize')
+	$(window).resize(onResize).trigger('resize');
 
-	return swiper
+	return swiper;
 }

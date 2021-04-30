@@ -176,12 +176,24 @@
 .sns-wrapper .desc-wrapper .sns:hover {border: #eb7e34; background-color: #eb7e34; color: #fff;}
 .sns-wrapper .sns-naver:hover {background: url(../img/index/naver-hover.png) no-repeat center; background-size: auto 1.25em;}
 .sns-wrapper .sns-kakao:hover {background: url(../img/index/kakao-hover.png) no-repeat center; background-size: auto 1.25em;}
+.sns-wrapper .sns-weixin {position: relative;}
+.sns-wrapper .sns-weixin > .qr-wrap {position: absolute; border: 3px solid #b38859; left: 50%; bottom: calc(100% + 20px); transform: translateX(-50%); z-index: 100; display: none;}
+.sns-wrapper .sns-weixin:hover > .qr-wrap {display: block;}
+/* 
+.sns-wrapper .sns-weixin > .qr-wrap::after {display: block; content: '▼'; color: #b38859; font-size: 1.25em; position: absolute; bottom: -1.25em; left: 50%; transform: translateX(-50%);} 
+*/
+.sns-wrapper .sns-weixin > .qr-wrap::after {display: block; content: ''; width: 0px; height: 0px; border-bottom: 12px solid none; border-top: 12px solid #b38859; border-right: 12px solid transparent; border-left: 12px solid  transparent; position: absolute; bottom: -12px; left: calc(50% - 12px)}
 
 
 /********************** contact-wrapper *********************/
 .contact-wrapper {text-align: left;}
 .contact-wrapper > .wrapper {display: flex; justify-content: space-between;}
 .contact-wrapper > .wrapper > div {flex: 49% 0 0; position: relative;}
+.contact-wrapper .mail-form {display: flex;}
+.contact-wrapper .mail-form .mail-input {flex-grow: 1; border: 1px solid #bbb; padding: 0 1em;}
+.contact-wrapper .mail-form .mail-input::placeholder {color: #bbb; font-size: 1.25em;}
+.contact-wrapper .mail-form .mail-input:focus {border: 1px solid #b38859;}
+.contact-wrapper .mail-form .mail-send {flex-shrink: 0; background-color: #bbb; color: #fff; padding: 1.5em 2.5em;}
 /*
 .contact-wrapper .letter-wrapper .title-wrap {background-image: url(../img/index/bg_news.jpg);  background-position: center; background-size: cover; overflow: hidden; height: 0; padding-top: 56.25%; margin: 0; position: relative; color: #fff;}
 .contact-wrapper .letter-wrapper .title-wrap > div {display: flex; flex-direction: column; align-items: flex-start; justify-content: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; padding: 0 10%;}
