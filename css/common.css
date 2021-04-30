@@ -8,6 +8,7 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 .wrapper {width: 1368px; margin: auto; position: relative;}
 .wrapper-lg {width: 1568px; margin: auto; position: relative;}
 .wrapper-xl {width: 1768px; margin: auto; position: relative;}
+.wrapper-all {max-width: 2560px; margin: auto; position: relative;}
 .bt-ghost {padding: .875em 1.75em; border: 1px solid #999; color: #fff; transition: all .5s;}
 .bt-ghost:hover {background-color: #fff; color: #b38859;}
 .bt-ghost.gold {border: 1px solid #fff;}
@@ -51,7 +52,7 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 
 
 /********************** header-wrapper *********************/
-.header-wrapper {color: #fff; position: fixed; width: 100%; transition: top 0.35s; z-index: 99;}
+.header-wrapper {color: #fff; position: fixed; width: 100%; transition: top 0.35s; z-index: 99;  top: 0;}
 
 .header-wrapper .link-wrapper {border-bottom: 1px solid rgba(255,255,255, .1);}
 .header-wrapper .link-wrap {padding: 1em 0; display: flex; justify-content: flex-end; align-items: center;}

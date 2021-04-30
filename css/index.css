@@ -1,4 +1,4 @@
-body > section {position: relative; z-index: 3; background-color: #fff; padding: 5em 0; width: 100%; overflow: hidden;}
+.wrapper-all > section {position: relative; z-index: 3; background-color: #fff; padding: 5em 0; width: 100%; overflow: hidden;}
 .title-wrap {text-align: center; margin-bottom: 3em;}
 .title-wrap h2.title {font-size: 3.5em; margin-bottom: .25em; font-family: 'Jost', sans-serif; letter-spacing: .05em;}
 .title-wrap h3.title {font-size: 2em; margin-bottom: .175em;}
