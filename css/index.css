@@ -168,8 +168,14 @@
 .sns-wrapper .desc-wrapper { display: flex; justify-content: center; color: #666;}
 .sns-wrapper .desc-wrapper .desc {font-size: 2.25em; font-weight: 300;}
 .sns-wrapper .desc-wrapper .divide {border-left: 1px solid #ccc; margin: 0 5em;}
-.sns-wrapper .desc-wrapper .sns {width: 50px; height: 50px; line-height: 50px; text-align: center;border-radius: 50%; border: 1px solid #ccc; color: #666; font-size: 1.25em;}
+.sns-wrapper .desc-wrapper .sns-wrap {display: flex; align-items: center;}
+.sns-wrapper .desc-wrapper .sns {display: inline-block; width: 50px; height: 50px; line-height: 50px; text-align: center;border-radius: 50%; border: 1px solid #ccc; color: #888; font-size: 1.25em; margin: 0 1em; transition: background-color .35s, color .35s; cursor: pointer;}
+.sns-wrapper .sns-naver {background: url(../img/index/naver.png) no-repeat center; background-size: auto 1.25em;}
+.sns-wrapper .sns-kakao {background: url(../img/index/kakao.png) no-repeat center; background-size: auto 1.25em;}
 
+.sns-wrapper .desc-wrapper .sns:hover {border: #eb7e34; background-color: #eb7e34; color: #fff;}
+.sns-wrapper .sns-naver:hover {background: url(../img/index/naver-hover.png) no-repeat center; background-size: auto 1.25em;}
+.sns-wrapper .sns-kakao:hover {background: url(../img/index/kakao-hover.png) no-repeat center; background-size: auto 1.25em;}
 
 
 /********************** contact-wrapper *********************/
