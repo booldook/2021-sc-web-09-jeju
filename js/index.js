@@ -77,16 +77,14 @@ $(function () {
 			}
 		}
 	
-		function ani() {
+		function onAni() {
 			$(this).addClass('active');
-			video.addEventListener('loadedmetadata', function() {
-				video.currentTime = 0;
-				if ($slide.eq(idx).hasClass('is-video')) video.play();
-				else {
-					clearTimeout(timeout);
-					timeout = setTimeout(onPlay, gap);
-				}
-			}, false);
+			video.currentTime = 0;
+			if ($slide.eq(idx).hasClass('is-video')) video.play();
+			else {
+				clearTimeout(timeout);
+				timeout = setTimeout(onPlay, gap);
+			}
 		}
 	
 		function onPlay(e) {
@@ -100,7 +98,7 @@ $(function () {
 			$slide.removeClass('active');
 			$slide.eq(idx).stop().animate({
 				'left': 0
-			}, speed, ani);
+			}, speed, onAni);
 		}
 
 		$slide.eq(idx).css('z-index', depth++);
@@ -113,7 +111,7 @@ $(function () {
 		$('.bt-video').click(onModalVideo);
 		$('.modal-video').find('.bt-close').click(onModalVideoClose);
 
-		ani();
+		video.addEventListener('loadedmetadata', onAni); // 시작시점
 	}
 
 	function weather() {
