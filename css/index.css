@@ -189,11 +189,6 @@
 .contact-wrapper {text-align: left;}
 .contact-wrapper > .wrapper {display: flex; justify-content: space-between;}
 .contact-wrapper > .wrapper > div {flex: 49% 0 0; position: relative;}
-.contact-wrapper .mail-form {display: flex;}
-.contact-wrapper .mail-form .mail-input {flex-grow: 1; border: 1px solid #bbb; padding: 0 1em;}
-.contact-wrapper .mail-form .mail-input::placeholder {color: #bbb; font-size: 1.25em;}
-.contact-wrapper .mail-form .mail-input:focus {border: 1px solid #b38859;}
-.contact-wrapper .mail-form .mail-send {flex-shrink: 0; background-color: #bbb; color: #fff; padding: 1.5em 2.5em;}
 /*
 .contact-wrapper .letter-wrapper .title-wrap {background-image: url(../img/index/bg_news.jpg);  background-position: center; background-size: cover; overflow: hidden; height: 0; padding-top: 56.25%; margin: 0; position: relative; color: #fff;}
 .contact-wrapper .letter-wrapper .title-wrap > div {display: flex; flex-direction: column; align-items: flex-start; justify-content: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; padding: 0 10%;}
@@ -209,6 +204,18 @@
 
 .contact-wrapper .mail-wrapper {border-top: 2px solid #333; border-bottom: 1px solid #bbb; display: flex; align-items: center; justify-content: center;}
 .contact-wrapper .mail-wrap {flex: 80% 0 0;}
+.contact-wrapper .mail-wrap .title-wrap {margin-bottom: 2em;}
+
+.contact-wrapper .mail-form .form-input {display: flex;}
+.contact-wrapper .mail-form .mail-input {flex-grow: 1; border: 1px solid #bbb; padding: 0 1em;}
+.contact-wrapper .mail-form .mail-input::placeholder {color: #bbb; font-size: 1.25em;}
+.contact-wrapper .mail-form .mail-input:focus {border: 1px solid #b38859;}
+.contact-wrapper .mail-form .mail-send {flex-shrink: 0; background-color: #bbb; color: #fff; padding: 1.5em 2.5em;}
+
+.contact-wrapper .mail-form .valid-alert {margin: 1em 0; padding: .75em 1em; background-color: #eb7e34; color: #fff; display: inline-block; border-radius: 4px; position: relative;}
+.contact-wrapper .mail-form .valid-alert::before {display: block; content: ''; width: 0px; height: 0px; border-top: 10px solid none; border-bottom: 10px solid #eb7e34; border-right: 10px solid transparent; border-left: 10px solid  transparent; position: absolute; top: -10px; left: 10%;}
+
+.contact-wrapper .mail-form .agree-mail {margin-top: 0;}
 
 
 /********************** cookie-wrapper *********************/

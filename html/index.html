@@ -542,8 +542,17 @@
 							<h4 class="title">업데이트된 뉴스레터를 받아 보세요.</h4>
 						</div>
 						<form class="mail-form" action="#">
-							<input type="text" class="mail-input" name="email" placeholder="example@example.com" required>
-							<button type="submit" class="mail-send">가입하기 <i class="bi-arrow-right"></i></button>
+							<div class="form-input">
+								<input type="text" class="mail-input" name="email" placeholder="example@example.com" required>
+								<button type="submit" class="mail-send">가입하기 <i class="bi-arrow-right"></i></button>
+							</div>
+							<div class="valid-alert">
+								<i class="fa fa-info-circle"></i> 이메일을 올바르게 입력해 주세요.
+							</div>
+							<div class="form-check">
+								<input type="checkbox" id="agreeMail" class="agree-mail form-check-input"> 
+								<label for="agreeMail">개인정보 이용약관에 동의합니다.</label>
+							</div>
 						</form>
 					</div>
 				</div>
