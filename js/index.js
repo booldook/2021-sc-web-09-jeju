@@ -334,12 +334,12 @@ $(function () {
 				emailChk = false;
 				$alert.addClass('active')
 			}
-			$button.attr('disabled', !(emailChk && agreeChk))
+			$button.attr('disabled', (emailChk && agreeChk) ? false : true)
 		}
 
 		function onChange() {
 			agreeChk = $(this).is(':checked');
-			$button.attr('disabled', !(emailChk && agreeChk))
+			$button.attr('disabled', (emailChk && agreeChk) ? false : true)
 		}
 
 		function onSubmit(e) {

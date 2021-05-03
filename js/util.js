@@ -1,29 +1,31 @@
+/* 
+&& (AND연산자) - 둘 다 true일때만 true를 반환 / 그 외에는 false를 반환
+|| (OR 연산자) - 둘 중 하나만 true여도 true를 반환 / 둘 다 false일때만 false를 반환
+*/
+
+
 /****************** regExp ********************/
 // Email 정규표현식
-var emailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,4}$/i;
-
-// 숫자, 문자, 특수문자를 포함한 8 ~ 16자리 정규표현식
-var passRegExp = /^.*(?=^.{8,16}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
-
-// 핸드폰번호 정규식
-var mobileRegExp = /^\d{3}-\d{3,4}-\d{4}$/;
-
-//일반 전화번호 정규식
-var phoneRegExp = /^\d{2,3}-\d{3,4}-\d{4}$/;
-
 function validEmail(v) {
+	var emailRegExp = /([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/i;
 	return (v.match(emailRegExp) !== null) ? true : false
 }
 
+// 숫자, 문자, 특수문자를 포함한 8 ~ 16자리 정규표현식
 function validPass(v) {
+	var passRegExp = /^.*(?=^.{8,16}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
 	return (v.match(passRegExp) !== null) ? true : false
 }
 
+// 핸드폰번호 정규식
 function validMobile(v) {
+	var mobileRegExp = /^\d{3}-\d{3,4}-\d{4}$/;
 	return (v.match(mobileRegExp) !== null) ? true : false
 }
 
+//일반 전화번호 정규식
 function validPhone(v) {
+	var phoneRegExp = /^\d{2,3}-\d{3,4}-\d{4}$/;
 	return (v.match(phoneRegExp) !== null) ? true : false
 }
 
