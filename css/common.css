@@ -4,7 +4,7 @@
 /* font-family: 'Jost', sans-serif; */
 
 /********************** 글로벌 설정 *********************/
-html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; height: 10000px;}
+html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 .wrapper {width: 1368px; margin: auto; position: relative;}
 .wrapper-lg {width: 1568px; margin: auto; position: relative;}
 .wrapper-xl {width: 1768px; margin: auto; position: relative;}
