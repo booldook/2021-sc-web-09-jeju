@@ -22,14 +22,24 @@
 </head>
 <body>
 	<div class="container">
-		<form action="#" method="GET">
+		<form action="//127.0.0.1:3000/test" method="GET">
 			<div class="form-inline p-3">
 				<input class="form-control m-2" type="text" name="query" placeholder="작성자">
 				<input class="form-control m-2 w-50" type="text" name="comment" placeholder="한줄 감상평">
-				<button class="btn btn-primary m-2">등록</button>
+				<button type="submit" class="btn btn-primary m-2">등록</button>
 			</div>
 		</form>
 	</div>
 	<script src="../js/12.form.js"></script>
 </body>
 </html>
+
+
+<!--
+- request : client에서 server로 전송한 정보
+- response : server에서 client로 응답한 정보
+
+- POST Header: GET과 다르게 아래의 두개의 정보가 추가되어 있다. content(body)가 존재한다
+	-- Content-Type: application/x-www-form-urlencoded
+	-- Origin: http://127.0.0.1:5500
+ -->
