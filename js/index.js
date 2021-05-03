@@ -29,7 +29,7 @@ $(function () {
 		var $cookieClose = $cookieWrapper.find('.bt-close');
 		var $cookieConfirm = $cookieWrapper.find('.bt-confirm');
 
-		if($.cookie('hideCookie') === 'Y') onCloseCookie();
+		if ($.cookie('hideCookie') === 'Y') onCloseCookie();
 
 		function onCloseCookie() {
 			$('.cookie-wrapper').hide();
@@ -67,17 +67,17 @@ $(function () {
 		function onModalVideo() {
 			$('.modal-video').show();
 		}
-	
+
 		function onModalVideoClose() {
 			$('.modal-video').hide();
 		}
-	
+
 		function onLoadedVideo() {
 			if (video.readyState >= 2) {
 				// video.playbackRate = 4.0;
 			}
 		}
-	
+
 		function onAni() {
 			$(this).addClass('active');
 			video.currentTime = 0;
@@ -87,7 +87,7 @@ $(function () {
 				timeout = setTimeout(onPlay, gap);
 			}
 		}
-	
+
 		function onPlay(e) {
 			if (e !== 'pager') idx = (idx == lastIdx) ? 0 : idx + 1;
 			$pagerSlide.find('.pager').removeClass('active');
@@ -151,13 +151,13 @@ $(function () {
 			$weather.find('.time > span').text(moment(r.dt * 1000).format('hh:mm'));
 			$weather.find('.time > small').text(moment(r.dt * 1000).format('A'));
 		}
-	
+
 		function onGetGeo(r) {
 			weatherData.lat = r.coords.latitude;
 			weatherData.lon = r.coords.longitude;
 			$.get(weatherURL, weatherData, onGetWeather);
 		}
-	
+
 		function onErrorGeo() {
 			weatherData.lat = 33.485739737138786;
 			weatherData.lon = 126.48154043372092;
@@ -168,7 +168,9 @@ $(function () {
 	}
 
 	function slideDream() {
-		var swiper = getSwiper('.dream-wrapper', { break: 3 });
+		var swiper = getSwiper('.dream-wrapper', {
+			break: 3
+		});
 	}
 
 	function slidePromo() {
@@ -177,28 +179,32 @@ $(function () {
 
 		function onGetData(r) {
 			// for(var i=0; i<r.promo.length; i++) {}
-			r.promo.forEach(function(v, i) {
+			r.promo.forEach(function (v, i) {
 				var html = '';
 				html += '<li class="slide swiper-slide">';
 				html += '<div class="img-wrap ratio-wrap" data-ratio="1">';
-				html += '<div class="ratio-bg" style="background-image: url('+v.src+');"></div>';
+				html += '<div class="ratio-bg" style="background-image: url(' + v.src + ');"></div>';
 				html += '</div>';
 				html += '<div class="cont-wrap">';
-				html += '<h3 class="title">'+v.title+'</h3>';
-				html += '<div class="desc">'+v.desc+'</div>';
+				html += '<h3 class="title">' + v.title + '</h3>';
+				html += '<div class="desc">' + v.desc + '</div>';
 				html += '</div>';
 				html += '</li>';
 				$slideWrapper.append(html);
 			})
-			var swiper = getSwiper('.promo-wrapper', { break: 4, pager: false });
+			var swiper = getSwiper('.promo-wrapper', {
+				break: 4,
+				pager: false
+			});
 		}
-		$.get('../json/promotion.json', onGetData);	// init
+		$.get('../json/promotion.json', onGetData); // init
 	}
 
 	function initStyle() {
 		$(window).resize(onResize).trigger('resize');
+
 		function onResize() {
-			$('.style-wrapper .ratio-wrap').each(function(i) {
+			$('.style-wrapper .ratio-wrap').each(function (i) {
 				var ratio = $(this).data('ratio');
 				var width = $(this).innerWidth();
 				var height = width * Number(ratio);
@@ -208,26 +214,34 @@ $(function () {
 	}
 
 	function slideRoom() {
-		var room = [], swiper;
+		var room = [],
+			swiper;
 		var $movingBox = $('.room-wrapper .desc-wrapper .moving-box');
 		var $tag = $('.room-wrapper .desc-wrapper .tag > div');
 		var $title = $('.room-wrapper .desc-wrapper .title > div');
 		var $desc = $('.room-wrapper .desc-wrapper .desc > div');
+
 		function onGetData(r) {
 			room = r.room.slice();
 			console.log(room);
-			swiper = getSwiper('.room-wrapper', { break: 2, speed: 600 });
+			swiper = getSwiper('.room-wrapper', {
+				break: 2,
+				speed: 600
+			});
 			swiper.on('slideChange', onBefore);
 			swiper.on('slideChangeTransitionEnd', onAfter);
 			showDesc(0);
 		}
+
 		function onBefore() {
 			$movingBox.removeClass('active');
 		}
+
 		function onAfter() {
 			var idx = this.realIndex;
 			showDesc(idx);
 		}
+
 		function showDesc(n) {
 			$tag.text(room[n].tag);
 			$title.text(room[n].title);
@@ -240,28 +254,35 @@ $(function () {
 	function slideSvc() {
 		var $slideWrapper = $('.svc-wrapper .slide-wrapper');
 		var swiper, lastIdx;
+
 		function onGetData(r) {
 			lastIdx = r.svc.length - 1;
-			r.svc.forEach(function(v, i){
+			r.svc.forEach(function (v, i) {
 				var html = '';
-				html += '<li class="slide swiper-slide" title="'+i+'">';
+				html += '<li class="slide swiper-slide" title="' + i + '">';
 				html += '<div class="img-wrap">';
-				html += '<img src="'+v.src+'" alt="svc" class="w-100">';
+				html += '<img src="' + v.src + '" alt="svc" class="w-100">';
 				html += '</div>';
-				html += '<h4 class="title">'+v.title+'</h4>';
+				html += '<h4 class="title">' + v.title + '</h4>';
 				html += '</li>';
 				$slideWrapper.append(html);
 			})
-			swiper = getSwiper('.svc-wrapper', { break: 2, speed: 600, pager: false });
+			swiper = getSwiper('.svc-wrapper', {
+				break: 2,
+				speed: 600,
+				pager: false
+			});
 			swiper.on('slideChange', onChange);
 			showAni(1);
 		}
+
 		function onChange() {
-			showAni( (this.realIndex == lastIdx) ? 0 : this.realIndex + 1 );
+			showAni((this.realIndex == lastIdx) ? 0 : this.realIndex + 1);
 		}
+
 		function showAni(n) {
 			$slideWrapper.find('.slide').removeClass('active');
-			$slideWrapper.find('.slide[title="'+n+'"]').addClass('active');
+			$slideWrapper.find('.slide[title="' + n + '"]').addClass('active');
 		}
 		$.get('../json/svc.json', onGetData);
 	}
@@ -269,16 +290,21 @@ $(function () {
 	function slideSns() {
 		var $slideWrapper = $('.sns-wrapper .slide-wrapper');
 		var swiper;
+
 		function onGetData(r) {
-			r.sns.forEach(function(v, i){
+			r.sns.forEach(function (v, i) {
 				var html = '';
 				html += '<li class="slide swiper-slide">';
-				html += '<img src="'+v.src+'" alt="이벤트" class="w-100">';
+				html += '<img src="' + v.src + '" alt="이벤트" class="w-100">';
 				html += '<i class="icon fab fa-instagram"></i>';
 				html += '</li>';
 				$slideWrapper.append(html);
 			})
-			swiper = getSwiper('.sns-wrapper', { break: 7, space: 0, pager: false });
+			swiper = getSwiper('.sns-wrapper', {
+				break: 7,
+				space: 0,
+				pager: false
+			});
 		}
 		$.get('../json/sns.json', onGetData);
 	}
@@ -292,30 +318,53 @@ $(function () {
 		var $button = $('.contact-wrapper .mail-send');
 		var $alert = $('.contact-wrapper .valid-alert');
 		var $check = $('.contact-wrapper .agree-mail');
-		
+
 		/********* Event Init *********/
-		$input.blur(onBlur)
-		$check.change(onChange)
-		
+		$input.blur(onBlur);
+		$check.change(onChange);
+		$form.submit(onSubmit);
+
 		/********* Event Callback *********/
 		function onBlur() {
-			var email = $(this).val().trim(); 
-			if(validEmail(email)) {
+			var email = $(this).val().trim();
+			if (validEmail(email)) {
 				emailChk = true;
 				$alert.removeClass('active')
-			}
-			else {
+			} else {
 				emailChk = false;
 				$alert.addClass('active')
 			}
+			changeButton()
 		}
 
 		function onChange() {
-			console.log( $(this).is(':checked') )
+			agreeChk = $(this).is(':checked');
+			changeButton()
 		}
-		
-		/********* User Function *********/
 
+		function onSubmit(e) {
+			e.preventDefault();	// submit이므로 전송되어야 하는데 전송기능을 막는다.
+			$form[0].contact_number.value = Math.random() * 100000 | 0;
+			emailjs.sendForm('service_gmail', 'template_gmail', this).then(function () {
+				console.log('SUCCESS!');
+			}, function (error) {
+				console.log('FAILED...', error);
+			});
+			return false;
+		}
+
+		function changeButton() {
+			console.log(emailChk, agreeChk);
+			if (emailChk && agreeChk) {
+				$button.addClass('active')
+				$button.attr('disabled', false)
+			} else {
+				$button.removeClass('active')
+				$button.attr('disabled', true)
+			}
+		}
+
+		/********* User Function *********/
+		emailjs.init('user_TROFqVnbPGZyygPAci7nt');
 	}
 })
-

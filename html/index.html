@@ -19,6 +19,7 @@
 	<script src="../js/bootstrap.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/moment.min.js"></script>
+	<script src="../js/email.min.js"></script>
 	<script src="../js/util.js"></script>
 </head>
 
@@ -541,10 +542,11 @@
 							<h3 class="title">KEEP IN TOUCH</h3>
 							<h4 class="title">업데이트된 뉴스레터를 받아 보세요.</h4>
 						</div>
-						<form class="mail-form" action="#">
+						<form class="mail-form" id="contact-form">
+							<input type="hidden" name="contact_number">
 							<div class="form-input">
 								<input type="text" class="mail-input" name="email" placeholder="example@example.com" required>
-								<button type="submit" class="mail-send" disabled>가입하기 <i class="bi-arrow-right"></i></button>
+								<button class="mail-send" disabled>가입하기 <i class="bi-arrow-right"></i></button>
 							</div>
 							<div class="valid-alert">
 								<i class="fa fa-info-circle"></i> 이메일을 올바르게 입력해 주세요.
