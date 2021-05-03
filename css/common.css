@@ -111,7 +111,14 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 
 
 /********************** footer-wrapper *********************/
+.footer-wrapper {background-color: #232d3a; color: #849099; padding: 5em 0; z-index: 3; position: relative;}
+.footer-wrapper .wrapper {display: flex;}
+.footer-wrapper .wrapper > :nth-child(1) {flex: 30% 0 0; border-right: 1px solid #3c4449; line-height: 1.5;}
+.footer-wrapper .wrapper > :nth-child(2) {flex: 40% 0 0; border-right: 1px solid #3c4449;}
+.footer-wrapper .wrapper > :nth-child(3) {flex: 30% 0 0;}
 
+.footer-wrapper h1.logo {margin-bottom: 2em;}
+.footer-wrapper .info {margin-bottom: 2em; font-weight: 300;}
 
 
 /********************** modal-wrapper *********************/
