@@ -1,3 +1,34 @@
+/****************** regExp ********************/
+// Email 정규표현식
+var emailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,4}$/i;
+
+// 숫자, 문자, 특수문자를 포함한 8 ~ 16자리 정규표현식
+var passRegExp = /^.*(?=^.{8,16}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+
+// 핸드폰번호 정규식
+var mobileRegExp = /^\d{3}-\d{3,4}-\d{4}$/;
+
+//일반 전화번호 정규식
+var phoneRegExp = /^\d{2,3}-\d{3,4}-\d{4}$/;
+
+function validEmail(v) {
+	return (v.match(emailRegExp) !== null) ? true : false
+}
+
+function validPass(v) {
+	return (v.match(passRegExp) !== null) ? true : false
+}
+
+function validMobile(v) {
+	return (v.match(mobileRegExp) !== null) ? true : false
+}
+
+function validPhone(v) {
+	return (v.match(phoneRegExp) !== null) ? true : false
+}
+
+
+
 /****************** Array.sort() ********************/
 function sortAsc(key) {
 	return function(a, b) {
