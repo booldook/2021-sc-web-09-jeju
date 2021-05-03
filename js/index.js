@@ -334,37 +334,30 @@ $(function () {
 				emailChk = false;
 				$alert.addClass('active')
 			}
-			changeButton()
+			$button.attr('disabled', !(emailChk && agreeChk))
 		}
 
 		function onChange() {
 			agreeChk = $(this).is(':checked');
-			changeButton()
+			$button.attr('disabled', !(emailChk && agreeChk))
 		}
 
 		function onSubmit(e) {
 			e.preventDefault();	// submit이므로 전송되어야 하는데 전송기능을 막는다.
 			$form[0].contact_number.value = Math.random() * 100000 | 0;
 			emailjs.sendForm('service_gmail', 'template_gmail', this).then(function () {
-				console.log('SUCCESS!');
+				alert('뉴스레터 신청이 완료되었습니다.');
+				$form[0].reset();
+				$button.attr('disabled', true)
+				agreeChk = false;
+				emailChk = false;
 			}, function (error) {
-				console.log('FAILED...', error);
+				alert('뉴스레터 신청 오류!\n관리자에게 문의하세요.')
 			});
 			return false;
 		}
 
-		function changeButton() {
-			console.log(emailChk, agreeChk);
-			if (emailChk && agreeChk) {
-				$button.addClass('active')
-				$button.attr('disabled', false)
-			} else {
-				$button.removeClass('active')
-				$button.attr('disabled', true)
-			}
-		}
-
 		/********* User Function *********/
-		emailjs.init('user_TROFqVnbPGZyygPAci7nt');
+		emailjs.init('user_TROFqVnbPGZyygPAci7nt');	// 본인거로 꼭 바꿔넣으세요.
 	}
 })
