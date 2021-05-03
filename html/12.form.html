@@ -6,6 +6,16 @@
 
 2. RESTFul - 아직 표준은 아니지만 $.ajax(jQuery), axios에서 쓰이고 있다.
 - CRUD (Create, Read, Update, Delete) - 데이터 핸들링의 모든것
+
+3. 요청과 응답
+- request : client에서 server로 전송한 정보(요청)
+- response : server에서 client로 응답한 정보(응답)
+
+4. POST Header: GET과 다르게 아래의 두개의 정보가 추가되어 있다. content(body)가 존재한다
+	-- Content-Type: application/x-www-form-urlencoded
+	-- Origin: http://127.0.0.1:5500
+
+5. form의 내용을 서버로 전송하기 전에 검증(validation)과정을 거쳐야 한다. (올바른 데이터를 보내기 위해)
  -->
 <!DOCTYPE html>
 <html lang="ko">
@@ -22,10 +32,10 @@
 </head>
 <body>
 	<div class="container">
-		<form action="//127.0.0.1:3000/test" method="GET">
+		<form action="#" method="GET" onsubmit="return validForm(this)">
 			<div class="form-inline p-3">
-				<input class="form-control m-2" type="text" name="query" placeholder="작성자">
-				<input class="form-control m-2 w-50" type="text" name="comment" placeholder="한줄 감상평">
+				<input class="form-control m-2" type="text" name="writer" placeholder="작성자">
+				<input class="form-control m-2 w-50" type="text" name="email" placeholder="이메일">
 				<button type="submit" class="btn btn-primary m-2">등록</button>
 			</div>
 		</form>
@@ -34,12 +44,3 @@
 </body>
 </html>
 
-
-<!--
-- request : client에서 server로 전송한 정보
-- response : server에서 client로 응답한 정보
-
-- POST Header: GET과 다르게 아래의 두개의 정보가 추가되어 있다. content(body)가 존재한다
-	-- Content-Type: application/x-www-form-urlencoded
-	-- Origin: http://127.0.0.1:5500
- -->
