@@ -113,12 +113,26 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 /********************** footer-wrapper *********************/
 .footer-wrapper {background-color: #232d3a; color: #849099; padding: 5em 0; z-index: 3; position: relative;}
 .footer-wrapper .wrapper {display: flex;}
-.footer-wrapper .wrapper > :nth-child(1) {flex: 30% 0 0; border-right: 1px solid #3c4449; line-height: 1.5;}
-.footer-wrapper .wrapper > :nth-child(2) {flex: 40% 0 0; border-right: 1px solid #3c4449;}
-.footer-wrapper .wrapper > :nth-child(3) {flex: 30% 0 0;}
+.footer-wrapper .wrapper > :nth-child(1) {flex: 30% 0 0; padding-right: 4em; border-right: 1px solid #3c4449; line-height: 1.5;}
+.footer-wrapper .wrapper > :nth-child(2) {flex: 40% 0 0; padding: 0 4em; border-right: 1px solid #3c4449;}
+.footer-wrapper .wrapper > :nth-child(3) {flex: 30% 0 0; padding-left: 4em;}
 
 .footer-wrapper h1.logo {margin-bottom: 2em;}
 .footer-wrapper .info {margin-bottom: 2em; font-weight: 300;}
+
+.footer-wrapper h2.title {font-size: 1.125em; color: #ddd; margin-bottom: 1.875em;}
+.footer-wrapper h2.title::after {display: block; content: ''; width: 30px; height: 2px; background-color: #ddd; margin-top: .5em;}
+
+.footer-wrapper .wrapper > :nth-child(2) > div {margin-bottom: .75em; font-size: 1.125em;}
+.footer-wrapper .wrapper > :nth-child(2) > address {margin-bottom: 2em; font-size: 1.125em;}
+.footer-wrapper .sns-wrap {display: flex; align-items: center;}
+.footer-wrapper .sns {display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; color: inherit; font-size: 1em; margin-right: 1em; cursor: pointer;}
+.footer-wrapper .sns-naver {background: url(../img/index/naver.png) no-repeat center; background-size: auto 1em;}
+.footer-wrapper .sns-kakao {background: url(../img/index/kakao.png) no-repeat center; background-size: auto 1em;}
+.footer-wrapper .sns-weixin {position: relative;}
+.footer-wrapper .sns-weixin > .qr-wrap {position: absolute; border: 3px solid #b38859; left: 50%; bottom: calc(100% + 20px); transform: translateX(-50%); z-index: 100; display: none;}
+.footer-wrapper .sns-weixin:hover > .qr-wrap {display: block;}
+.footer-wrapper .sns-weixin > .qr-wrap::after {display: block; content: ''; width: 0px; height: 0px; border-bottom: 12px solid none; border-top: 12px solid #b38859; border-right: 12px solid transparent; border-left: 12px solid  transparent; position: absolute; bottom: -12px; left: calc(50% - 12px)}
 
 
 /********************** modal-wrapper *********************/
