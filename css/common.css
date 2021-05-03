@@ -127,9 +127,9 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 .footer-wrapper .wrapper > :nth-child(2) > address {margin-bottom: 2em; font-size: 1.125em;}
 .footer-wrapper .sns-wrap {display: flex; align-items: center;}
 .footer-wrapper .sns {display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; color: inherit; font-size: 1em; margin-right: 1em; cursor: pointer;}
-.footer-wrapper .sns-naver {background: url(../img/index/naver.png) no-repeat center; background-size: auto 1em;}
-.footer-wrapper .sns-kakao {background: url(../img/index/kakao.png) no-repeat center; background-size: auto 1em;}
-.footer-wrapper .sns-weixin {position: relative;}
+.footer-wrapper .sns-naver {background: url(../img/index/naver.png) no-repeat center; background-size: auto 1em; opacity: .7;}
+.footer-wrapper .sns-kakao {background: url(../img/index/kakao.png) no-repeat center; background-size: auto 1em; opacity: .7;}
+.footer-wrapper .sns-weixin {position: relative; opacity: .7;}
 .footer-wrapper .sns-weixin > .qr-wrap {position: absolute; border: 3px solid #b38859; left: 50%; bottom: calc(100% + 20px); transform: translateX(-50%); z-index: 100; display: none;}
 .footer-wrapper .sns-weixin:hover > .qr-wrap {display: block;}
 .footer-wrapper .sns-weixin > .qr-wrap::after {display: block; content: ''; width: 0px; height: 0px; border-bottom: 12px solid none; border-top: 12px solid #b38859; border-right: 12px solid transparent; border-left: 12px solid  transparent; position: absolute; bottom: -12px; left: calc(50% - 12px)}
