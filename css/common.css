@@ -134,6 +134,10 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif; he
 .footer-wrapper .sns-weixin:hover > .qr-wrap {display: block;}
 .footer-wrapper .sns-weixin > .qr-wrap::after {display: block; content: ''; width: 0px; height: 0px; border-bottom: 12px solid none; border-top: 12px solid #b38859; border-right: 12px solid transparent; border-left: 12px solid  transparent; position: absolute; bottom: -12px; left: calc(50% - 12px)}
 
+.footer-wrapper .link-wrap {display: flex;}
+.footer-wrapper .link-wrap > div {flex: 50% 0 0; display: flex; flex-direction: column;}
+.footer-wrapper .link-wrap > div > a {font-size: 1.125em; margin-bottom: .75em;}
+
 
 /********************** modal-wrapper *********************/
 .modal-wrapper {width: 100%; height: 100vh; position: fixed; z-index: 199; top: 0; left: 0; background-color: rgba(0,0,0,.85); display: none;}
