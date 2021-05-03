@@ -1,1 +1,2 @@
-.wrapper {max-width: 800px; margin: 100px auto;}
+.wrapper {max-width: 1200px; margin: 100px auto;}
+.slick-prev:before, .slick-next:before {font-size: 20px; opacity: .75; color: black;}
