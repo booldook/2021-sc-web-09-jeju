@@ -130,7 +130,7 @@ section.style-wrapper {background-color: #f5f0e7; padding: 5em 0 0 0;}
 .room-wrapper .slide-stage {position: relative; margin-bottom: 6em;}
 .room-wrapper .slide-stage .slide-bg {
 	background-image: linear-gradient(to right, #28354b, #28354b 60%, #fff 60%, #fff);}
-.room-wrapper .slide-stage .slide-container {width: calc(90% - 60px); transform: translate(45%, 10%);}
+.room-wrapper .slide-stage .slide-container {transform: translate(42%, 10%);}
 .room-wrapper .slide-stage .slide-container .slide {margin: 0 16px;}
 .room-wrapper .slide-stage .slick-dots {bottom: -5em;}
 .room-wrapper .slide-stage .slick-dots li.slick-active {border: 1px solid #b38859;}

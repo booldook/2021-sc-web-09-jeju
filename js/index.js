@@ -263,9 +263,10 @@ $(function () {
 			makeSlickButton($slick, $btPrev, $btNext);
 			$(window).trigger('resize');
 
-			// swiper.on('slideChange', onBefore);
-			// swiper.on('slideChangeTransitionEnd', onAfter);
-			// showDesc(0);
+			$slick.on('afterChange', function(event, slick, idx){
+				showDesc(idx)
+			});
+			showDesc(0);
 		}
 
 		function onBefore() {
