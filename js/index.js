@@ -196,25 +196,26 @@ $(function () {
 
 	function slideDream() {
 		// var swiper = getSwiper('.dream-wrapper', { break: 3 });
-		var $dream = $('.dream-wrapper');
-		var $slide = $('.dream-wrapper .slide-wrapper');
+		var $slick = $('.dream-wrapper .slide-wrapper');
 		var $btPrev = $('.dream-wrapper .bt-slide.left');
 		var $btNext = $('.dream-wrapper .bt-slide.right');
 		var options = cloneObject(slick);
-		$slide.slick(options);
-		$btPrev.click(function() { $slide.slick('slickPrev') });
-		$btNext.click(function() { $slide.slick('slickNext') });
+		$slick.slick(options);
+		makeSlickButton($slick, $btPrev, $btNext);
 	}
 
 	function slidePromo() {
-		var $promoWrapper = $('.promo-wrapper');
-		var $slideWrapper = $promoWrapper.find('.slide-wrapper');
+		var $promo = $('.promo-wrapper');
+		var $slick = $promo.find('.slide-wrapper');
+		var $btPrev = $promo.find('.bt-slide.left');
+		var $btNext = $promo.find('.bt-slide.right');
+		var options = cloneObject(slick);
 
 		function onGetData(r) {
 			// for(var i=0; i<r.promo.length; i++) {}
 			r.promo.forEach(function (v, i) {
 				var html = '';
-				html += '<li class="slide swiper-slide">';
+				html += '<li class="slide">';
 				html += '<div class="img-wrap ratio-wrap" data-ratio="1">';
 				html += '<div class="ratio-bg" style="background-image: url(' + v.src + ');"></div>';
 				html += '</div>';
@@ -223,12 +224,15 @@ $(function () {
 				html += '<div class="desc">' + v.desc + '</div>';
 				html += '</div>';
 				html += '</li>';
-				$slideWrapper.append(html);
-			})
-			var swiper = getSwiper('.promo-wrapper', {
-				break: 4,
-				pager: false
+				$slick.append(html);
 			});
+			
+			options.slidesToShow = 4;
+			options.dots = false;
+			options.responsive.unshift({breakpoint: 992, settings: {slidesToShow: 3}});
+			$slick.slick(options);
+			makeSlickButton($slick, $btPrev, $btNext);
+			$(window).trigger('resize');
 		}
 		$.get('../json/promotion.json', onGetData); // init
 	}
@@ -384,9 +388,14 @@ $(function () {
 		/********* User Function *********/
 		emailjs.init('user_TROFqVnbPGZyygPAci7nt'); // 본인거로 꼭 바꿔넣으세요.
 	}
-
-
+	
+	
 	/********* Global Function *********/
+	function makeSlickButton($slick, $prev, $next) {
+		$prev.click(function() { $slick.slick('slickPrev') });
+		$next.click(function() { $slick.slick('slickNext') });
+	}
+	
 	function onResize(e) {
 		$('.ratio-wrap').each(function(i) {
 			var ratio = $(this).data('ratio');
@@ -396,6 +405,6 @@ $(function () {
 		})
 	}
 	
+	
 	$(window).resize(onResize).trigger('resize');
-
 })

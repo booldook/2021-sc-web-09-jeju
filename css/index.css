@@ -59,9 +59,9 @@
 /********************** dream-wrapper *********************/
 .dream-wrapper {background-image: linear-gradient(#fff, #fff 40%, #eee 40%, #eee); overflow: hidden;}
 .dream-wrapper .slide-stage {position: relative; margin-bottom: 6em;}
-.dream-wrapper .slide-stage > .slide-container {width: calc(100% - 40px); margin-left: 20px;}
+.dream-wrapper .slide-stage > .slide-container {width: 100%;}
 .dream-wrapper .slide-stage .slick-list {overflow: visible;}
-.dream-wrapper .slide-stage .slide {cursor: pointer; margin: 0 20px;}
+.dream-wrapper .slide-stage .slide {cursor: pointer; margin: 0 30px;}
 .dream-wrapper .slide-stage .cont-wrap {padding: 8%; min-height: 220px; position: relative; background-color: #fff; border: 1px solid #ddd;}
 .dream-wrapper .slide-stage .img-wrap {overflow: hidden;}
 .dream-wrapper .slide-stage .img-wrap > .ratio-bg {transition: all 1s;}
@@ -72,8 +72,8 @@
 .dream-wrapper .slide-stage .slick-dots {bottom: -3em;}
 .dream-wrapper .slide-stage .slick-dots li.slick-active {border: 1px solid #b38859;}
 
-.dream-wrapper .slide-stage .box.left {left: calc(-200% + 1px);}
-.dream-wrapper .slide-stage .box.right {right: calc(-200% + 1px);}
+.dream-wrapper .slide-stage .box.left {left: calc(-200% - 30px);}
+.dream-wrapper .slide-stage .box.right {right: calc(-200% - 30px);}
 
 .dream-wrapper .bt-wrap {text-align: center;}
 .dream-wrapper .bt-wrap .bt-ghost.white {padding: 1em 3em;}
@@ -82,9 +82,9 @@
 /********************** promo-wrapper *********************/
 .promo-wrapper {padding: 12em 0;}
 .promo-wrapper .slide-stage {position: relative; margin-bottom: 6em;}
-.promo-wrapper .slide-stage > .swiper-container {width: calc(100% - 60px); overflow: hidden;}
-.promo-wrapper .slide-stage > .swiper-container > .swiper-wrapper {width: 100%;}
-.promo-wrapper .slide-stage .slide {cursor: pointer;}
+.promo-wrapper .slide-stage > .slide-container {width: calc(100% - 32px); margin-left: 16px; overflow: hidden;}
+.promo-wrapper .slide-stage > .slide-container > .slide-wrapper {width: 100%;}
+.promo-wrapper .slide-stage .slide {cursor: pointer; margin: 0 16px;}
 .promo-wrapper .slide-stage .cont-wrap {padding: 8% 0; border-bottom: 1px solid #ddd;}
 .promo-wrapper .slide-stage .img-wrap {overflow: hidden;}
 .promo-wrapper .slide-stage .img-wrap > .ratio-bg {transition: all 1s;}
