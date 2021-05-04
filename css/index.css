@@ -1,3 +1,4 @@
+/* Global *********************/
 .wrapper-all > section {position: relative; z-index: 3; background-color: #fff; padding: 5em 0; width: 100%; overflow: hidden;}
 .title-wrap {text-align: center; margin-bottom: 3em;}
 .title-wrap h2.title {font-size: 3.5em; margin-bottom: .25em; font-family: 'Jost', sans-serif; letter-spacing: .05em;}
@@ -8,7 +9,7 @@
 .slide-stage .box.left {background-image: linear-gradient(to left, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
 .slide-stage .box.right {background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1));}
 
-/********************** main-wrapper *********************/
+/* main-wrapper *********************/
 .main-wrapper {width: 100%; height: 100vh;}
 .main-wrapper .slide-stage {width: 100%; height: 100vh; overflow: hidden; position: fixed; z-index: 1;}
 .main-wrapper .slide-wrap {position: relative; width: 100%; height: 100%; z-index: 1;}
@@ -56,7 +57,7 @@
 }
 
 
-/********************** dream-wrapper *********************/
+/* dream-wrapper *********************/
 .dream-wrapper {background-image: linear-gradient(#fff, #fff 40%, #eee 40%, #eee); overflow: hidden;}
 .dream-wrapper .slide-stage {position: relative; margin-bottom: 6em;}
 .dream-wrapper .slide-stage > .slide-container {width: 100%;}
@@ -79,7 +80,7 @@
 .dream-wrapper .bt-wrap .bt-ghost.white {padding: 1em 3em;}
 
 
-/********************** promo-wrapper *********************/
+/* promo-wrapper *********************/
 .promo-wrapper {padding: 12em 0;}
 .promo-wrapper .slide-stage {position: relative; margin-bottom: 6em;}
 .promo-wrapper .slide-stage > .slide-container {width: calc(100% - 32px); margin-left: 16px; overflow: hidden;}
@@ -96,7 +97,7 @@
 .promo-wrapper .bt-wrap .bt-ghost.white {padding: 1em 3em;}
 
 
-/********************** style-wrapper *********************/
+/* style-wrapper *********************/
 section.style-wrapper {background-color: #f5f0e7; padding: 5em 0 0 0;}
 .style-wrapper .list-wrap {display: flex;}
 .style-wrapper .list {flex: 0 0 33.3333%; position: relative;}
@@ -125,11 +126,12 @@ section.style-wrapper {background-color: #f5f0e7; padding: 5em 0 0 0;}
 
 
 
-/********************** room-wrapper *********************/
+/* room-wrapper *********************/
 .room-wrapper .slide-stage {position: relative; margin-bottom: 6em;}
 .room-wrapper .slide-stage .slide-bg {
 	background-image: linear-gradient(to right, #28354b, #28354b 60%, #fff 60%, #fff);}
 .room-wrapper .slide-stage .slide-container {width: calc(90% - 60px); transform: translate(45%, 10%);}
+.room-wrapper .slide-stage .slide-container .slide {margin: 0 16px;}
 .room-wrapper .slide-stage .slick-dots {bottom: -5em;}
 .room-wrapper .slide-stage .slick-dots li.slick-active {border: 1px solid #b38859;}
 .room-wrapper .desc-wrapper {position: absolute; width: 35%; height: 100%; top: 0; left: 80px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: #fff;}
@@ -142,7 +144,7 @@ section.style-wrapper {background-color: #f5f0e7; padding: 5em 0 0 0;}
 .room-wrapper .desc-wrapper .moving-box.active {transform: translateY(0);}
 
 
-/********************** svc-wrapper *********************/
+/* svc-wrapper *********************/
 .svc-wrapper {background-image: linear-gradient(#f5f5f5, #f5f5f5 55%, #fff 55% , #fff); padding-bottom: 10em;}
 .svc-wrapper .title-wrap.wrapper {text-align: left; margin-top: 4em;}
 .svc-wrapper .title-wrap.wrapper h3.title {font-size: 2.75em; margin-bottom: .5em;}
@@ -158,7 +160,7 @@ section.style-wrapper {background-color: #f5f0e7; padding: 5em 0 0 0;}
 .svc-wrapper .slide-stage .slide.active {transform: translateY(-20%);}
 
 
-/********************** sns-wrapper *********************/
+/* sns-wrapper *********************/
 section.sns-wrapper {background-color: #f5f5f5;}
 .sns-wrapper .slide-stage {margin-bottom: 2em;}
 .sns-wrapper .slide-stage .swiper-container {overflow: visible;}
@@ -186,7 +188,7 @@ section.sns-wrapper {background-color: #f5f5f5;}
 .sns-wrapper .sns-weixin > .qr-wrap::after {display: block; content: ''; width: 0px; height: 0px; border-bottom: 12px solid none; border-top: 12px solid #b38859; border-right: 12px solid transparent; border-left: 12px solid  transparent; position: absolute; bottom: -12px; left: calc(50% - 12px)}
 
 
-/********************** contact-wrapper *********************/
+/* contact-wrapper *********************/
 .contact-wrapper {text-align: left;}
 .contact-wrapper > .wrapper {display: flex; justify-content: space-between;}
 .contact-wrapper > .wrapper > div {flex: 49% 0 0; position: relative;}
@@ -223,14 +225,14 @@ section.sns-wrapper {background-color: #f5f5f5;}
 
 
 
-/********************** cookie-wrapper *********************/
+/* cookie-wrapper *********************/
 .cookie-wrapper {position: fixed; z-index: 100; width: 100%; left: 0; bottom: 0; background: rgba(0, 0, 0, .7); backdrop-filter: blur(6px); padding: 3em 0; color: #fff;}
 .cookie-wrapper .cont-wrap {display: flex; justify-content: space-between;}
 .cookie-wrapper .cont-wrap > p {flex: 90% 0 1; font-size: 1.125em; font-weight: 300; line-height: 1.75; margin-bottom: 1em;}
 .cookie-wrapper .cont-wrap > i {font-size: 2em; cursor: pointer;}
 
 
-/********************** modal-wrapper *********************/
+/* modal-wrapper *********************/
 .modal-video .modal-wrap {flex: 80% 0 1;}
 .modal-video .modal-top {padding: .5em 0; font-size: 2em; color: #ddd; text-align: right;}
 .modal-video .modal-center video {width: 100%;}
@@ -238,7 +240,7 @@ section.sns-wrapper {background-color: #f5f5f5;}
 
 
 
-/********************** 반응형 설정 *********************/
+/* 반응형 설정 *********************/
 @media (max-width: 1399px) {
 	
 }

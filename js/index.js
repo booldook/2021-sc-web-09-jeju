@@ -16,7 +16,6 @@ $(function () {
 	var slick = {
 		autoplay: true,
 		autoplaySpeed: 2000,
-		pauseOnDotsHover: true,
 		infinite: true,
 		touchThreshold: 10,
 		arrows: false,
@@ -256,6 +255,10 @@ $(function () {
 		function onGetData(r) {
 			room = r.room.slice();
 			options.slidesToShow = 2;
+			options.dots = false;
+			options.responsive.pop();	// 배열의 마지막 요소를 빼낸다
+			options.responsive[0].breakpoint = 992;
+			options.responsive[0].settings.slidesToShow = 1;
 			$slick.slick(options);
 			makeSlickButton($slick, $btPrev, $btNext);
 			$(window).trigger('resize');
@@ -396,8 +399,18 @@ $(function () {
 	
 	/********* Global Function *********/
 	function makeSlickButton($slick, $prev, $next) {
-		$prev.click(function() { $slick.slick('slickPrev') });
-		$next.click(function() { $slick.slick('slickNext') });
+		$prev.click(function() { 
+			$slick.slick('slickPrev') 
+		});
+		$next.click(function() { 
+			$slick.slick('slickNext') 
+		});
+		$slick.find('.slick-dots').on('mouseenter', function() {
+			$slick.slick('slickPause');
+		});
+		$slick.find('.slick-dots').on('mouseleave', function() {
+			$slick.slick('slickPlay');
+		});
 	}
 	
 	function onResize(e) {
