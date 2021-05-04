@@ -24,7 +24,7 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 .bt-moving-top:hover > i {transform: translateY(-0.25em);}
 
 /*********** slick-pager ************/
-.slick-dots li button {opacity: 0;}
+.slick-dots li button {display: none;}
 .slick-dots li {border: 1px solid #fff; border-radius: 50%; background-color: #ccc; width: 14px;  height: 14px; margin: 0 4px; transition: all .5s; transform: scale(.6);}
 .slick-dots li.slick-active {border: 1px solid #fff; background-color: transparent; transform: scale(1);}
 
@@ -68,9 +68,9 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 .header-wrapper .link-lang:hover .bt-lang::before {transform: rotate(180deg);}
 
 .header-wrapper .navi-wrapper > .wrapper {display: flex;}
-.header-wrapper .logo-wrap {order: 2; flex: 254px 0 0; padding: 1.5em 0;}
+.header-wrapper .logo-wrap {order: 2; flex-basis: 254px; padding: 1.5em 0;}
 .header-wrapper .logo-color {display: none;}
-.header-wrapper .navi-wrap {flex: 0 0 calc(50% - 127px); display: flex;}
+.header-wrapper .navi-wrap {flex-basis: calc(50% - 127px); display: flex;}
 .header-wrapper .navi-wrap-lt {order: 1;}
 .header-wrapper .navi-wrap-rt {order: 3; justify-content: flex-end;}
 .header-wrapper .navi {padding: 0 2em; position: relative; display: flex; align-items: center;}
