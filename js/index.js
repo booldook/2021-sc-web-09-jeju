@@ -307,6 +307,7 @@ $(function () {
 				$slick.append(html);
 			})
 			options.slidesToShow = 2;
+			options.dots = false;
 			options.responsive.pop();
 			options.responsive[0].breakpoint = 992;
 			options.responsive[0].settings.slidesToShow = 1;
