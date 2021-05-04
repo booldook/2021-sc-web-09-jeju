@@ -13,6 +13,33 @@ else idx = idx + 1 */
 /*************** Index *****************/
 $(function () {
 
+	var slick = {
+		autoplay: true,
+		autoplaySpeed: 2000,
+		pauseOnDotsHover: true,
+		infinite: true,
+		touchThreshold: 10,
+		arrows: false,
+		dots: true,
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 576,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
+	}
+
 	weather();
 	setCookie();
 	slideMain();
@@ -168,9 +195,15 @@ $(function () {
 	}
 
 	function slideDream() {
-		var swiper = getSwiper('.dream-wrapper', {
-			break: 3
-		});
+		// var swiper = getSwiper('.dream-wrapper', { break: 3 });
+		var $dream = $('.dream-wrapper');
+		var $slide = $('.dream-wrapper .slide-wrapper');
+		var $btPrev = $('.dream-wrapper .bt-slide.left');
+		var $btNext = $('.dream-wrapper .bt-slide.right');
+		var options = cloneObject(slick);
+		$slide.slick(options);
+		$btPrev.click(function() { $slide.slick('slickPrev') });
+		$btNext.click(function() { $slide.slick('slickNext') });
 	}
 
 	function slidePromo() {
@@ -201,16 +234,7 @@ $(function () {
 	}
 
 	function initStyle() {
-		$(window).resize(onResize).trigger('resize');
-
-		function onResize() {
-			$('.style-wrapper .ratio-wrap').each(function (i) {
-				var ratio = $(this).data('ratio');
-				var width = $(this).innerWidth();
-				var height = width * Number(ratio);
-				$(this).innerHeight(height);
-			})
-		}
+		
 	}
 
 	function slideRoom() {
@@ -343,7 +367,7 @@ $(function () {
 		}
 
 		function onSubmit(e) {
-			e.preventDefault();	// submit이므로 전송되어야 하는데 전송기능을 막는다.
+			e.preventDefault(); // submit이므로 전송되어야 하는데 전송기능을 막는다.
 			$form[0].contact_number.value = Math.random() * 100000 | 0;
 			emailjs.sendForm('service_gmail', 'template_gmail', this).then(function () {
 				alert('뉴스레터 신청이 완료되었습니다.');
@@ -358,6 +382,20 @@ $(function () {
 		}
 
 		/********* User Function *********/
-		emailjs.init('user_TROFqVnbPGZyygPAci7nt');	// 본인거로 꼭 바꿔넣으세요.
+		emailjs.init('user_TROFqVnbPGZyygPAci7nt'); // 본인거로 꼭 바꿔넣으세요.
 	}
+
+
+	/********* Global Function *********/
+	function onResize(e) {
+		$('.ratio-wrap').each(function(i) {
+			var ratio = $(this).data('ratio');
+			var width = $(this).innerWidth();
+			var height = width * Number(ratio);
+			$(this).innerHeight(height);
+		})
+	}
+	
+	$(window).resize(onResize).trigger('resize');
+
 })

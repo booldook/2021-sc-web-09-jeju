@@ -59,8 +59,9 @@
 /********************** dream-wrapper *********************/
 .dream-wrapper {background-image: linear-gradient(#fff, #fff 40%, #eee 40%, #eee); overflow: hidden;}
 .dream-wrapper .slide-stage {position: relative; margin-bottom: 6em;}
-.dream-wrapper .slide-stage > .swiper-container {width: calc(100% - 60px); overflow: visible;}
-.dream-wrapper .slide-stage .slide {cursor: pointer;}
+.dream-wrapper .slide-stage > .slide-container {width: calc(100% - 40px); margin-left: 20px;}
+.dream-wrapper .slide-stage .slick-list {overflow: visible;}
+.dream-wrapper .slide-stage .slide {cursor: pointer; margin: 0 20px;}
 .dream-wrapper .slide-stage .cont-wrap {padding: 8%; min-height: 220px; position: relative; background-color: #fff; border: 1px solid #ddd;}
 .dream-wrapper .slide-stage .img-wrap {overflow: hidden;}
 .dream-wrapper .slide-stage .img-wrap > .ratio-bg {transition: all 1s;}
@@ -68,11 +69,11 @@
 .dream-wrapper .slide-stage .cont-wrap .title {font-size: 1.75em; margin-bottom: 0.5em;}
 .dream-wrapper .slide-stage .cont-wrap .desc {font-size: 1.125em; color: #888; line-height: 1.5;}
 .dream-wrapper .slide-stage .cont-wrap .tag {font-size: 1em; color: #fff; background-color: #ff5100; padding: 0 .75em; position: absolute; height: 26px; line-height: 26px; border-radius: 13px; top: -13px; left: 10%;}
-.dream-wrapper .slide-stage .pager-slide {text-align: center; margin-top: 2em; position: absolute; width: 100%;}
-.dream-wrapper .slide-stage .pager-slide .swiper-pagination-bullet-active {border: 1px solid #b38859;}
+.dream-wrapper .slide-stage .slick-dots {bottom: -3em;}
+.dream-wrapper .slide-stage .slick-dots li.slick-active {border: 1px solid #b38859;}
 
-.dream-wrapper .slide-stage .box.left {left: calc(-200% - 9px);}
-.dream-wrapper .slide-stage .box.right {right: calc(-200% - 9px);}
+.dream-wrapper .slide-stage .box.left {left: calc(-200% + 1px);}
+.dream-wrapper .slide-stage .box.right {right: calc(-200% + 1px);}
 
 .dream-wrapper .bt-wrap {text-align: center;}
 .dream-wrapper .bt-wrap .bt-ghost.white {padding: 1em 3em;}
