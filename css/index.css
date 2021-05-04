@@ -129,9 +129,9 @@ section.style-wrapper {background-color: #f5f0e7; padding: 5em 0 0 0;}
 .room-wrapper .slide-stage {position: relative; margin-bottom: 6em;}
 .room-wrapper .slide-stage .slide-bg {
 	background-image: linear-gradient(to right, #28354b, #28354b 60%, #fff 60%, #fff);}
-.room-wrapper .slide-stage .swiper-container {width: calc(90% - 60px); transform: translate(45%, 10%);}
-.room-wrapper .slide-stage .pager-slide {text-align: center; margin-top: 5em; position: absolute; width: 100%;}
-.room-wrapper .slide-stage .pager-slide .swiper-pagination-bullet-active {border: 1px solid #b38859;}
+.room-wrapper .slide-stage .slide-container {width: calc(90% - 60px); transform: translate(45%, 10%);}
+.room-wrapper .slide-stage .slick-dots {bottom: -5em;}
+.room-wrapper .slide-stage .slick-dots li.slick-active {border: 1px solid #b38859;}
 .room-wrapper .desc-wrapper {position: absolute; width: 35%; height: 100%; top: 0; left: 80px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; color: #fff;}
 .room-wrapper .desc-wrapper .tag {width: 100%; color: #b38859; font-size: 1.125em; margin-bottom: .5em;}
 .room-wrapper .desc-wrapper .title {width: 100%; font-size: 2.5em; margin-bottom: .5em;}
