@@ -313,27 +313,12 @@ $(function () {
 			$slick.slick(options);
 			makeSlickButton($slick, $btPrev, $btNext);
 			$slick.on('beforeChange', onBefore);
-			$slick.on('afterChange', onAfter);
 			$(window).trigger('resize');
-
 			showAni(1);
-
-			/* swiper = getSwiper('.svc-wrapper', {
-				break: 2,
-				speed: 600,
-				pager: false
-			});
-			swiper.on('slideChange', onChange);
-			showAni(1); */
 		}
 
-		function onBefore(e, slick, idx) {
-			$slick.find('.slide').removeClass('active');
-			
-			showAni((idx == lastIdx) ? 0 : idx + 1);
-		}
-
-		function onAfter(e, slick, idx) {
+		function onBefore(e, slick, current, idx) {
+			showAni((idx === lastIdx) ? 0 : idx + 1);
 		}
 
 		function showAni(n) {
