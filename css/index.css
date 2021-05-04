@@ -156,7 +156,7 @@ section.style-wrapper {background-color: #f5f0e7; padding: 5em 0 0 0;}
 .svc-wrapper .slide-stage .box.left {left: calc(-200% - 30px);}
 .svc-wrapper .slide-stage .box.right {right: calc(-200% - 30px);}
 
-.svc-wrapper .slide-stage .slide {transition: transform .6s; margin: 0 30px;}
+.svc-wrapper .slide-stage .slide {transition: transform .5s; margin: 0 30px;}
 .svc-wrapper .slide-stage .slide.active {transform: translateY(-20%);}
 
 

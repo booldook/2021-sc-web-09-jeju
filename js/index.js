@@ -298,7 +298,7 @@ $(function () {
 			lastIdx = r.svc.length - 1;
 			r.svc.forEach(function (v, i) {
 				var html = '';
-				html += '<li class="slide swiper-slide" title="' + i + '">';
+				html += '<li class="slide" title="' + i + '">';
 				html += '<div class="img-wrap">';
 				html += '<img src="' + v.src + '" alt="svc" class="w-100">';
 				html += '</div>';
@@ -330,23 +330,31 @@ $(function () {
 	}
 
 	function slideSns() {
-		var $slideWrapper = $('.sns-wrapper .slide-wrapper');
-		var swiper;
+		var $sns = $('.sns-wrapper');
+		var $slick = $sns.find('.slide-wrapper');
+		var $btPrev = $sns.find('.bt-slide.left');
+		var $btNext = $sns.find('.bt-slide.right');
+		var options = cloneObject(slick);
 
 		function onGetData(r) {
 			r.sns.forEach(function (v, i) {
 				var html = '';
-				html += '<li class="slide swiper-slide">';
+				html += '<li class="slide">';
 				html += '<img src="' + v.src + '" alt="이벤트" class="w-100">';
 				html += '<i class="icon fab fa-instagram"></i>';
 				html += '</li>';
-				$slideWrapper.append(html);
+				$slick.append(html);
 			})
-			/* swiper = getSwiper('.sns-wrapper', {
-				break: 7,
-				space: 0,
-				pager: false
-			}); */
+			options.dots = false;
+			options.slidesToShow = 7;
+			options.responsive[0].settings.slidesToShow = 3;
+			options.responsive[1].settings.slidesToShow = 2;
+			options.responsive.unshift({breakpoint: 992, settings: {slidesToShow: 4}});
+			options.responsive.unshift({breakpoint: 1200, settings: {slidesToShow: 5}});
+			options.responsive.unshift({breakpoint: 1400, settings: {slidesToShow: 6}});
+			console.log(options.responsive)
+			$slick.slick(options);
+			makeSlickButton($slick, $btPrev, $btNext);
 		}
 		$.get('../json/sns.json', onGetData);
 	}
