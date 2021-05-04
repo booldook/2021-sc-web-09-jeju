@@ -254,6 +254,7 @@ $(function () {
 
 		function onGetData(r) {
 			room = r.room.slice();
+			options.autoplaySpeed = 4000;
 			options.slidesToShow = 2;
 			options.dots = false;
 			options.responsive.pop();	// 배열의 마지막 요소를 빼낸다
@@ -263,9 +264,8 @@ $(function () {
 			makeSlickButton($slick, $btPrev, $btNext);
 			$(window).trigger('resize');
 
-			$slick.on('afterChange', function(event, slick, idx){
-				showDesc(idx)
-			});
+			$slick.on('beforeChange', onBefore);
+			$slick.on('afterChange', onAfter);
 			showDesc(0);
 		}
 
@@ -273,8 +273,7 @@ $(function () {
 			$movingBox.removeClass('active');
 		}
 
-		function onAfter() {
-			var idx = this.realIndex;
+		function onAfter(e, slick, idx) {
 			showDesc(idx);
 		}
 
@@ -288,8 +287,12 @@ $(function () {
 	}
 
 	function slideSvc() {
-		var $slideWrapper = $('.svc-wrapper .slide-wrapper');
-		var swiper, lastIdx;
+		var $svc = $('.svc-wrapper');
+		var $slick = $svc.find('.slide-wrapper');
+		var $btPrev = $svc.find('.bt-slide.left');
+		var $btNext = $svc.find('.bt-slide.right');
+		var options = cloneObject(slick);
+		var lastIdx;
 
 		function onGetData(r) {
 			lastIdx = r.svc.length - 1;
@@ -301,8 +304,20 @@ $(function () {
 				html += '</div>';
 				html += '<h4 class="title">' + v.title + '</h4>';
 				html += '</li>';
-				$slideWrapper.append(html);
+				$slick.append(html);
 			})
+			options.slidesToShow = 2;
+			options.responsive.pop();
+			options.responsive[0].breakpoint = 992;
+			options.responsive[0].settings.slidesToShow = 1;
+			$slick.slick(options);
+			makeSlickButton($slick, $btPrev, $btNext);
+			$slick.on('beforeChange', onBefore);
+			$slick.on('afterChange', onAfter);
+			$(window).trigger('resize');
+
+			showAni(1);
+
 			/* swiper = getSwiper('.svc-wrapper', {
 				break: 2,
 				speed: 600,
@@ -312,13 +327,18 @@ $(function () {
 			showAni(1); */
 		}
 
-		function onChange() {
-			showAni((this.realIndex == lastIdx) ? 0 : this.realIndex + 1);
+		function onBefore(e, slick, idx) {
+			$slick.find('.slide').removeClass('active');
+			
+			showAni((idx == lastIdx) ? 0 : idx + 1);
+		}
+
+		function onAfter(e, slick, idx) {
 		}
 
 		function showAni(n) {
-			$slideWrapper.find('.slide').removeClass('active');
-			$slideWrapper.find('.slide[title="' + n + '"]').addClass('active');
+			$slick.find('.slide').removeClass('active');
+			$slick.find('.slide[title="' + n + '"]').addClass('active');
 		}
 		$.get('../json/svc.json', onGetData);
 	}
