@@ -84,10 +84,20 @@ $(function() {
 	$('.header-wrapper .link-lang .lang').click(onChgLang);
 
 	$('.bt-moving-top').click(onMovingTop);
+	$('.bt-moving-top2').click(onMovingTop);
+
+	$('.mo-link-wrapper .mo-lang').click(onChgLangMobile);
 
 
 	/*************** 이벤트 콜백 *****************/
-	function onMovingTop() {
+	function onChgLangMobile(e) {
+		e.preventDefault();
+		if($(this).text() === 'KR') $(this).text('EN');
+		else $(this).text('KR');
+	}
+
+	function onMovingTop(e) {
+		e.preventDefault();
 		$('html, body').stop().animate({ "scrollTop": 0 }, 300);
 	}
 
