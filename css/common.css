@@ -77,8 +77,8 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 .header-wrapper .navi-wrap-lt {order: 1;}
 .header-wrapper .navi-wrap-rt {order: 3; justify-content: flex-end;}
 .header-wrapper .navi {padding: 0 2em; position: relative; display: flex; align-items: center;}
-.header-wrapper .navi.has-sub.active::after {width: 40px; height: 2px; background-color: #b38859; content: ''; display: block; position: absolute; /* transform: rotate(90deg); */ margin-left: 50%; transform: translateX(-50%);}
-.header-wrapper .navi > a {font-size: 1.125em; text-shadow: 0 0 8px rgba(0,0,0,.75);}
+.header-wrapper .navi > a {font-size: 1.125em; text-shadow: 0 0 8px rgba(0,0,0,.75); position: relative;}
+.header-wrapper .navi.has-sub.active > a::after {width: 40px; height: 2px; background-color: #b38859; content: ''; display: block; position: absolute; transform: rotate(90deg); left: calc(50% - 20px); top: 50px; z-index: 9;}
 .header-wrapper .navi:first-child {margin-left: 0;}
 .header-wrapper .navi:last-child {margin-right: 0;}
 .header-wrapper .navi > .sub-wrapper {position: absolute; background-color: #fff; padding: 3em 2.5em; top: 92px; border-top: 1px solid #ddd; color: #666;}
@@ -167,7 +167,6 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 	.header-wrapper .navi-wrap {order: 2; width: auto;}
 	.header-wrapper .navi {padding-bottom: 24px;}
 	.header-wrapper .navi > .sub-wrapper {top: 70px;}
-	.header-wrapper .navi.has-sub.active::after {top: 58px;}
 	.header-wrapper .navi-wrap > :nth-child(3) > .sub-wrapper {left: -329px; width: 992px;}
 }
 
@@ -178,7 +177,6 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 @media (max-width: 991px) {
 	.header-wrapper .navi {position: static;}
 	.header-wrapper .navi > .sub-wrapper {top: 132px !important; left: -1em !important; width: calc(100% + 2em) !important; right: auto !important;}
-	.header-wrapper .navi.has-sub.active::after {top: 120px;}
 	.header-wrapper .navi-wrap > :nth-child(2)::after {left: 100px !important;}
 	.header-wrapper .navi.navi-book {display: none;}
 }
