@@ -179,19 +179,22 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 	.header-wrapper .navi > .sub-wrapper {top: 140px !important; left: -16px !important; width: calc(100% + 32px) !important; right: auto !important;}
 	.header-wrapper .navi.navi-book {display: none;}
 	.header-wrapper .sub-wrap .list-wrap {display: block;}
-	.header-wrapper .sub-wrap .lists {flex-grow: 1; padding: 0; margin-bottom: 2em;}
+	.header-wrapper .sub-wrap .lists {flex-grow: 1; padding: 0; margin-bottom: 1em;}
 	.header-wrapper .sub-wrap .lists:not(:last-child) {border-right: none;}
 	.header-wrapper .sub-wrap .list {display: inline-block; margin-right: 1em;}
 }
 
 @media (max-width: 767px) {
 	.notice-wrapper {display: none !important;}
+	.link-wrapper {display: none !important;}
 }
 
 @media (max-width: 575px) {
 	.header-wrapper .link-wrap {justify-content: center;}
 	.header-wrapper .link-wrap > .link:not(.link-lang) {padding: 0 1em;}
 	.header-wrapper .link-lang {padding-left: 1em;}
-	.header-wrapper .navi {font-size: .875em; padding: 0 .5em 2em .5em;}
-	.header-wrapper .navi > .sub-wrapper {top: 135px !important; max-height: 80vh; overflow: auto;}
+	.header-wrapper .navi {font-size: .625em; padding: 0 .5em 2em .5em;}
+	.header-wrapper .navi.has-sub.active > a::after {top: 35px;}
+	.header-wrapper .navi > .sub-wrapper {top: 120px !important; max-height: 80vh; overflow: auto;}
+	.footer-wrapper {display: none;}
 }

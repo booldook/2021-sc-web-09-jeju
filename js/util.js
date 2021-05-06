@@ -4,6 +4,10 @@
 */
 
 
+/****************** mobile check ********************/
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+
 /****************** regExp ********************/
 // Email 정규표현식
 function validEmail(v) {
