@@ -139,7 +139,8 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 .footer-wrapper .sns {display: inline-block; width: 30px; height: 30px; line-height: 30px; text-align: center; color: inherit; font-size: 1em; margin-right: 1em; cursor: pointer;}
 .footer-wrapper .sns-naver {background: url(../img/index/naver.png) no-repeat center; background-size: auto 1em; opacity: .7;}
 .footer-wrapper .sns-kakao {background: url(../img/index/kakao.png) no-repeat center; background-size: auto 1em; opacity: .7;}
-.footer-wrapper .sns-weixin {position: relative; opacity: .7;}
+.footer-wrapper .sns-weixin {position: relative;}
+.footer-wrapper .sns-weixin::before {opacity: .7;}
 .footer-wrapper .sns-weixin > .qr-wrap {position: absolute; border: 3px solid #b38859; left: 50%; bottom: calc(100% + 20px); transform: translateX(-50%); z-index: 100; display: none;}
 .footer-wrapper .sns-weixin:hover > .qr-wrap {display: block;}
 .footer-wrapper .sns-weixin > .qr-wrap::after {display: block; content: ''; width: 0px; height: 0px; border-bottom: 12px solid none; border-top: 12px solid #b38859; border-right: 12px solid transparent; border-left: 12px solid  transparent; position: absolute; bottom: -12px; left: calc(50% - 12px)}
@@ -177,7 +178,10 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 }
 
 @media (max-width: 1199px) {
-	
+	.footer-wrapper .wrapper > div {font-size: .875em;}
+	.footer-wrapper .wrapper > :nth-child(1) {padding-right: 1.5em;}
+	.footer-wrapper .wrapper > :nth-child(2) {padding: 1.5em;}
+	.footer-wrapper .wrapper > :nth-child(3) {padding-right: 1.5em; padding-left: 1.5em;}
 }
 
 @media (max-width: 991px) {
@@ -189,6 +193,14 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 	.header-wrapper .sub-wrap .lists:not(:last-child) {border-right: none;}
 	.header-wrapper .sub-wrap .list {display: inline-block; margin-right: 1em;}
 	.bt-moving-top {display: none;}
+
+	.footer-wrapper .wrapper {flex-wrap: wrap;}
+	.footer-wrapper .wrapper > div {font-size: .875em; margin-bottom: 1.5em;}
+	.footer-wrapper .wrapper > :nth-child(1) {width: 100%; padding-right: 1.5em; padding-left: 1.5em; padding-bottom: 1.5em; border-bottom: 1px solid #3c4449;}
+	.footer-wrapper .wrapper > :nth-child(2) {width: 100%; padding: 0 1.5em; border-bottom: 1px solid #3c4449;}
+	.footer-wrapper .wrapper > :nth-child(3) {width: 100%; padding-right: 1.5em; padding-left: 1.5em;}
+	.footer-wrapper .link-wrap {flex-wrap: wrap;}
+	.footer-wrapper .link-wrap > div {width: 100%;}
 }
 
 @media (max-width: 767px) {
@@ -204,5 +216,4 @@ html, body {font-size: 16px; font-family: 'Jost', 'Noto Sans KR', sans-serif;}
 	.header-wrapper .navi {font-size: .625em; padding: 0 .5em 2em .5em;}
 	.header-wrapper .navi.has-sub.active > a::after {top: 35px;}
 	.header-wrapper .navi > .sub-wrapper {top: 120px !important; max-height: 80vh; overflow: auto;}
-	.footer-wrapper {display: none;}
 }
