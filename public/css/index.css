@@ -246,13 +246,6 @@ section.sns-wrapper {background-color: #f5f5f5;}
 }
 
 @media (max-width: 1199px) {
-	
-}
-
-@media (max-width: 991px) {
-	.main-wrapper .slide .slide-title {font-size: 9vw;}
-	.main-wrapper .info-stage {display: none;}
-	.style-wrapper .list {width: 100%;}
 	.style-wrapper .list .title {font-size: 2em;}
 	.style-wrapper .list:hover .title {font-size: 1.5em;}
 	.style-wrapper .list:hover .bar {margin: 1em auto;}
@@ -260,11 +253,17 @@ section.sns-wrapper {background-color: #f5f5f5;}
 	.style-wrapper .list .bt-ghost {padding: .5em;}
 }
 
+@media (max-width: 991px) {
+	.main-wrapper .slide .slide-title {font-size: 9vw;}
+	.main-wrapper .info-stage {display: none;}
+	.style-wrapper .list {width: 100%;}
+}
+
 @media (max-width: 767px) {
 	.title-wrap h2.title {font-size: 2em;}
 	.title-wrap h3.title {font-size: 1.5em; line-height: 1.5;}
 	.title-wrap h4.title {font-size: 1em; line-height: 1.5;}
-
+	
 	.dream-wrapper .slide-stage .cont-wrap {font-size: .75em; min-height: 160px;}
 	.promo-wrapper .slide-stage .cont-wrap .desc {font-size: 1.125em;}
 }
