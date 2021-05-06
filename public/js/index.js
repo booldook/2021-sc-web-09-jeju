@@ -190,7 +190,7 @@ $(function () {
 			$.get(weatherURL, weatherData, onGetWeather);
 		}
 		// 위치정보 가져오기(못 가져오면 제주도 보이기 33.485739737138786, 126.48154043372092)
-		navigator.geolocation.getCurrentPosition(onGetGeo, onErrorGeo);
+		if(!isMobile) navigator.geolocation.getCurrentPosition(onGetGeo, onErrorGeo);
 	}
 
 	function slideDream() {
